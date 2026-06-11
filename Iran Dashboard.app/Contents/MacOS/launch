@@ -1,0 +1,27 @@
+#!/bin/bash
+
+DASHBOARD_DIR="$HOME/Documents/iran-metrics-dashboard"
+PORT=8000
+
+cd "$DASHBOARD_DIR" || exit 1
+
+# Kill any existing server on this port
+lsof -ti:$PORT 2>/dev/null | xargs kill -9 2>/dev/null
+sleep 0.5
+
+# Fetch fresh data
+python3 fetch_data.py > /dev/null 2>&1 &
+
+# Start server
+python3 -m http.server $PORT > /dev/null 2>&1 &
+
+# Wait for server
+for i in {1..10}; do
+    if curl -s "http://localhost:$PORT" > /dev/null 2>&1; then
+        break
+    fi
+    sleep 0.3
+done
+
+# Open browser
+open "http://localhost:$PORT"

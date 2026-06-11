@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iran Situation Metrics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f7;
+            min-height: 100vh;
+            color: #1d1d1f;
+            padding: 24px;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #d2d2d7;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 4px;
+        }
+
+        .subtitle {
+            color: #86868b;
+            font-size: 14px;
+        }
+
+        .meta-row {
+            display: flex;
+            gap: 24px;
+            margin-top: 12px;
+            font-size: 13px;
+        }
+
+        .meta-row span {
+            color: #86868b;
+        }
+
+        .meta-row strong {
+            color: #1d1d1f;
+        }
+
+        .refresh-btn {
+            background: #0071e3;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 13px;
+            margin-left: auto;
+        }
+
+        .refresh-btn:hover {
+            background: #0077ed;
+        }
+
+        .section {
+            margin-bottom: 32px;
+        }
+
+        .section-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #86868b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 12px;
+        }
+
+        .metric-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 16px;
+            border: 1px solid #e5e5e5;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            color: #86868b;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .live-dot {
+            width: 6px;
+            height: 6px;
+            background: #34c759;
+            border-radius: 50%;
+        }
+
+        .manual-dot {
+            width: 6px;
+            height: 6px;
+            background: #ff9500;
+            border-radius: 50%;
+        }
+
+        .metric-value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 4px;
+        }
+
+        .metric-change {
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .metric-change.positive {
+            color: #34c759;
+        }
+
+        .metric-change.negative {
+            color: #ff3b30;
+        }
+
+        .metric-change.neutral {
+            color: #86868b;
+        }
+
+        .metric-source {
+            font-size: 11px;
+            color: #aeaeb2;
+            margin-top: 8px;
+        }
+
+        .analysis-section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid #e5e5e5;
+            margin-top: 24px;
+        }
+
+        .analysis-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1d1d1f;
+        }
+
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        @media (max-width: 768px) {
+            .analysis-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .analysis-box h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 12px;
+        }
+
+        .analysis-box ul {
+            list-style: none;
+        }
+
+        .analysis-box li {
+            color: #1d1d1f;
+            margin-bottom: 10px;
+            padding-left: 16px;
+            position: relative;
+            line-height: 1.5;
+            font-size: 13px;
+        }
+
+        .analysis-box li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 4px;
+            height: 4px;
+            background: #86868b;
+            border-radius: 50%;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 13px;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .data-table th {
+            color: #86868b;
+            font-weight: 500;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 24px;
+            color: #86868b;
+            font-size: 12px;
+            margin-top: 32px;
+        }
+
+        .legend {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 8px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Iran Situation Metrics</h1>
+            <p class="subtitle">Key economic, market, and political indicators</p>
+            <div class="meta-row">
+                <span>Last updated: <strong id="lastUpdated">Loading...</strong></span>
+                <span>Baseline: <strong>February 27, 2026</strong></span>
+                <button class="refresh-btn" onclick="refreshAllData()">Refresh</button>
+            </div>
+        </header>
+
+        <div class="section">
+            <h2 class="section-title">Markets</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label"><span class="live-dot"></span>S&P 500</div>
+                    <div class="metric-value" id="sp500-value">--</div>
+                    <div class="metric-change" id="sp500-change">--</div>
+                    <div class="metric-source">Yahoo Finance</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label"><span class="live-dot"></span>MSCI World</div>
+                    <div class="metric-value" id="msci-value">--</div>
+                    <div class="metric-change" id="msci-change">--</div>
+                    <div class="metric-source">Yahoo Finance (URTH)</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label"><span class="live-dot"></span>VIX</div>
+                    <div class="metric-value" id="vix-value">--</div>
+                    <div class="metric-change" id="vix-change">--</div>
+                    <div class="metric-source">CBOE</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label"><span class="live-dot"></span>10-Year Treasury</div>
+                    <div class="metric-value" id="treasury-value">--</div>
+                    <div class="metric-change" id="treasury-change">--</div>
+                    <div class="metric-source">Yahoo Finance</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label"><span class="manual-dot"></span>Global GDP 2026</div>
+                    <div class="metric-value" id="gdp-value">2.5%</div>
+                    <div class="metric-change negative" id="gdp-change">-0.2% vs baseline</div>
+                    <div class="metric-source">IMF</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label"><span class="manual-dot"></span>Global Inflation</div>
+                    <div class="metric-value" id="inflation-value">3.8% - 6.1%</div>
+                    <div class="metric-change negative" id="inflation-change">+1.1% to +3.3%</div>
+                    <div class="metric-source">IMF / World Bank</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Energy</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label"><span class="live-dot"></span>Brent Crude</div>
+                    <div class="metric-value" id="brent-value">--</div>
+                    <div class="metric-change" id="brent-change">--</div>
+                    <div class="metric-source">Yahoo Finance</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label"><span class="live-dot"></span>WTI Crude</div>
+                    <div class="metric-value" id="wti-value">--</div>
+                    <div class="metric-change" id="wti-change">--</div>
+                    <div class="metric-source">Yahoo Finance</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label"><span class="live-dot"></span>Henry Hub Gas</div>
+                    <div class="metric-value" id="henryhub-value">--</div>
+                    <div class="metric-change" id="henryhub-change">--</div>
+                    <div class="metric-source">Yahoo Finance</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label"><span class="manual-dot"></span>Dutch TTF</div>
+                    <div class="metric-value" id="ttf-value">--</div>
+                    <div class="metric-change" id="ttf-change">--</div>
+                    <div class="metric-source">ICE Exchange</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label"><span class="manual-dot"></span>US Gas Prices</div>
+                    <div class="metric-value" id="fuel-value">--</div>
+                    <div class="metric-change" id="fuel-change">--</div>
+                    <div class="metric-source">AAA / EIA</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Political</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label"><span class="manual-dot"></span>Trump Net Approval</div>
+                    <div class="metric-value" id="trump-approval">--</div>
+                    <div class="metric-change" id="trump-change">--</div>
+                    <div class="metric-source">FiveThirtyEight / RCP</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-label"><span class="manual-dot"></span>Iran War Net Approval</div>
+                    <div class="metric-value" id="iran-approval">--</div>
+                    <div class="metric-change" id="iran-change">--</div>
+                    <div class="metric-source">Aggregate Polling</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="analysis-section">
+            <h2 class="analysis-title">Situation Analysis</h2>
+            <div class="analysis-grid">
+                <div class="analysis-box">
+                    <h3>Current State</h3>
+                    <ul>
+                        <li><strong>Diplomacy stalled.</strong> Israel-Lebanon negotiations at standstill.</li>
+                        <li><strong>Regional escalation.</strong> Iran struck Kuwait airport; targeting US forces.</li>
+                        <li><strong>Iran economy deteriorating.</strong> IMF projects -6.1% GDP, 68.9% inflation.</li>
+                        <li><strong>Congress acts.</strong> House voted 215-208 on war powers resolution.</li>
+                        <li><strong>Public support declining.</strong> Net support at -22.8%, down from -9%.</li>
+                    </ul>
+                </div>
+                <div class="analysis-box">
+                    <h3>Outlook</h3>
+                    <ul>
+                        <li>Most probable: limited agreement with guarded Strait of Hormuz reopening.</li>
+                        <li><strong>Domestic politics:</strong> Midterms 5 months out; GOP defections possible.</li>
+                        <li><strong>US-Israel:</strong> Netanyahu escalation led Iran to suspend talks.</li>
+                        <li>As of June 4, Hezbollah rejected US-brokered ceasefire.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="analysis-section">
+            <h2 class="analysis-title">Summary</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                        <th>Change</th>
+                        <th>Source</th>
+                    </tr>
+                </thead>
+                <tbody id="summary-table"></tbody>
+            </table>
+        </div>
+
+        <footer class="footer">
+            <p>Dashboard auto-refreshes every 5 minutes</p>
+            <div class="legend">
+                <span class="legend-item"><span class="live-dot"></span> Live data</span>
+                <span class="legend-item"><span class="manual-dot"></span> Manual update</span>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const BASELINE = {
+            sp500: 6877.17,
+            msci: 4556.35,
+            brent: 67.87,
+            wti: 67.00,
+            henryhub: 3.15,
+            vix: 15.0,
+            treasury: 4.25,
+            ttf: 31.00,
+            fuel: 2.98
+        };
+
+        let currentData = {};
+
+        function formatNumber(num, decimals = 2) {
+            return num.toLocaleString('en-US', {
+                minimumFractionDigits: decimals,
+                maximumFractionDigits: decimals
+            });
+        }
+
+        function calcChange(current, baseline) {
+            return ((current - baseline) / baseline * 100).toFixed(2);
+        }
+
+        function updateMetric(id, value, change, isPositiveGood = true) {
+            const valueEl = document.getElementById(`${id}-value`);
+            const changeEl = document.getElementById(`${id}-change`);
+
+            if (valueEl) valueEl.textContent = value;
+            if (changeEl) {
+                const changeNum = parseFloat(change);
+                const isPositive = changeNum > 0;
+                const isNegative = changeNum < 0;
+
+                changeEl.className = 'metric-change';
+
+                if (isPositiveGood) {
+                    changeEl.classList.add(isPositive ? 'positive' : (isNegative ? 'negative' : 'neutral'));
+                } else {
+                    changeEl.classList.add(isPositive ? 'negative' : (isNegative ? 'positive' : 'neutral'));
+                }
+
+                const arrow = isPositive ? '+' : '';
+                changeEl.textContent = `${arrow}${change}% vs baseline`;
+            }
+        }
+
+        async function fetchMarketData() {
+            const data = {
+                sp500: { price: 7266.99, baseline: BASELINE.sp500 },
+                msci: { price: 4785.95, baseline: BASELINE.msci },
+                brent: { price: 94.30, baseline: BASELINE.brent },
+                wti: { price: 91.46, baseline: BASELINE.wti },
+                henryhub: { price: 3.19, baseline: BASELINE.henryhub },
+                vix: { price: 22.22, baseline: BASELINE.vix },
+                treasury: { price: 4.54, baseline: BASELINE.treasury }
+            };
+
+            let manualData = {
+                ttf: { value: 48.75, change_pct: 57.26 },
+                fuel: { value: 4.24, change_pct: 42.28 },
+                trump_approval: { value: -19.1, change: '-6 pts' },
+                iran_war_approval: { value: -22.8, change: '-9 pts' }
+            };
+
+            try {
+                const response = await fetch('data.json');
+                if (response.ok) {
+                    const jsonData = await response.json();
+                    const metrics = jsonData.metrics;
+
+                    if (metrics.sp500) data.sp500.price = metrics.sp500.value;
+                    if (metrics.msci) data.msci.price = metrics.msci.value;
+                    if (metrics.brent) data.brent.price = metrics.brent.value;
+                    if (metrics.wti) data.wti.price = metrics.wti.value;
+                    if (metrics.henryhub) data.henryhub.price = metrics.henryhub.value;
+                    if (metrics.vix) data.vix.price = metrics.vix.value;
+                    if (metrics.treasury) data.treasury.price = metrics.treasury.value;
+
+                    if (metrics.ttf) manualData.ttf = metrics.ttf;
+                    if (metrics.fuel) manualData.fuel = metrics.fuel;
+                    if (metrics.trump_approval) manualData.trump_approval = metrics.trump_approval;
+                    if (metrics.iran_war_approval) manualData.iran_war_approval = metrics.iran_war_approval;
+                }
+            } catch (e) {
+                console.log('Using default data');
+            }
+
+            // Update market metrics
+            updateMetric('sp500', formatNumber(data.sp500.price), calcChange(data.sp500.price, BASELINE.sp500), true);
+            updateMetric('msci', formatNumber(data.msci.price), calcChange(data.msci.price, BASELINE.msci), true);
+            updateMetric('vix', formatNumber(data.vix.price), calcChange(data.vix.price, BASELINE.vix), false);
+            updateMetric('treasury', formatNumber(data.treasury.price) + '%', calcChange(data.treasury.price, BASELINE.treasury), false);
+
+            // Update energy metrics
+            updateMetric('brent', '$' + formatNumber(data.brent.price), calcChange(data.brent.price, BASELINE.brent), false);
+            updateMetric('wti', '$' + formatNumber(data.wti.price), calcChange(data.wti.price, BASELINE.wti), false);
+            updateMetric('henryhub', '$' + formatNumber(data.henryhub.price), calcChange(data.henryhub.price, BASELINE.henryhub), false);
+
+            // Update manual data
+            document.getElementById('ttf-value').textContent = '$' + manualData.ttf.value;
+            document.getElementById('ttf-change').textContent = '+' + manualData.ttf.change_pct + '% vs baseline';
+            document.getElementById('ttf-change').className = 'metric-change negative';
+
+            document.getElementById('fuel-value').textContent = '$' + manualData.fuel.value;
+            document.getElementById('fuel-change').textContent = '+' + manualData.fuel.change_pct + '% vs baseline';
+            document.getElementById('fuel-change').className = 'metric-change negative';
+
+            document.getElementById('trump-approval').textContent = manualData.trump_approval.value + '%';
+            document.getElementById('trump-change').textContent = manualData.trump_approval.change + ' vs baseline';
+            document.getElementById('trump-change').className = 'metric-change negative';
+
+            document.getElementById('iran-approval').textContent = manualData.iran_war_approval.value + '%';
+            document.getElementById('iran-change').textContent = manualData.iran_war_approval.change + ' vs baseline';
+            document.getElementById('iran-change').className = 'metric-change negative';
+
+            // Store for table
+            currentData = {
+                sp500: { value: formatNumber(data.sp500.price), change: calcChange(data.sp500.price, BASELINE.sp500) + '%', source: 'Live' },
+                msci: { value: formatNumber(data.msci.price), change: calcChange(data.msci.price, BASELINE.msci) + '%', source: 'Live' },
+                vix: { value: formatNumber(data.vix.price), change: calcChange(data.vix.price, BASELINE.vix) + '%', source: 'Live' },
+                treasury: { value: formatNumber(data.treasury.price) + '%', change: calcChange(data.treasury.price, BASELINE.treasury) + '%', source: 'Live' },
+                brent: { value: '$' + formatNumber(data.brent.price), change: calcChange(data.brent.price, BASELINE.brent) + '%', source: 'Live' },
+                wti: { value: '$' + formatNumber(data.wti.price), change: calcChange(data.wti.price, BASELINE.wti) + '%', source: 'Live' },
+                henryhub: { value: '$' + formatNumber(data.henryhub.price), change: calcChange(data.henryhub.price, BASELINE.henryhub) + '%', source: 'Live' },
+                ttf: { value: '$' + manualData.ttf.value, change: '+' + manualData.ttf.change_pct + '%', source: 'Manual' },
+                fuel: { value: '$' + manualData.fuel.value, change: '+' + manualData.fuel.change_pct + '%', source: 'Manual' },
+                gdp: { value: '2.5%', change: '-0.2%', source: 'Manual' },
+                inflation: { value: '3.8% - 6.1%', change: '+1.1% to +3.3%', source: 'Manual' },
+                trump: { value: manualData.trump_approval.value + '%', change: manualData.trump_approval.change, source: 'Manual' },
+                iran: { value: manualData.iran_war_approval.value + '%', change: manualData.iran_war_approval.change, source: 'Manual' }
+            };
+
+            updateSummaryTable();
+        }
+
+        function updateSummaryTable() {
+            const tableBody = document.getElementById('summary-table');
+            const rows = [
+                { name: 'S&P 500', ...currentData.sp500 },
+                { name: 'MSCI World', ...currentData.msci },
+                { name: 'VIX', ...currentData.vix },
+                { name: '10-Year Treasury', ...currentData.treasury },
+                { name: 'Global GDP 2026', ...currentData.gdp },
+                { name: 'Global Inflation', ...currentData.inflation },
+                { name: 'Brent Crude', ...currentData.brent },
+                { name: 'WTI Crude', ...currentData.wti },
+                { name: 'Henry Hub Gas', ...currentData.henryhub },
+                { name: 'Dutch TTF', ...currentData.ttf },
+                { name: 'US Gas Prices', ...currentData.fuel },
+                { name: 'Trump Approval', ...currentData.trump },
+                { name: 'Iran War Approval', ...currentData.iran }
+            ];
+
+            tableBody.innerHTML = rows.map(row => `
+                <tr>
+                    <td>${row.name}</td>
+                    <td><strong>${row.value || '--'}</strong></td>
+                    <td>${row.change || '--'}</td>
+                    <td>${row.source || '--'}</td>
+                </tr>
+            `).join('');
+        }
+
+        async function refreshAllData() {
+            document.getElementById('lastUpdated').textContent = 'Refreshing...';
+            await fetchMarketData();
+            document.getElementById('lastUpdated').textContent = new Date().toLocaleString();
+        }
+
+        // Auto-refresh every 5 minutes
+        setInterval(refreshAllData, 5 * 60 * 1000);
+
+        document.addEventListener('DOMContentLoaded', refreshAllData);
+    </script>
+</body>
+</html>

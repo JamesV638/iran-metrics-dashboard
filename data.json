@@ -1,0 +1,87 @@
+{
+  "last_updated": "2026-06-10T22:01:53.049660",
+  "baseline_date": "2026-02-27",
+  "metrics": {
+    "sp500": {
+      "value": 7266.99,
+      "change_pct": 5.67,
+      "source": "Yahoo Finance",
+      "live": true
+    },
+    "msci": {
+      "value": 4785.95,
+      "etf_price": 197.44,
+      "change_pct": 5.04,
+      "source": "Yahoo Finance (URTH ETF converted)",
+      "live": true
+    },
+    "brent": {
+      "value": 94.42,
+      "change_pct": 39.12,
+      "source": "Yahoo Finance",
+      "live": true
+    },
+    "wti": {
+      "value": 91.58,
+      "change_pct": 36.69,
+      "source": "Yahoo Finance",
+      "live": true
+    },
+    "henryhub": {
+      "value": 3.19,
+      "change_pct": 1.27,
+      "source": "Yahoo Finance",
+      "live": true
+    },
+    "vix": {
+      "value": 22.22,
+      "change_pct": 48.13,
+      "source": "Yahoo Finance",
+      "live": true
+    },
+    "treasury": {
+      "value": 4.54,
+      "change_pct": 6.87,
+      "source": "Yahoo Finance",
+      "live": true
+    },
+    "fuel": {
+      "value": 4.24,
+      "change_pct": 42.28,
+      "source": "EIA/AAA",
+      "live": false
+    },
+    "gdp": {
+      "value": "2.5%",
+      "change": "-0.2%",
+      "source": "IMF World Economic Outlook",
+      "live": false
+    },
+    "inflation": {
+      "value": "3.8% - 6.1%",
+      "change": "+1.1% to +3.3%",
+      "source": "IMF/World Bank",
+      "live": false
+    },
+    "ttf": {
+      "value": 48.75,
+      "change_pct": 57.26,
+      "source": "ICE Exchange",
+      "live": false
+    },
+    "trump_approval": {
+      "value": -19.1,
+      "change": "-6 pts",
+      "source": "FiveThirtyEight/RealClearPolitics",
+      "live": false,
+      "note": "Net approval rating"
+    },
+    "iran_war_approval": {
+      "value": -22.8,
+      "change": "-9 pts",
+      "source": "Aggregate Polling",
+      "live": false,
+      "note": "Net approval for/against Iran conflict"
+    }
+  }
+}
