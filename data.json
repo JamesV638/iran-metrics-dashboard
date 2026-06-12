@@ -1,47 +1,47 @@
 {
-  "last_updated": "2026-06-12T17:40:23.350901",
+  "last_updated": "2026-06-12T20:19:45.295310",
   "baseline_date": "2026-02-27",
   "metrics": {
     "sp500": {
-      "value": 7427.88,
-      "change_pct": 8.01,
+      "value": 7431.46,
+      "change_pct": 8.06,
       "source": "Yahoo Finance",
       "live": true
     },
     "msci": {
-      "value": 4903.75,
-      "etf_price": 202.3,
-      "change_pct": 7.62,
+      "value": 4904.24,
+      "etf_price": 202.32,
+      "change_pct": 7.64,
       "source": "Yahoo Finance (URTH ETF converted)",
       "live": true
     },
     "brent": {
-      "value": 87.11,
-      "change_pct": 28.35,
+      "value": 86.96,
+      "change_pct": 28.13,
       "source": "Yahoo Finance",
       "live": true
     },
     "wti": {
-      "value": 84.61,
-      "change_pct": 26.28,
+      "value": 84.41,
+      "change_pct": 25.99,
       "source": "Yahoo Finance",
       "live": true
     },
     "henryhub": {
-      "value": 3.12,
-      "change_pct": -1.11,
+      "value": 3.13,
+      "change_pct": -0.51,
       "source": "Yahoo Finance",
       "live": true
     },
     "vix": {
-      "value": 18.35,
-      "change_pct": 22.33,
+      "value": 17.63,
+      "change_pct": 17.53,
       "source": "Yahoo Finance",
       "live": true
     },
     "treasury": {
-      "value": 4.48,
-      "change_pct": 5.44,
+      "value": 4.49,
+      "change_pct": 5.58,
       "source": "Yahoo Finance",
       "live": true
     },
