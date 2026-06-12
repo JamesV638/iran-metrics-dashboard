@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-12T00:22:07.758483",
+  "last_updated": "2026-06-12T05:53:38.790451",
   "baseline_date": "2026-02-27",
   "metrics": {
     "sp500": {
@@ -16,20 +16,20 @@
       "live": true
     },
     "brent": {
-      "value": 88.95,
-      "change_pct": 31.06,
+      "value": 88.21,
+      "change_pct": 29.97,
       "source": "Yahoo Finance",
       "live": true
     },
     "wti": {
-      "value": 86.35,
-      "change_pct": 28.88,
+      "value": 85.72,
+      "change_pct": 27.94,
       "source": "Yahoo Finance",
       "live": true
     },
     "henryhub": {
       "value": 3.08,
-      "change_pct": -2.35,
+      "change_pct": -2.16,
       "source": "Yahoo Finance",
       "live": true
     },
