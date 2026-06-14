@@ -122,7 +122,7 @@ def fetch_yahoo_finance_data():
     return data
 
 def fetch_sector_etfs():
-    """Fetch all 11 GICS sector ETFs."""
+    """Fetch all 11 GICS sector ETFs with historical data."""
     print("\nFetching sector ETFs...")
 
     data = {"sectors": {}}
@@ -137,6 +137,28 @@ def fetch_sector_etfs():
                 baseline = BASELINE.get(info["key"], price)
                 change_pct = calc_change(price, baseline)
 
+                # Fetch historical data (since war start: Feb 27, 2026)
+                history = []
+                try:
+                    hist = ticker.history(start="2026-02-27", interval="1d")
+                    if not hist.empty:
+                        for date, row in hist.iterrows():
+                            history.append({
+                                "date": date.strftime("%Y-%m-%d"),
+                                "close": round(row["Close"], 2),
+                                "volume": int(row["Volume"]) if row["Volume"] else 0
+                            })
+                except Exception as e:
+                    print(f"    Could not fetch history for {symbol}: {e}")
+
+                # Get top holdings if available
+                top_holdings = []
+                try:
+                    holdings = ticker.get_institutional_holders()
+                    # For ETFs, try to get the actual holdings
+                except:
+                    pass
+
                 data["sectors"][info["key"]] = {
                     "symbol": symbol,
                     "name": info["name"],
@@ -144,9 +166,12 @@ def fetch_sector_etfs():
                     "price": round(price, 2),
                     "baseline": baseline,
                     "change_pct": change_pct,
-                    "live": True
+                    "live": True,
+                    "history": history[-90:] if len(history) > 90 else history,  # Last 90 days
+                    "week_change": calc_change(price, history[-5]["close"]) if len(history) >= 5 else 0,
+                    "month_change": calc_change(price, history[-22]["close"]) if len(history) >= 22 else 0,
                 }
-                print(f"  {info['name']} ({symbol}): ${price:.2f} ({change_pct:+.2f}%)")
+                print(f"  {info['name']} ({symbol}): ${price:.2f} ({change_pct:+.2f}%) - {len(history)} days of history")
         except Exception as e:
             print(f"  Error fetching {symbol}: {e}")
 

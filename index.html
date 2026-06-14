@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iran Situation Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         * {
             margin: 0;
@@ -208,6 +209,13 @@
             border: 1px solid #e5e5e5;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .sector-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         .sector-card::before {
@@ -221,6 +229,172 @@
 
         .sector-card.up::before { background: #34c759; }
         .sector-card.down::before { background: #ff3b30; }
+
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: #fff;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-header {
+            padding: 24px;
+            border-bottom: 1px solid #e5e5e5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: #fff;
+            z-index: 10;
+        }
+
+        .modal-title {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .modal-subtitle {
+            font-size: 14px;
+            color: #86868b;
+            margin-top: 4px;
+        }
+
+        .modal-close {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: none;
+            background: #f5f5f7;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            background: #e5e5e5;
+        }
+
+        .modal-body {
+            padding: 24px;
+        }
+
+        .modal-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .modal-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .modal-stat {
+            text-align: center;
+            padding: 16px;
+            background: #f5f5f7;
+            border-radius: 12px;
+        }
+
+        .modal-stat-label {
+            font-size: 12px;
+            color: #86868b;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .modal-stat-value {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .modal-stat-value.positive { color: #34c759; }
+        .modal-stat-value.negative { color: #ff3b30; }
+
+        .chart-container {
+            background: #f5f5f7;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .chart-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .chart-wrapper {
+            height: 300px;
+            position: relative;
+        }
+
+        .modal-section {
+            margin-bottom: 24px;
+        }
+
+        .modal-section-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1d1d1f;
+        }
+
+        .key-drivers {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .key-drivers {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .driver-card {
+            background: #f5f5f7;
+            border-radius: 10px;
+            padding: 16px;
+        }
+
+        .driver-card h4 {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .driver-card p {
+            font-size: 13px;
+            color: #86868b;
+            line-height: 1.5;
+        }
 
         .sector-name {
             font-size: 13px;
@@ -850,8 +1024,129 @@
         </footer>
     </div>
 
+    <!-- Sector Detail Modal -->
+    <div class="modal-overlay" id="sector-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <div>
+                    <div class="modal-title" id="modal-sector-name">Technology</div>
+                    <div class="modal-subtitle" id="modal-sector-industries">Semiconductors, Software, Hardware</div>
+                </div>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-stats" id="modal-stats">
+                    <!-- Populated by JS -->
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-title">Price Performance Since Feb 27, 2026</div>
+                    <div class="chart-wrapper">
+                        <canvas id="sector-chart"></canvas>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <div class="modal-section-title">Key Drivers</div>
+                    <div class="key-drivers" id="modal-drivers">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <div class="modal-section-title">War Impact Analysis</div>
+                    <div id="modal-analysis">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         let data = {};
+        let sectorChart = null;
+
+        // Sector analysis data
+        const sectorAnalysis = {
+            xlk: {
+                drivers: [
+                    { title: "Helium Shortage", desc: "Critical for semiconductor manufacturing. Qatar supplies 30% of global high-purity helium; Strait disruption causing chip production delays." },
+                    { title: "Data Center Demand", desc: "AI infrastructure buildout continues but facing supply constraints. Lead times extended 6+ weeks for advanced chips." }
+                ],
+                impact: "Technology sector facing mixed signals: strong AI demand offset by supply chain disruptions. Semiconductor subsector most exposed to helium shortage affecting advanced node production. Software relatively insulated."
+            },
+            xle: {
+                drivers: [
+                    { title: "Oil Price Surge", desc: "Brent crude up 30%+ since war start. US producers benefiting from higher prices and market share gains." },
+                    { title: "Domestic Production", desc: "US shale ramping up. Strategic Petroleum Reserve releases providing some price relief." }
+                ],
+                impact: "Energy is the clear winner of the conflict. Higher oil prices directly boost revenues for US oil majors. Natural gas also elevated on Europe LNG demand. Refining margins strong."
+            },
+            xlf: {
+                drivers: [
+                    { title: "Interest Rate Environment", desc: "Fed holding rates higher for longer due to inflation concerns. Net interest margins supported." },
+                    { title: "Market Volatility", desc: "Trading revenues up on elevated VIX. M&A activity paused due to uncertainty." }
+                ],
+                impact: "Banks benefiting from higher rates but facing credit concerns. Insurance sector exposed to geopolitical event risk. Asset managers seeing outflows from international funds."
+            },
+            xlv: {
+                drivers: [
+                    { title: "Defensive Positioning", desc: "Healthcare seen as safe haven during geopolitical uncertainty. Steady demand regardless of economic cycle." },
+                    { title: "Supply Chain Stability", desc: "Less exposed to Middle East supply chains than other sectors. Domestic manufacturing base." }
+                ],
+                impact: "Healthcare outperforming as defensive play. Pharma benefiting from inelastic demand. Medical device makers facing some component shortages but managing."
+            },
+            xly: {
+                drivers: [
+                    { title: "Consumer Pullback", desc: "Rising gas prices and inflation fears causing discretionary spending cuts. Auto sales declining." },
+                    { title: "Chip Shortage Impact", desc: "Auto production constrained by semiconductor shortages. EV transition slowing." }
+                ],
+                impact: "Consumer discretionary hit hard by fuel costs eating into budgets. Retailers facing inventory challenges and weakening demand. Travel/leisure recovering but facing higher fuel surcharges."
+            },
+            xlp: {
+                drivers: [
+                    { title: "Defensive Demand", desc: "Staples benefiting from trade-down effect as consumers cut discretionary spending." },
+                    { title: "Input Cost Pressures", desc: "Higher energy and commodity costs pressuring margins. Passing through via price increases." }
+                ],
+                impact: "Staples holding up as defensive play despite margin pressure. Food and beverage companies raising prices. Household products seeing steady demand."
+            },
+            xli: {
+                drivers: [
+                    { title: "Defense Spending", desc: "Military budget increases benefiting aerospace and defense contractors. New orders accelerating." },
+                    { title: "Supply Chain Issues", desc: "Machinery and equipment facing component shortages. Order backlogs growing." }
+                ],
+                impact: "Industrials bifurcated: defense contractors thriving while commercial industrials struggling with supply chains. Airlines suffering from fuel costs. Shipping rates elevated."
+            },
+            xlb: {
+                drivers: [
+                    { title: "Commodity Volatility", desc: "Base metals volatile on supply concerns. Gold rallying as safe haven." },
+                    { title: "Chemical Feedstock Costs", desc: "Higher energy costs raising chemical production expenses." }
+                ],
+                impact: "Materials mixed: precious metals up on safe haven demand, but industrial metals and chemicals facing cost pressures. Mining operations in stable regions benefiting."
+            },
+            xlu: {
+                drivers: [
+                    { title: "Interest Rate Sensitivity", desc: "Utilities underperforming as higher rates make bonds more attractive vs. dividend stocks." },
+                    { title: "Natural Gas Costs", desc: "Power generation costs elevated. Some ability to pass through to customers." }
+                ],
+                impact: "Utilities lagging despite defensive characteristics due to rate sensitivity. Regulated utilities more insulated than merchant power producers."
+            },
+            xlre: {
+                drivers: [
+                    { title: "Rate Environment", desc: "Higher rates pressuring REIT valuations and transaction activity." },
+                    { title: "Remote Work Trends", desc: "Office sector still struggling. Industrial/logistics holding up better." }
+                ],
+                impact: "Real estate facing headwinds from higher rates but some subsectors resilient. Data centers benefiting from AI buildout. Office remains challenged."
+            },
+            xlc: {
+                drivers: [
+                    { title: "Digital Ad Spending", desc: "Advertising budgets holding up despite uncertainty. Shift to digital accelerating." },
+                    { title: "Streaming Competition", desc: "Content costs elevated. Consolidation likely as market matures." }
+                ],
+                impact: "Communication services resilient with Meta and Google driving performance. Telecom stable. Media facing content cost pressures."
+            }
+        };
 
         function formatNumber(num, decimals = 2) {
             return num.toLocaleString('en-US', {
@@ -890,8 +1185,10 @@
 
             grid.innerHTML = sortedSectors.map(([key, sector]) => {
                 const isUp = sector.change_pct >= 0;
+                const weekChange = sector.week_change || 0;
+                const monthChange = sector.month_change || 0;
                 return `
-                    <div class="sector-card ${isUp ? 'up' : 'down'}">
+                    <div class="sector-card ${isUp ? 'up' : 'down'}" onclick="openSectorModal('${key}')">
                         <div class="sector-name">${sector.name}</div>
                         <div class="sector-industries">${sector.industries}</div>
                         <div class="sector-value ${isUp ? 'up' : 'down'}">
@@ -900,10 +1197,184 @@
                         <div style="font-size: 12px; color: #86868b; margin-top: 4px;">
                             $${sector.price.toFixed(2)} (${sector.symbol})
                         </div>
+                        <div style="font-size: 11px; color: #86868b; margin-top: 4px;">
+                            Click for details
+                        </div>
                     </div>
                 `;
             }).join('');
         }
+
+        function openSectorModal(key) {
+            const sector = data.sectors[key];
+            if (!sector) return;
+
+            const modal = document.getElementById('sector-modal');
+            const analysis = sectorAnalysis[key] || { drivers: [], impact: "Analysis not available." };
+
+            // Update header
+            document.getElementById('modal-sector-name').textContent = `${sector.name} (${sector.symbol})`;
+            document.getElementById('modal-sector-industries').textContent = sector.industries;
+
+            // Update stats
+            const weekChange = sector.week_change || 0;
+            const monthChange = sector.month_change || 0;
+            document.getElementById('modal-stats').innerHTML = `
+                <div class="modal-stat">
+                    <div class="modal-stat-label">Current Price</div>
+                    <div class="modal-stat-value">$${sector.price.toFixed(2)}</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-label">Since War Start</div>
+                    <div class="modal-stat-value ${sector.change_pct >= 0 ? 'positive' : 'negative'}">
+                        ${sector.change_pct >= 0 ? '+' : ''}${sector.change_pct.toFixed(1)}%
+                    </div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-label">Past Week</div>
+                    <div class="modal-stat-value ${weekChange >= 0 ? 'positive' : 'negative'}">
+                        ${weekChange >= 0 ? '+' : ''}${weekChange.toFixed(1)}%
+                    </div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-label">Past Month</div>
+                    <div class="modal-stat-value ${monthChange >= 0 ? 'positive' : 'negative'}">
+                        ${monthChange >= 0 ? '+' : ''}${monthChange.toFixed(1)}%
+                    </div>
+                </div>
+            `;
+
+            // Update drivers
+            document.getElementById('modal-drivers').innerHTML = analysis.drivers.map(d => `
+                <div class="driver-card">
+                    <h4>${d.title}</h4>
+                    <p>${d.desc}</p>
+                </div>
+            `).join('');
+
+            // Update analysis
+            document.getElementById('modal-analysis').innerHTML = `
+                <div class="driver-card">
+                    <p>${analysis.impact}</p>
+                </div>
+            `;
+
+            // Render chart
+            renderSectorChart(sector);
+
+            // Show modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function renderSectorChart(sector) {
+            const ctx = document.getElementById('sector-chart').getContext('2d');
+
+            // Destroy existing chart
+            if (sectorChart) {
+                sectorChart.destroy();
+            }
+
+            // Prepare data
+            const history = sector.history || [];
+            const labels = history.map(h => {
+                const d = new Date(h.date);
+                return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            });
+            const prices = history.map(h => h.close);
+            const baseline = sector.baseline;
+
+            // Create baseline array
+            const baselineData = history.map(() => baseline);
+
+            sectorChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: sector.symbol,
+                            data: prices,
+                            borderColor: sector.change_pct >= 0 ? '#34c759' : '#ff3b30',
+                            backgroundColor: sector.change_pct >= 0 ? 'rgba(52, 199, 89, 0.1)' : 'rgba(255, 59, 48, 0.1)',
+                            fill: true,
+                            tension: 0.3,
+                            pointRadius: 0,
+                            pointHoverRadius: 4,
+                        },
+                        {
+                            label: 'Baseline (Feb 27)',
+                            data: baselineData,
+                            borderColor: '#86868b',
+                            borderDash: [5, 5],
+                            fill: false,
+                            pointRadius: 0,
+                            pointHoverRadius: 0,
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        intersect: false,
+                        mode: 'index'
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top',
+                            labels: {
+                                boxWidth: 12,
+                                padding: 15
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.dataset.label}: $${context.parsed.y.toFixed(2)}`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                maxTicksLimit: 10
+                            }
+                        },
+                        y: {
+                            grid: {
+                                color: '#e5e5e5'
+                            },
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value.toFixed(0);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function closeModal() {
+            document.getElementById('sector-modal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Close modal on overlay click
+        document.getElementById('sector-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'sector-modal') closeModal();
+        });
 
         function renderSentiment(partisan) {
             const grid = document.getElementById('sentiment-grid');
