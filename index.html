@@ -418,6 +418,79 @@
         .sector-value.up { color: #34c759; }
         .sector-value.down { color: #ff3b30; }
 
+        /* Consumer Overview */
+        .consumer-overview {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        @media (max-width: 900px) {
+            .consumer-overview {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .sentiment-hero {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid #e5e5e5;
+            text-align: center;
+        }
+
+        .sentiment-hero-value {
+            font-size: 64px;
+            font-weight: 700;
+            color: #ff3b30;
+            line-height: 1;
+        }
+
+        .sentiment-hero-label {
+            font-size: 14px;
+            color: #86868b;
+            margin-top: 8px;
+        }
+
+        .sentiment-hero-context {
+            font-size: 13px;
+            color: #1d1d1f;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .sentiment-breakdown {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .sentiment-mini-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 16px;
+            border: 1px solid #e5e5e5;
+        }
+
+        .sentiment-mini-label {
+            font-size: 12px;
+            color: #86868b;
+            margin-bottom: 6px;
+        }
+
+        .sentiment-mini-value {
+            font-size: 22px;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+
+        .sentiment-mini-change {
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
         /* Sentiment Cards */
         .sentiment-grid {
             display: grid;
@@ -442,7 +515,7 @@
         .sentiment-party {
             font-size: 14px;
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -462,11 +535,85 @@
             color: #86868b;
         }
 
+        .sentiment-outlook {
+            font-size: 11px;
+            font-weight: 500;
+            margin-top: 8px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .sentiment-outlook.pessimistic {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        .sentiment-outlook.optimistic {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
         .sentiment-inflation {
             margin-top: 12px;
             padding-top: 12px;
             border-top: 1px solid #e5e5e5;
             font-size: 13px;
+        }
+
+        .sentiment-change {
+            font-size: 12px;
+            margin-top: 6px;
+        }
+
+        /* Concern bars */
+        .concern-item {
+            margin-bottom: 12px;
+        }
+
+        .concern-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+            font-size: 13px;
+        }
+
+        .concern-bar {
+            height: 8px;
+            background: #e5e5e5;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .concern-fill {
+            height: 100%;
+            background: #0071e3;
+            border-radius: 4px;
+        }
+
+        /* Spending behavior */
+        .behavior-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 13px;
+        }
+
+        .behavior-item:last-child {
+            border-bottom: none;
+        }
+
+        .behavior-pct {
+            font-weight: 600;
+            color: #ff3b30;
+        }
+
+        @media (max-width: 768px) {
+            .consumer-behavior-grid {
+                grid-template-columns: 1fr !important;
+            }
         }
 
         /* Supply Chain Status */
@@ -888,30 +1035,69 @@
         <!-- Consumer Sentiment Section -->
         <div class="section" id="sentiment">
             <div class="section-header">
-                <h2 class="section-title">Consumer Sentiment by Party</h2>
-                <span style="font-size: 12px; color: #86868b;">U of Michigan Survey</span>
+                <h2 class="section-title">Consumer Sentiment & Economic Outlook</h2>
+                <span style="font-size: 12px; color: #86868b;">U of Michigan Survey of Consumers</span>
             </div>
-            <div class="sentiment-grid" id="sentiment-grid">
+
+            <!-- Overall Sentiment Overview -->
+            <div class="consumer-overview" id="consumer-overview">
                 <!-- Populated by JavaScript -->
             </div>
-            <div class="metrics-grid" style="margin-top: 16px;">
-                <div class="metric-card">
-                    <div class="metric-label"><span class="manual-dot"></span>Overall Consumer Sentiment</div>
-                    <div class="metric-value" id="umcsent-value">--</div>
-                    <div class="metric-change" id="umcsent-change">--</div>
-                    <div class="metric-source">U of Michigan via FRED</div>
+
+            <!-- Partisan Breakdown -->
+            <div style="margin-top: 24px;">
+                <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 12px; color: #1d1d1f;">Sentiment by Political Affiliation</h3>
+                <div class="sentiment-grid" id="sentiment-grid">
+                    <!-- Populated by JavaScript -->
                 </div>
-                <div class="metric-card">
-                    <div class="metric-label"><span class="manual-dot"></span>1-Year Inflation Expectations</div>
-                    <div class="metric-value" id="inf1yr-value">--</div>
-                    <div class="metric-change" id="inf1yr-change">--</div>
-                    <div class="metric-source">U of Michigan via FRED</div>
+            </div>
+
+            <!-- Inflation Expectations -->
+            <div style="margin-top: 24px;">
+                <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 12px; color: #1d1d1f;">Inflation Expectations</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-label"><span class="manual-dot"></span>1-Year Inflation Expectation</div>
+                        <div class="metric-value" id="inf1yr-value">--</div>
+                        <div class="metric-change" id="inf1yr-change">--</div>
+                        <div class="metric-source">U of Michigan</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label"><span class="manual-dot"></span>5-Year Inflation Expectation</div>
+                        <div class="metric-value" id="inf5yr-value">--</div>
+                        <div class="metric-change" id="inf5yr-change">--</div>
+                        <div class="metric-source">U of Michigan</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label"><span class="live-dot"></span>US Gas Prices</div>
+                        <div class="metric-value" id="gas-impact-value">--</div>
+                        <div class="metric-change negative" id="gas-impact-change">--</div>
+                        <div class="metric-source">AAA / EIA</div>
+                    </div>
                 </div>
-                <div class="metric-card">
-                    <div class="metric-label"><span class="manual-dot"></span>5-Year Inflation Expectations</div>
-                    <div class="metric-value" id="inf5yr-value">--</div>
-                    <div class="metric-change" id="inf5yr-change">--</div>
-                    <div class="metric-source">U of Michigan via FRED</div>
+            </div>
+
+            <!-- Buying Conditions -->
+            <div style="margin-top: 24px;">
+                <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 12px; color: #1d1d1f;">Buying Conditions</h3>
+                <div id="buying-conditions" class="metrics-grid">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Consumer Concerns & Behavior -->
+            <div class="consumer-behavior-grid" style="margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                <div class="analysis-section" style="margin-top: 0;">
+                    <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 16px;">Top Consumer Concerns</h3>
+                    <div id="consumer-concerns">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+                <div class="analysis-section" style="margin-top: 0;">
+                    <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 16px;">Spending Behavior Changes</h3>
+                    <div id="spending-behavior">
+                        <!-- Populated by JavaScript -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -1377,26 +1563,151 @@
             if (e.target.id === 'sector-modal') closeModal();
         });
 
-        function renderSentiment(partisan) {
-            const grid = document.getElementById('sentiment-grid');
-            if (!partisan || !grid) return;
+        function renderConsumerData(consumerData) {
+            if (!consumerData) return;
 
-            const parties = ['democrat', 'republican', 'independent'];
-            const labels = { democrat: 'Democrat', republican: 'Republican', independent: 'Independent' };
+            // Render overview
+            const overview = document.getElementById('consumer-overview');
+            if (overview) {
+                const overall = consumerData.overall_sentiment || {};
+                const current = consumerData.current_conditions || {};
+                const expectations = consumerData.expectations || {};
+                const gas = consumerData.gas_price_impact || {};
 
-            grid.innerHTML = parties.map(party => {
-                const p = partisan[party];
-                return `
-                    <div class="sentiment-card">
-                        <div class="sentiment-party ${party}">${labels[party]}</div>
-                        <div class="sentiment-value">${p.sentiment}</div>
-                        <div class="sentiment-label">Consumer Sentiment</div>
-                        <div class="sentiment-inflation">
-                            Inflation Expectation: <strong>${p.inflation_exp}%</strong>
+                overview.innerHTML = `
+                    <div class="sentiment-hero">
+                        <div class="sentiment-hero-value">${overall.value || '--'}</div>
+                        <div class="sentiment-hero-label">Consumer Sentiment Index</div>
+                        <div class="sentiment-hero-context">
+                            <span class="metric-change negative">${overall.change_pct}% from baseline</span><br>
+                            <span style="font-size: 12px; color: #86868b;">Historic low: ${overall.historic_low} (${overall.historic_low_date})</span>
+                        </div>
+                    </div>
+                    <div class="sentiment-breakdown">
+                        <div class="sentiment-mini-card">
+                            <div class="sentiment-mini-label">Current Conditions</div>
+                            <div class="sentiment-mini-value">${current.value || '--'}</div>
+                            <div class="sentiment-mini-change metric-change negative">${current.change_pct}% vs baseline</div>
+                            <div style="font-size: 11px; color: #86868b; margin-top: 4px;">${current.description || ''}</div>
+                        </div>
+                        <div class="sentiment-mini-card">
+                            <div class="sentiment-mini-label">Future Expectations</div>
+                            <div class="sentiment-mini-value">${expectations.value || '--'}</div>
+                            <div class="sentiment-mini-change metric-change negative">${expectations.change_pct}% vs baseline</div>
+                            <div style="font-size: 11px; color: #86868b; margin-top: 4px;">${expectations.description || ''}</div>
+                        </div>
+                        <div class="sentiment-mini-card">
+                            <div class="sentiment-mini-label">Gas Price Impact</div>
+                            <div class="sentiment-mini-value">+$${gas.monthly_cost_increase || '--'}/mo</div>
+                            <div class="sentiment-mini-change metric-change negative">+${gas.pct_increase}% vs baseline</div>
+                            <div style="font-size: 11px; color: #86868b; margin-top: 4px;">${gas.description || ''}</div>
+                        </div>
+                        <div class="sentiment-mini-card">
+                            <div class="sentiment-mini-label">Next Data Release</div>
+                            <div class="sentiment-mini-value" style="font-size: 16px;">${consumerData.next_release || '--'}</div>
+                            <div style="font-size: 11px; color: #86868b; margin-top: 8px;">U of Michigan Survey</div>
                         </div>
                     </div>
                 `;
-            }).join('');
+            }
+
+            // Render partisan sentiment
+            const grid = document.getElementById('sentiment-grid');
+            if (grid && consumerData.by_party) {
+                const parties = ['democrat', 'republican', 'independent'];
+                const labels = { democrat: 'Democrat', republican: 'Republican', independent: 'Independent' };
+
+                grid.innerHTML = parties.map(party => {
+                    const p = consumerData.by_party[party];
+                    const isOptimistic = p.economic_outlook.toLowerCase().includes('optimistic');
+                    return `
+                        <div class="sentiment-card">
+                            <div class="sentiment-party ${party}">${labels[party]}</div>
+                            <div class="sentiment-value">${p.sentiment}</div>
+                            <div class="sentiment-label">Sentiment Index</div>
+                            <div class="sentiment-outlook ${isOptimistic ? 'optimistic' : 'pessimistic'}">${p.economic_outlook}</div>
+                            <div class="sentiment-change metric-change ${p.change_from_baseline >= 0 ? 'positive' : 'negative'}">
+                                ${p.change_from_baseline >= 0 ? '+' : ''}${p.change_from_baseline}% from baseline
+                            </div>
+                            <div class="sentiment-inflation">
+                                1-Yr Inflation Exp: <strong>${p.inflation_exp_1yr}%</strong>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            // Render buying conditions
+            const buyingEl = document.getElementById('buying-conditions');
+            if (buyingEl && consumerData.buying_conditions) {
+                const conditions = consumerData.buying_conditions;
+                buyingEl.innerHTML = Object.entries(conditions).map(([key, cond]) => `
+                    <div class="metric-card">
+                        <div class="metric-label"><span class="manual-dot"></span>${key.charAt(0).toUpperCase() + key.slice(1)} Buying Conditions</div>
+                        <div class="metric-value" style="font-size: 18px;">${cond.assessment}</div>
+                        <div class="metric-change negative">${Math.round((cond.value - cond.baseline) / cond.baseline * 100)}% vs baseline</div>
+                        <div class="metric-source">${cond.reason}</div>
+                    </div>
+                `).join('');
+            }
+
+            // Render concerns
+            const concernsEl = document.getElementById('consumer-concerns');
+            if (concernsEl && consumerData.key_concerns) {
+                concernsEl.innerHTML = consumerData.key_concerns.map(c => `
+                    <div class="concern-item">
+                        <div class="concern-header">
+                            <span>${c.concern}</span>
+                            <span style="font-weight: 600;">${c.pct_citing}%</span>
+                        </div>
+                        <div class="concern-bar">
+                            <div class="concern-fill" style="width: ${c.pct_citing}%;"></div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Render spending behavior
+            const spendingEl = document.getElementById('spending-behavior');
+            if (spendingEl && consumerData.spending_intentions) {
+                const behaviors = {
+                    cut_discretionary: "Cutting discretionary spending",
+                    delay_major_purchases: "Delaying major purchases",
+                    reduce_travel: "Reducing travel plans",
+                    switch_to_cheaper_brands: "Switching to cheaper brands"
+                };
+                spendingEl.innerHTML = Object.entries(consumerData.spending_intentions).map(([key, pct]) => `
+                    <div class="behavior-item">
+                        <span>${behaviors[key] || key}</span>
+                        <span class="behavior-pct">${pct}%</span>
+                    </div>
+                `).join('');
+            }
+
+            // Update inflation expectations
+            if (consumerData.inflation_expectations) {
+                const inf1yr = consumerData.inflation_expectations.one_year;
+                const inf5yr = consumerData.inflation_expectations.five_year;
+
+                document.getElementById('inf1yr-value').textContent = inf1yr.value + '%';
+                document.getElementById('inf1yr-change').textContent = '+' + inf1yr.change + ' pts vs baseline';
+                document.getElementById('inf1yr-change').className = 'metric-change negative';
+
+                document.getElementById('inf5yr-value').textContent = inf5yr.value + '%';
+                document.getElementById('inf5yr-change').textContent = '+' + inf5yr.change + ' pts vs baseline';
+                document.getElementById('inf5yr-change').className = 'metric-change negative';
+            }
+
+            // Update gas impact
+            if (consumerData.gas_price_impact) {
+                document.getElementById('gas-impact-value').textContent = '$' + consumerData.gas_price_impact.current_price;
+                document.getElementById('gas-impact-change').textContent = '+' + consumerData.gas_price_impact.pct_increase + '% vs baseline';
+            }
+        }
+
+        // Keep old function for backwards compatibility
+        function renderSentiment(partisan) {
+            // Now handled by renderConsumerData
         }
 
         function renderSupplyChain(impacts) {
@@ -1525,23 +1836,28 @@
                     document.getElementById('fuel-change').className = 'metric-change negative';
                 }
 
-                // Consumer Sentiment
-                if (data.consumer_sentiment) {
-                    document.getElementById('umcsent-value').textContent = data.consumer_sentiment.value;
-                    document.getElementById('umcsent-change').textContent = data.consumer_sentiment.change_pct + '% vs baseline';
-                    document.getElementById('umcsent-change').className = 'metric-change negative';
+                // Consumer Sentiment - comprehensive view
+                if (data.consumer_data) {
+                    renderConsumerData(data.consumer_data);
+                } else {
+                    // Fallback to old format
+                    if (data.consumer_sentiment) {
+                        document.getElementById('umcsent-value').textContent = data.consumer_sentiment.value;
+                        document.getElementById('umcsent-change').textContent = data.consumer_sentiment.change_pct + '% vs baseline';
+                        document.getElementById('umcsent-change').className = 'metric-change negative';
+                    }
+                    if (data.inflation_1yr) {
+                        document.getElementById('inf1yr-value').textContent = data.inflation_1yr.value + '%';
+                        document.getElementById('inf1yr-change').textContent = '+' + data.inflation_1yr.change_pct + ' pts vs baseline';
+                        document.getElementById('inf1yr-change').className = 'metric-change negative';
+                    }
+                    if (data.inflation_5yr) {
+                        document.getElementById('inf5yr-value').textContent = data.inflation_5yr.value + '%';
+                        document.getElementById('inf5yr-change').textContent = '+' + data.inflation_5yr.change_pct + ' pts vs baseline';
+                        document.getElementById('inf5yr-change').className = 'metric-change negative';
+                    }
+                    if (data.partisan_sentiment) renderSentiment(data.partisan_sentiment);
                 }
-                if (data.inflation_1yr) {
-                    document.getElementById('inf1yr-value').textContent = data.inflation_1yr.value + '%';
-                    document.getElementById('inf1yr-change').textContent = '+' + data.inflation_1yr.change_pct + ' pts vs baseline';
-                    document.getElementById('inf1yr-change').className = 'metric-change negative';
-                }
-                if (data.inflation_5yr) {
-                    document.getElementById('inf5yr-value').textContent = data.inflation_5yr.value + '%';
-                    document.getElementById('inf5yr-change').textContent = '+' + data.inflation_5yr.change_pct + ' pts vs baseline';
-                    document.getElementById('inf5yr-change').className = 'metric-change negative';
-                }
-                if (data.partisan_sentiment) renderSentiment(data.partisan_sentiment);
 
                 // Political
                 if (data.trump_approval) {

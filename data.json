@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-14T12:52:54.644623",
+  "last_updated": "2026-06-14T13:02:14.660215",
   "baseline_date": "2026-02-27",
   "metrics": {
     "sp500": {
@@ -5485,24 +5485,119 @@
       "source": "Aggregate Polling",
       "live": false
     },
-    "partisan_sentiment": {
-      "democrat": {
-        "sentiment": 28.5,
-        "inflation_exp": 5.8,
-        "direction": "down"
+    "consumer_data": {
+      "overall_sentiment": {
+        "value": 48.9,
+        "baseline": 64.7,
+        "change_pct": -24.4,
+        "historic_low": 44.8,
+        "historic_low_date": "May 2026"
       },
-      "republican": {
-        "sentiment": 72.4,
-        "inflation_exp": 3.1,
-        "direction": "stable"
+      "current_conditions": {
+        "value": 56.2,
+        "baseline": 72.3,
+        "change_pct": -22.3,
+        "description": "Assessment of current financial situation"
       },
-      "independent": {
-        "sentiment": 41.2,
-        "inflation_exp": 5.2,
-        "direction": "down"
+      "expectations": {
+        "value": 44.1,
+        "baseline": 59.8,
+        "change_pct": -26.3,
+        "description": "Expectations for economy over next year"
       },
-      "source": "U of Michigan Survey",
+      "buying_conditions": {
+        "durables": {
+          "value": 82,
+          "baseline": 121,
+          "assessment": "Poor",
+          "reason": "High prices and uncertainty"
+        },
+        "vehicles": {
+          "value": 78,
+          "baseline": 115,
+          "assessment": "Poor",
+          "reason": "Chip shortages, high prices"
+        },
+        "homes": {
+          "value": 45,
+          "baseline": 62,
+          "assessment": "Very Poor",
+          "reason": "High rates and prices"
+        }
+      },
+      "inflation_expectations": {
+        "one_year": {
+          "value": 4.6,
+          "baseline": 3.0,
+          "change": 1.6
+        },
+        "five_year": {
+          "value": 3.4,
+          "baseline": 2.8,
+          "change": 0.6
+        }
+      },
+      "gas_price_impact": {
+        "current_price": 4.24,
+        "baseline_price": 2.98,
+        "pct_increase": 42.3,
+        "monthly_cost_increase": 85,
+        "description": "Average household paying $85/month more for gas"
+      },
+      "by_party": {
+        "democrat": {
+          "sentiment": 28.5,
+          "inflation_exp_1yr": 5.8,
+          "change_from_baseline": -38.2,
+          "direction": "down",
+          "economic_outlook": "Very Pessimistic"
+        },
+        "republican": {
+          "sentiment": 72.4,
+          "inflation_exp_1yr": 3.1,
+          "change_from_baseline": 8.5,
+          "direction": "up",
+          "economic_outlook": "Optimistic"
+        },
+        "independent": {
+          "sentiment": 41.2,
+          "inflation_exp_1yr": 5.2,
+          "change_from_baseline": -28.4,
+          "direction": "down",
+          "economic_outlook": "Pessimistic"
+        }
+      },
+      "key_concerns": [
+        {
+          "concern": "Gas prices",
+          "pct_citing": 68
+        },
+        {
+          "concern": "Inflation/prices",
+          "pct_citing": 54
+        },
+        {
+          "concern": "War/conflict",
+          "pct_citing": 41
+        },
+        {
+          "concern": "Job security",
+          "pct_citing": 23
+        },
+        {
+          "concern": "Interest rates",
+          "pct_citing": 19
+        }
+      ],
+      "spending_intentions": {
+        "cut_discretionary": 58,
+        "delay_major_purchases": 64,
+        "reduce_travel": 52,
+        "switch_to_cheaper_brands": 47
+      },
+      "source": "U of Michigan Survey of Consumers",
       "last_updated": "June 2026",
+      "next_release": "June 28, 2026",
       "live": false
     },
     "supply_chain_impacts": {
