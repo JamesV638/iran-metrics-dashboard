@@ -41,6 +41,17 @@ BASELINE = {
     "gold": 2850.00,
     "copper": 4.25,
     "wheat": 575.00,
+    # Supply chain commodities (Feb 27, 2026 baselines)
+    "aluminum": 2450.00,
+    "nickel": 16500.00,
+    "zinc": 2650.00,
+    "uranium_etf": 28.50,    # URA ETF
+    "lithium_etf": 42.00,    # LIT ETF
+    "shipping_etf": 8.50,    # BDRY - Breakwave Dry Bulk Shipping
+    "fertilizer": 48.00,     # MOS - Mosaic Company
+    "rare_earth": 68.00,     # REMX - Rare Earth ETF
+    "steel": 78.00,          # SLX - Steel ETF
+    "agriculture": 22.50,    # DBA - Agriculture ETF
     # Consumer sentiment baseline
     "umcsent": 64.7,
     "inflation_1yr": 3.0,
@@ -172,6 +183,68 @@ def fetch_sector_etfs():
                     "month_change": calc_change(price, history[-22]["close"]) if len(history) >= 22 else 0,
                 }
                 print(f"  {info['name']} ({symbol}): ${price:.2f} ({change_pct:+.2f}%) - {len(history)} days of history")
+        except Exception as e:
+            print(f"  Error fetching {symbol}: {e}")
+
+    return data
+
+def fetch_supply_chain_commodities():
+    """Fetch supply chain related commodities and ETFs."""
+    print("\nFetching supply chain commodities...")
+
+    # Supply chain symbols - mix of futures and ETFs as proxies
+    symbols = {
+        "ALI=F": {"name": "Aluminum", "key": "aluminum", "unit": "$/ton", "category": "metals"},
+        "^SPGSIN": {"name": "Nickel", "key": "nickel", "unit": "$/ton", "category": "metals"},
+        "URA": {"name": "Uranium (ETF)", "key": "uranium_etf", "unit": "$", "category": "energy"},
+        "LIT": {"name": "Lithium (ETF)", "key": "lithium_etf", "unit": "$", "category": "battery"},
+        "BDRY": {"name": "Dry Bulk Shipping", "key": "shipping_etf", "unit": "$", "category": "shipping"},
+        "MOS": {"name": "Fertilizers (Mosaic)", "key": "fertilizer", "unit": "$", "category": "agriculture"},
+        "REMX": {"name": "Rare Earth Metals", "key": "rare_earth", "unit": "$", "category": "metals"},
+        "SLX": {"name": "Steel", "key": "steel", "unit": "$", "category": "metals"},
+        "DBA": {"name": "Agriculture", "key": "agriculture", "unit": "$", "category": "agriculture"},
+        "SOYB": {"name": "Soybeans (ETF)", "key": "soybeans", "unit": "$", "category": "agriculture"},
+        "CORN": {"name": "Corn (ETF)", "key": "corn", "unit": "$", "category": "agriculture"},
+        "PALL": {"name": "Palladium", "key": "palladium", "unit": "$", "category": "metals"},
+        "PPLT": {"name": "Platinum", "key": "platinum", "unit": "$", "category": "metals"},
+    }
+
+    data = {"supply_chain_live": {}}
+
+    for symbol, info in symbols.items():
+        try:
+            ticker = yf.Ticker(symbol)
+            fast_info = ticker.fast_info
+            price = fast_info.last_price if hasattr(fast_info, 'last_price') else fast_info.get('lastPrice', 0)
+
+            if price and price > 0:
+                baseline = BASELINE.get(info["key"], price)
+                change_pct = calc_change(price, baseline)
+
+                # Determine status based on change
+                if change_pct > 50:
+                    status = "critical"
+                elif change_pct > 25:
+                    status = "elevated"
+                elif change_pct > 10:
+                    status = "stressed"
+                elif change_pct < -10:
+                    status = "improving"
+                else:
+                    status = "stable"
+
+                data["supply_chain_live"][info["key"]] = {
+                    "symbol": symbol,
+                    "name": info["name"],
+                    "category": info["category"],
+                    "price": round(price, 2),
+                    "baseline": baseline,
+                    "change_pct": change_pct,
+                    "status": status,
+                    "unit": info["unit"],
+                    "live": True
+                }
+                print(f"  {info['name']}: {price:.2f} ({change_pct:+.2f}%) - {status}")
         except Exception as e:
             print(f"  Error fetching {symbol}: {e}")
 
@@ -428,31 +501,71 @@ def get_manual_data():
             "next_release": "June 28, 2026",
             "live": False
         },
-        # Supply chain impacts (manual analysis)
-        "supply_chain_impacts": {
+        # Supply chain impacts (manual analysis for non-tradeable commodities)
+        "supply_chain_manual": {
             "helium": {
                 "status": "critical",
                 "change": "+180%",
-                "impact": "Semiconductor manufacturing, MRI machines, aerospace",
-                "notes": "Qatar supplies 30% of global high-purity helium; Strait of Hormuz closure disrupting"
+                "impact": "Semiconductor manufacturing, MRI machines, aerospace, fiber optics",
+                "notes": "Qatar supplies 30% of global high-purity helium. Strait of Hormuz disruption cutting supplies. No substitute for chip cooling.",
+                "affected_industries": ["Semiconductors", "Healthcare", "Aerospace", "Telecom"],
+                "live": False
             },
             "neon": {
                 "status": "elevated",
                 "change": "+45%",
-                "impact": "Chip lithography",
-                "notes": "Alternative sources from US/EU partially offsetting"
+                "impact": "Chip lithography, laser manufacturing",
+                "notes": "Used in EUV lithography for advanced chips. US/EU alternative sources ramping but insufficient.",
+                "affected_industries": ["Semiconductors", "Lasers"],
+                "live": False
             },
-            "shipping": {
+            "container_shipping": {
                 "status": "disrupted",
                 "change": "+85%",
-                "impact": "Container rates, delivery times",
-                "notes": "Red Sea/Suez diversions adding 10-14 days to Asia-Europe routes"
+                "impact": "Container rates, delivery times, inventory costs",
+                "notes": "Red Sea/Suez diversions adding 10-14 days to Asia-Europe routes. Insurance premiums spiking.",
+                "affected_industries": ["Retail", "Manufacturing", "Auto"],
+                "live": False
             },
-            "semiconductors": {
+            "petrochemicals": {
+                "status": "stressed",
+                "change": "+35%",
+                "impact": "Plastics, packaging, synthetic materials",
+                "notes": "Higher oil/gas feedstock costs. Middle East accounts for 15% of global petrochemical exports.",
+                "affected_industries": ["Packaging", "Consumer Goods", "Construction"],
+                "live": False
+            },
+            "ammonia": {
+                "status": "critical",
+                "change": "+65%",
+                "impact": "Fertilizer production, food prices",
+                "notes": "Natural gas is key input. Middle East major exporter. Food price inflation risk.",
+                "affected_industries": ["Agriculture", "Food"],
+                "live": False
+            },
+            "pharmaceuticals": {
+                "status": "stressed",
+                "change": "+20%",
+                "impact": "API supply, generic drugs",
+                "notes": "Some active pharmaceutical ingredients sourced from region. Shipping delays affecting supply.",
+                "affected_industries": ["Healthcare", "Pharma"],
+                "live": False
+            },
+            "automotive_parts": {
                 "status": "constrained",
-                "change": "Lead times +6 weeks",
-                "impact": "Auto, consumer electronics, data centers",
-                "notes": "Helium shortage affecting advanced node production"
+                "change": "Lead times +4 weeks",
+                "impact": "Vehicle production, EV batteries",
+                "notes": "Chip shortage compounded by shipping delays. Battery material costs elevated.",
+                "affected_industries": ["Auto", "EV"],
+                "live": False
+            },
+            "data_centers": {
+                "status": "stressed",
+                "change": "Capacity -15%",
+                "impact": "AI infrastructure, cloud computing",
+                "notes": "Helium shortage affecting HDD production. Chip constraints limiting GPU availability.",
+                "affected_industries": ["Tech", "AI", "Cloud"],
+                "live": False
             }
         },
         # Scenario projections
@@ -541,6 +654,9 @@ def main():
 
     # Fetch sector ETFs
     all_data.update(fetch_sector_etfs())
+
+    # Fetch supply chain commodities
+    all_data.update(fetch_supply_chain_commodities())
 
     # Fetch FRED consumer data
     all_data.update(fetch_fred_data())

@@ -617,10 +617,31 @@
         }
 
         /* Supply Chain Status */
+        .supply-section-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #86868b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .supply-section-label:first-child {
+            margin-top: 0;
+        }
+
         .supply-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 12px;
+        }
+
+        .supply-grid.compact {
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
         }
 
         .supply-card {
@@ -628,6 +649,14 @@
             border-radius: 12px;
             padding: 16px;
             border: 1px solid #e5e5e5;
+        }
+
+        .supply-card.live {
+            border-left: 3px solid #34c759;
+        }
+
+        .supply-card.manual {
+            border-left: 3px solid #ff9500;
         }
 
         .supply-header {
@@ -640,6 +669,12 @@
         .supply-name {
             font-size: 14px;
             font-weight: 600;
+        }
+
+        .supply-symbol {
+            font-size: 11px;
+            color: #86868b;
+            font-weight: 400;
         }
 
         .supply-status {
@@ -670,11 +705,48 @@
             color: #fff;
         }
 
+        .supply-status.stressed {
+            background: #ff9500;
+            color: #fff;
+        }
+
+        .supply-status.stable {
+            background: #86868b;
+            color: #fff;
+        }
+
+        .supply-status.improving {
+            background: #34c759;
+            color: #fff;
+        }
+
+        .supply-price {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+
         .supply-change {
             font-size: 20px;
             font-weight: 600;
             color: #ff3b30;
             margin-bottom: 8px;
+        }
+
+        .supply-change.positive {
+            color: #34c759;
+        }
+
+        .supply-change.negative {
+            color: #ff3b30;
+        }
+
+        .supply-category {
+            font-size: 10px;
+            color: #86868b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
         }
 
         .supply-impact {
@@ -687,6 +759,21 @@
             font-size: 11px;
             color: #86868b;
             line-height: 1.4;
+        }
+
+        .supply-industries {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 8px;
+        }
+
+        .supply-industry-tag {
+            font-size: 10px;
+            background: #f5f5f7;
+            color: #1d1d1f;
+            padding: 2px 6px;
+            border-radius: 4px;
         }
 
         /* Scenario Analysis */
@@ -1139,7 +1226,20 @@
                 <h2 class="section-title">Supply Chain Disruptions</h2>
                 <span style="font-size: 12px; color: #86868b;">Second & third-order effects</span>
             </div>
-            <div class="supply-grid" id="supply-grid">
+
+            <!-- Live Commodity Prices -->
+            <div class="supply-section-label">
+                <span class="live-dot"></span> Live Commodity Prices (Auto-Updating)
+            </div>
+            <div class="supply-grid compact" id="supply-live-grid">
+                <!-- Populated by JavaScript -->
+            </div>
+
+            <!-- Manual Supply Chain Analysis -->
+            <div class="supply-section-label">
+                <span class="manual-dot"></span> Supply Chain Disruptions (Analysis)
+            </div>
+            <div class="supply-grid" id="supply-manual-grid">
                 <!-- Populated by JavaScript -->
             </div>
         </div>
@@ -1710,21 +1810,63 @@
             // Now handled by renderConsumerData
         }
 
-        function renderSupplyChain(impacts) {
-            const grid = document.getElementById('supply-grid');
+        function renderSupplyChainLive(commodities) {
+            const grid = document.getElementById('supply-live-grid');
+            if (!commodities || !grid) return;
+
+            // Sort by change percentage (highest first)
+            const sorted = Object.entries(commodities).sort((a, b) => b[1].change_pct - a[1].change_pct);
+
+            grid.innerHTML = sorted.map(([key, item]) => {
+                const isPositive = item.change_pct > 0;
+                const changeClass = item.change_pct > 0 ? 'negative' : (item.change_pct < 0 ? 'positive' : '');
+                return `
+                <div class="supply-card live">
+                    <div class="supply-category">${item.category}</div>
+                    <div class="supply-header">
+                        <div class="supply-name">${item.name} <span class="supply-symbol">${item.symbol}</span></div>
+                        <div class="supply-status ${item.status}">${item.status}</div>
+                    </div>
+                    <div class="supply-price">$${item.price.toFixed(2)}</div>
+                    <div class="supply-change ${changeClass}">${isPositive ? '+' : ''}${item.change_pct.toFixed(1)}%</div>
+                </div>
+            `}).join('');
+        }
+
+        function renderSupplyChainManual(impacts) {
+            const grid = document.getElementById('supply-manual-grid');
             if (!impacts || !grid) return;
 
-            grid.innerHTML = Object.entries(impacts).map(([key, item]) => `
-                <div class="supply-card">
+            // Order: critical first, then elevated, then others
+            const statusOrder = { 'critical': 0, 'elevated': 1, 'stressed': 2, 'disrupted': 3, 'constrained': 4, 'stable': 5 };
+            const sorted = Object.entries(impacts).sort((a, b) =>
+                (statusOrder[a[1].status] || 99) - (statusOrder[b[1].status] || 99)
+            );
+
+            grid.innerHTML = sorted.map(([key, item]) => {
+                const displayName = key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+                const industriesTags = item.affected_industries ?
+                    `<div class="supply-industries">${item.affected_industries.map(ind =>
+                        `<span class="supply-industry-tag">${ind}</span>`
+                    ).join('')}</div>` : '';
+
+                return `
+                <div class="supply-card manual">
                     <div class="supply-header">
-                        <div class="supply-name">${key.charAt(0).toUpperCase() + key.slice(1)}</div>
+                        <div class="supply-name">${displayName}</div>
                         <div class="supply-status ${item.status}">${item.status}</div>
                     </div>
                     <div class="supply-change">${item.change}</div>
                     <div class="supply-impact"><strong>Impact:</strong> ${item.impact}</div>
                     <div class="supply-notes">${item.notes}</div>
+                    ${industriesTags}
                 </div>
-            `).join('');
+            `}).join('');
+        }
+
+        // Keep old function for backwards compatibility
+        function renderSupplyChain(impacts) {
+            renderSupplyChainManual(impacts);
         }
 
         function renderScenarios(scenarios) {
@@ -1881,8 +2023,12 @@
                     document.getElementById('inflation-change').className = 'metric-change negative';
                 }
 
-                // Supply Chain
-                if (data.supply_chain_impacts) renderSupplyChain(data.supply_chain_impacts);
+                // Supply Chain - Live commodities
+                if (data.supply_chain_live) renderSupplyChainLive(data.supply_chain_live);
+
+                // Supply Chain - Manual analysis
+                if (data.supply_chain_manual) renderSupplyChainManual(data.supply_chain_manual);
+                else if (data.supply_chain_impacts) renderSupplyChainManual(data.supply_chain_impacts);
 
                 // Scenarios
                 if (data.scenarios) renderScenarios(data.scenarios);

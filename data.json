@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-14T13:02:14.660215",
+  "last_updated": "2026-06-14T13:20:49.859482",
   "baseline_date": "2026-02-27",
   "metrics": {
     "sp500": {
@@ -4278,6 +4278,151 @@
         "month_change": -4.38
       }
     },
+    "supply_chain_live": {
+      "aluminum": {
+        "symbol": "ALI=F",
+        "name": "Aluminum",
+        "category": "metals",
+        "price": 3574.5,
+        "baseline": 2450.0,
+        "change_pct": 45.9,
+        "status": "elevated",
+        "unit": "$/ton",
+        "live": true
+      },
+      "nickel": {
+        "symbol": "^SPGSIN",
+        "name": "Nickel",
+        "category": "metals",
+        "price": 621.51,
+        "baseline": 16500.0,
+        "change_pct": -96.23,
+        "status": "improving",
+        "unit": "$/ton",
+        "live": true
+      },
+      "uranium_etf": {
+        "symbol": "URA",
+        "name": "Uranium (ETF)",
+        "category": "energy",
+        "price": 45.52,
+        "baseline": 28.5,
+        "change_pct": 59.72,
+        "status": "critical",
+        "unit": "$",
+        "live": true
+      },
+      "lithium_etf": {
+        "symbol": "LIT",
+        "name": "Lithium (ETF)",
+        "category": "battery",
+        "price": 82.37,
+        "baseline": 42.0,
+        "change_pct": 96.12,
+        "status": "critical",
+        "unit": "$",
+        "live": true
+      },
+      "shipping_etf": {
+        "symbol": "BDRY",
+        "name": "Dry Bulk Shipping",
+        "category": "shipping",
+        "price": 12.32,
+        "baseline": 8.5,
+        "change_pct": 44.94,
+        "status": "elevated",
+        "unit": "$",
+        "live": true
+      },
+      "fertilizer": {
+        "symbol": "MOS",
+        "name": "Fertilizers (Mosaic)",
+        "category": "agriculture",
+        "price": 22.69,
+        "baseline": 48.0,
+        "change_pct": -52.73,
+        "status": "improving",
+        "unit": "$",
+        "live": true
+      },
+      "rare_earth": {
+        "symbol": "REMX",
+        "name": "Rare Earth Metals",
+        "category": "metals",
+        "price": 95.5,
+        "baseline": 68.0,
+        "change_pct": 40.44,
+        "status": "elevated",
+        "unit": "$",
+        "live": true
+      },
+      "steel": {
+        "symbol": "SLX",
+        "name": "Steel",
+        "category": "metals",
+        "price": 110.85,
+        "baseline": 78.0,
+        "change_pct": 42.12,
+        "status": "elevated",
+        "unit": "$",
+        "live": true
+      },
+      "agriculture": {
+        "symbol": "DBA",
+        "name": "Agriculture",
+        "category": "agriculture",
+        "price": 26.24,
+        "baseline": 22.5,
+        "change_pct": 16.62,
+        "status": "stressed",
+        "unit": "$",
+        "live": true
+      },
+      "soybeans": {
+        "symbol": "SOYB",
+        "name": "Soybeans (ETF)",
+        "category": "agriculture",
+        "price": 24.13,
+        "baseline": 24.1299991607666,
+        "change_pct": 0.0,
+        "status": "stable",
+        "unit": "$",
+        "live": true
+      },
+      "corn": {
+        "symbol": "CORN",
+        "name": "Corn (ETF)",
+        "category": "agriculture",
+        "price": 16.8,
+        "baseline": 16.799999237060547,
+        "change_pct": 0.0,
+        "status": "stable",
+        "unit": "$",
+        "live": true
+      },
+      "palladium": {
+        "symbol": "PALL",
+        "name": "Palladium",
+        "category": "metals",
+        "price": 23.23,
+        "baseline": 23.229999542236328,
+        "change_pct": 0.0,
+        "status": "stable",
+        "unit": "$",
+        "live": true
+      },
+      "platinum": {
+        "symbol": "PPLT",
+        "name": "Platinum",
+        "category": "metals",
+        "price": 15.54,
+        "baseline": 15.539999961853027,
+        "change_pct": 0.0,
+        "status": "stable",
+        "unit": "$",
+        "live": true
+      }
+    },
     "consumer_sentiment": {
       "value": 48.9,
       "change_pct": -24.42,
@@ -5600,30 +5745,99 @@
       "next_release": "June 28, 2026",
       "live": false
     },
-    "supply_chain_impacts": {
+    "supply_chain_manual": {
       "helium": {
         "status": "critical",
         "change": "+180%",
-        "impact": "Semiconductor manufacturing, MRI machines, aerospace",
-        "notes": "Qatar supplies 30% of global high-purity helium; Strait of Hormuz closure disrupting"
+        "impact": "Semiconductor manufacturing, MRI machines, aerospace, fiber optics",
+        "notes": "Qatar supplies 30% of global high-purity helium. Strait of Hormuz disruption cutting supplies. No substitute for chip cooling.",
+        "affected_industries": [
+          "Semiconductors",
+          "Healthcare",
+          "Aerospace",
+          "Telecom"
+        ],
+        "live": false
       },
       "neon": {
         "status": "elevated",
         "change": "+45%",
-        "impact": "Chip lithography",
-        "notes": "Alternative sources from US/EU partially offsetting"
+        "impact": "Chip lithography, laser manufacturing",
+        "notes": "Used in EUV lithography for advanced chips. US/EU alternative sources ramping but insufficient.",
+        "affected_industries": [
+          "Semiconductors",
+          "Lasers"
+        ],
+        "live": false
       },
-      "shipping": {
+      "container_shipping": {
         "status": "disrupted",
         "change": "+85%",
-        "impact": "Container rates, delivery times",
-        "notes": "Red Sea/Suez diversions adding 10-14 days to Asia-Europe routes"
+        "impact": "Container rates, delivery times, inventory costs",
+        "notes": "Red Sea/Suez diversions adding 10-14 days to Asia-Europe routes. Insurance premiums spiking.",
+        "affected_industries": [
+          "Retail",
+          "Manufacturing",
+          "Auto"
+        ],
+        "live": false
       },
-      "semiconductors": {
+      "petrochemicals": {
+        "status": "stressed",
+        "change": "+35%",
+        "impact": "Plastics, packaging, synthetic materials",
+        "notes": "Higher oil/gas feedstock costs. Middle East accounts for 15% of global petrochemical exports.",
+        "affected_industries": [
+          "Packaging",
+          "Consumer Goods",
+          "Construction"
+        ],
+        "live": false
+      },
+      "ammonia": {
+        "status": "critical",
+        "change": "+65%",
+        "impact": "Fertilizer production, food prices",
+        "notes": "Natural gas is key input. Middle East major exporter. Food price inflation risk.",
+        "affected_industries": [
+          "Agriculture",
+          "Food"
+        ],
+        "live": false
+      },
+      "pharmaceuticals": {
+        "status": "stressed",
+        "change": "+20%",
+        "impact": "API supply, generic drugs",
+        "notes": "Some active pharmaceutical ingredients sourced from region. Shipping delays affecting supply.",
+        "affected_industries": [
+          "Healthcare",
+          "Pharma"
+        ],
+        "live": false
+      },
+      "automotive_parts": {
         "status": "constrained",
-        "change": "Lead times +6 weeks",
-        "impact": "Auto, consumer electronics, data centers",
-        "notes": "Helium shortage affecting advanced node production"
+        "change": "Lead times +4 weeks",
+        "impact": "Vehicle production, EV batteries",
+        "notes": "Chip shortage compounded by shipping delays. Battery material costs elevated.",
+        "affected_industries": [
+          "Auto",
+          "EV"
+        ],
+        "live": false
+      },
+      "data_centers": {
+        "status": "stressed",
+        "change": "Capacity -15%",
+        "impact": "AI infrastructure, cloud computing",
+        "notes": "Helium shortage affecting HDD production. Chip constraints limiting GPU availability.",
+        "affected_industries": [
+          "Tech",
+          "AI",
+          "Cloud"
+        ],
+        "live": false
       }
     },
     "scenarios": {
