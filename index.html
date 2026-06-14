@@ -215,7 +215,8 @@
 
         .sector-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-color: #0071e3;
         }
 
         .sector-card::before {
@@ -839,7 +840,7 @@
         <!-- Sectors Section -->
         <div class="section" id="sectors">
             <div class="section-header">
-                <h2 class="section-title">Sector Performance (GICS)</h2>
+                <h2 class="section-title">Sector Performance (GICS) - Click Any Sector</h2>
                 <span style="font-size: 12px; color: #86868b;">Since Feb 27, 2026</span>
             </div>
             <div class="sector-grid" id="sector-grid">
@@ -1197,8 +1198,8 @@
                         <div style="font-size: 12px; color: #86868b; margin-top: 4px;">
                             $${sector.price.toFixed(2)} (${sector.symbol})
                         </div>
-                        <div style="font-size: 11px; color: #86868b; margin-top: 4px;">
-                            Click for details
+                        <div style="font-size: 11px; color: #0071e3; margin-top: 6px; font-weight: 500;">
+                            View Details →
                         </div>
                     </div>
                 `;
