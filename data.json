@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-15T05:05:22.018564",
+  "last_updated": "2026-06-15T12:31:20.321589",
   "baseline_date": "2026-02-27",
   "metrics": {
     "sp500": {
@@ -16,26 +16,26 @@
       "live": true
     },
     "brent": {
-      "value": 83.33,
-      "change_pct": 22.78,
+      "value": 83.18,
+      "change_pct": 22.56,
       "source": "Yahoo Finance",
       "live": true
     },
     "wti": {
-      "value": 80.57,
-      "change_pct": 20.25,
+      "value": 80.29,
+      "change_pct": 19.84,
       "source": "Yahoo Finance",
       "live": true
     },
     "henryhub": {
-      "value": 3.06,
-      "change_pct": -2.98,
+      "value": 3.08,
+      "change_pct": -2.25,
       "source": "Yahoo Finance",
       "live": true
     },
     "vix": {
-      "value": 17.68,
-      "change_pct": 17.87,
+      "value": 16.62,
+      "change_pct": 10.8,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -46,20 +46,20 @@
       "live": true
     },
     "gold": {
-      "value": 4348.0,
-      "change_pct": 52.56,
+      "value": 4349.2,
+      "change_pct": 52.6,
       "source": "Yahoo Finance",
       "live": true
     },
     "copper": {
-      "value": 6.55,
-      "change_pct": 54.04,
+      "value": 6.49,
+      "change_pct": 52.66,
       "source": "Yahoo Finance",
       "live": true
     },
     "wheat": {
-      "value": 580.25,
-      "change_pct": 0.91,
+      "value": 574.5,
+      "change_pct": -0.09,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -4283,9 +4283,9 @@
         "symbol": "ALI=F",
         "name": "Aluminum",
         "category": "metals",
-        "price": 3568.0,
+        "price": 3435.5,
         "baseline": 2450.0,
-        "change_pct": 45.63,
+        "change_pct": 40.22,
         "status": "elevated",
         "unit": "$/ton",
         "live": true
@@ -4294,9 +4294,9 @@
         "symbol": "^SPGSIN",
         "name": "Nickel",
         "category": "metals",
-        "price": 626.12,
+        "price": 617.32,
         "baseline": 16500.0,
-        "change_pct": -96.21,
+        "change_pct": -96.26,
         "status": "improving",
         "unit": "$/ton",
         "live": true
