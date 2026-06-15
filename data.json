@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-14T23:16:01.487099",
+  "last_updated": "2026-06-15T05:05:22.018564",
   "baseline_date": "2026-02-27",
   "metrics": {
     "sp500": {
@@ -16,20 +16,20 @@
       "live": true
     },
     "brent": {
-      "value": 83.9,
-      "change_pct": 23.62,
+      "value": 83.33,
+      "change_pct": 22.78,
       "source": "Yahoo Finance",
       "live": true
     },
     "wti": {
-      "value": 81.1,
-      "change_pct": 21.04,
+      "value": 80.57,
+      "change_pct": 20.25,
       "source": "Yahoo Finance",
       "live": true
     },
     "henryhub": {
-      "value": 3.08,
-      "change_pct": -2.38,
+      "value": 3.06,
+      "change_pct": -2.98,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -46,20 +46,20 @@
       "live": true
     },
     "gold": {
-      "value": 4305.3,
-      "change_pct": 51.06,
+      "value": 4348.0,
+      "change_pct": 52.56,
       "source": "Yahoo Finance",
       "live": true
     },
     "copper": {
-      "value": 6.52,
-      "change_pct": 53.34,
+      "value": 6.55,
+      "change_pct": 54.04,
       "source": "Yahoo Finance",
       "live": true
     },
     "wheat": {
-      "value": 584.5,
-      "change_pct": 1.65,
+      "value": 580.25,
+      "change_pct": 0.91,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -4283,9 +4283,9 @@
         "symbol": "ALI=F",
         "name": "Aluminum",
         "category": "metals",
-        "price": 3588.0,
+        "price": 3568.0,
         "baseline": 2450.0,
-        "change_pct": 46.45,
+        "change_pct": 45.63,
         "status": "elevated",
         "unit": "$/ton",
         "live": true
@@ -4294,9 +4294,9 @@
         "symbol": "^SPGSIN",
         "name": "Nickel",
         "category": "metals",
-        "price": 621.51,
+        "price": 626.12,
         "baseline": 16500.0,
-        "change_pct": -96.23,
+        "change_pct": -96.21,
         "status": "improving",
         "unit": "$/ton",
         "live": true
