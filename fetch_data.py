@@ -226,17 +226,19 @@ def fetch_supply_chain_commodities():
                 baseline = BASELINE.get(info["key"], price)
                 change_pct = calc_change(price, baseline)
 
-                # Determine status based on change
-                if change_pct > 50:
+                # Determine status based on change from baseline
+                if change_pct > 75:
                     status = "critical"
-                elif change_pct > 25:
+                elif change_pct > 35:
                     status = "elevated"
-                elif change_pct > 10:
+                elif change_pct > 15:
                     status = "stressed"
-                elif change_pct < -10:
-                    status = "improving"
-                else:
+                elif change_pct > -15:
                     status = "stable"
+                elif change_pct > -40:
+                    status = "below_baseline"
+                else:
+                    status = "collapsed"
 
                 data["supply_chain_live"][info["key"]] = {
                     "symbol": symbol,
@@ -529,69 +531,69 @@ def get_manual_data():
             "live": False
         },
         # Supply chain impacts (manual analysis for non-tradeable commodities)
-        # UPDATED June 15, 2026: Peace deal announced, Hormuz reopening
+        # UPDATED June 16, 2026: Based on actual market data and news
         "supply_chain_manual": {
             "helium": {
-                "status": "improving",
-                "change": "+180% (easing)",
+                "status": "critical",
+                "change": "+40-100%",
                 "impact": "Semiconductor manufacturing, MRI machines, aerospace, fiber optics",
-                "notes": "PEACE DEAL: Hormuz reopening will restore Qatar helium shipments. Prices expected to normalize over 4-8 weeks. Backlog clearing.",
+                "notes": "STILL CRITICAL: Airgas at 50% allocation, declared force majeure. Recovery will take YEARS not weeks. Qatar production offline. Russia/Algeria cannot fill gap. No substitutes exist for advanced chip manufacturing.",
                 "affected_industries": ["Semiconductors", "Healthcare", "Aerospace", "Telecom"],
                 "live": False
             },
             "strait_of_hormuz": {
                 "status": "reopening",
-                "change": "Open as of June 19",
+                "change": "Opening June 19",
                 "impact": "20% of global oil, 25% of LNG transits",
-                "notes": "Peace deal signed June 14. Toll-free shipping resumes. US naval blockade lifting. Insurance premiums expected to drop 60-70%.",
+                "notes": "Peace deal signed June 14. Formal reopening June 19. Oil down 5% on news. Full normalization depends on deal implementation.",
                 "affected_industries": ["Energy", "Shipping", "All sectors"],
                 "live": False
             },
             "container_shipping": {
-                "status": "improving",
-                "change": "+85% (normalizing)",
+                "status": "stressed",
+                "change": "+25-40% above pre-crisis",
                 "impact": "Container rates, delivery times, inventory costs",
-                "notes": "PEACE DEAL: Red Sea/Suez routes reopening. Transit times returning to normal. Rates expected to drop 40-50% over next month.",
+                "notes": "Red Sea PARTIALLY reopening. Some carriers resuming Suez routes. But rates still 25-40% elevated, Cape diversions still adding 10-14 days. June seeing rate spike due to early peak season.",
                 "affected_industries": ["Retail", "Manufacturing", "Auto"],
                 "live": False
             },
             "oil_supply": {
-                "status": "stabilizing",
-                "change": "Brent falling",
+                "status": "falling",
+                "change": "-22.9% this month",
                 "impact": "Global energy prices, inflation",
-                "notes": "Peace deal removing war premium from oil. Analysts expect Brent to fall to $75-80 range within weeks if deal holds.",
+                "notes": "Brent at $81.55, down from ~$104 peak. Dropped 5% on peace deal. War premium unwinding. If deal holds, could reach $75-80.",
                 "affected_industries": ["Energy", "Transport", "Manufacturing"],
                 "live": False
             },
             "petrochemicals": {
-                "status": "improving",
-                "change": "+35% (easing)",
+                "status": "elevated",
+                "change": "+30-40%",
                 "impact": "Plastics, packaging, synthetic materials",
-                "notes": "Lower oil/gas feedstock costs expected. Middle East exports resuming normal flows.",
+                "notes": "Still elevated but easing with oil prices. Feedstock costs declining. Full normalization depends on sustained Hormuz access.",
                 "affected_industries": ["Packaging", "Consumer Goods", "Construction"],
                 "live": False
             },
             "ammonia": {
-                "status": "improving",
-                "change": "+65% (easing)",
+                "status": "elevated",
+                "change": "+50-60%",
                 "impact": "Fertilizer production, food prices",
-                "notes": "Natural gas prices declining on peace news. Middle East exports resuming. Food inflation pressure easing.",
+                "notes": "Still elevated. Natural gas prices easing but Middle East exports not fully restored. Food inflation risk remains.",
                 "affected_industries": ["Agriculture", "Food"],
                 "live": False
             },
             "neon": {
-                "status": "stable",
-                "change": "+45% (holding)",
+                "status": "elevated",
+                "change": "+45%",
                 "impact": "Chip lithography, laser manufacturing",
-                "notes": "Less affected by Hormuz than other commodities. US/EU sources continue ramping.",
+                "notes": "Less affected by Hormuz. US/EU alternative sources ramping but not at full capacity. Prices holding steady.",
                 "affected_industries": ["Semiconductors", "Lasers"],
                 "live": False
             },
             "automotive_parts": {
-                "status": "improving",
-                "change": "Lead times -2 weeks",
+                "status": "constrained",
+                "change": "Lead times +3-4 weeks",
                 "impact": "Vehicle production, EV batteries",
-                "notes": "Chip supply improving as helium flows resume. Shipping normalization helping parts delivery.",
+                "notes": "Helium shortage still constraining chip supply. Shipping improving but not normalized. Battery materials (lithium +100%) still critical.",
                 "affected_industries": ["Auto", "EV"],
                 "live": False
             }
