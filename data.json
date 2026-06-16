@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-16T08:54:47.828739",
+  "last_updated": "2026-06-16T08:59:25.703904",
   "baseline_date": "2026-02-27",
   "metrics": {
     "sp500": {
@@ -22,44 +22,44 @@
       "live": true
     },
     "wti": {
-      "value": 76.17,
-      "change_pct": 13.69,
+      "value": 76.19,
+      "change_pct": 13.72,
       "source": "Yahoo Finance",
       "live": true
     },
     "henryhub": {
       "value": 3.16,
-      "change_pct": 0.19,
+      "change_pct": 0.32,
       "source": "Yahoo Finance",
       "live": true
     },
     "vix": {
-      "value": 16.12,
-      "change_pct": 7.47,
+      "value": 16.13,
+      "change_pct": 7.53,
       "source": "Yahoo Finance",
       "live": true
     },
     "treasury": {
       "value": 4.44,
-      "change_pct": 4.49,
+      "change_pct": 4.45,
       "source": "Yahoo Finance",
       "live": true
     },
     "gold": {
-      "value": 4370.0,
-      "change_pct": 53.33,
+      "value": 4370.2,
+      "change_pct": 53.34,
       "source": "Yahoo Finance",
       "live": true
     },
     "copper": {
       "value": 6.5,
-      "change_pct": 52.87,
+      "change_pct": 52.89,
       "source": "Yahoo Finance",
       "live": true
     },
     "wheat": {
-      "value": 603.25,
-      "change_pct": 4.91,
+      "value": 603.5,
+      "change_pct": 4.96,
       "source": "Yahoo Finance",
       "live": true
     },

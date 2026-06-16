@@ -1959,10 +1959,12 @@
 
         async function fetchAndRender() {
             try {
-                const response = await fetch('data.json');
+                // Add cache-busting parameter
+                const response = await fetch('data.json?t=' + Date.now());
                 if (!response.ok) throw new Error('Failed to fetch data');
                 const jsonData = await response.json();
                 data = jsonData.metrics;
+                if (!data) throw new Error('No metrics in data');
 
                 // Update timestamp
                 const lastUpdated = new Date(jsonData.last_updated);
@@ -2064,6 +2066,7 @@
 
             } catch (error) {
                 console.error('Error fetching data:', error);
+                document.getElementById('lastUpdated').textContent = 'Error: ' + error.message;
             }
         }
 
