@@ -238,7 +238,7 @@ def fetch_supply_chain_commodities():
                 elif change_pct > -40:
                     status = "below_baseline"
                 else:
-                    status = "collapsed"
+                    status = "below_baseline"
 
                 data["supply_chain_live"][info["key"]] = {
                     "symbol": symbol,

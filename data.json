@@ -4307,7 +4307,7 @@
         "price": 612.3,
         "baseline": 16500.0,
         "change_pct": -96.29,
-        "status": "collapsed",
+        "status": "below_baseline",
         "unit": "$/ton",
         "live": true
       },
@@ -4351,7 +4351,7 @@
         "price": 22.52,
         "baseline": 48.0,
         "change_pct": -53.08,
-        "status": "collapsed",
+        "status": "below_baseline",
         "unit": "$",
         "live": true
       },
