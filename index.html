@@ -2139,6 +2139,31 @@
             }
         });
 
+        // Relative time display
+        function updateRelativeTime() {
+            if (!window.dataFetchTime) return;
+            const now = new Date();
+            const diff = Math.floor((now - window.dataFetchTime) / 1000);
+
+            let text;
+            if (diff < 60) {
+                text = 'Just now';
+            } else if (diff < 3600) {
+                const mins = Math.floor(diff / 60);
+                text = `${mins} minute${mins > 1 ? 's' : ''} ago`;
+            } else if (diff < 86400) {
+                const hours = Math.floor(diff / 3600);
+                text = `${hours} hour${hours > 1 ? 's' : ''} ago`;
+            } else {
+                text = window.dataFetchTime.toLocaleString();
+            }
+
+            document.getElementById('lastUpdated').textContent = text;
+        }
+
+        // Update relative time every 30 seconds
+        setInterval(updateRelativeTime, 30000);
+
         // Sector analysis data
         const sectorAnalysis = {
             xlk: {
@@ -2735,9 +2760,9 @@
                 data = jsonData.metrics;
                 if (!data) throw new Error('No metrics in data');
 
-                // Update timestamp
-                const lastUpdated = new Date(jsonData.last_updated);
-                document.getElementById('lastUpdated').textContent = lastUpdated.toLocaleString();
+                // Update timestamp with relative time
+                window.dataFetchTime = new Date(jsonData.last_updated);
+                updateRelativeTime();
 
                 // Peace deal banner
                 if (data.peace_deal) {
