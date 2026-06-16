@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hormuz Reopening: Cascade Effects</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+            background: #0f0f0f;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        .slide {
+            width: 1280px;
+            height: 720px;
+            margin: 0 auto;
+            padding: 48px 56px;
+            background: linear-gradient(145deg, #111 0%, #1a1a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle grid background */
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .title {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .title span {
+            color: #00d4aa;
+        }
+
+        .date-badge {
+            background: rgba(0, 212, 170, 0.15);
+            color: #00d4aa;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 212, 170, 0.3);
+        }
+
+        .cascade-container {
+            display: flex;
+            gap: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .order-column {
+            flex: 1;
+            background: rgba(255,255,255,0.03);
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.08);
+            position: relative;
+        }
+
+        .order-column::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            border-radius: 16px 16px 0 0;
+        }
+
+        .order-1::before { background: linear-gradient(90deg, #ff6b6b, #ee5a5a); }
+        .order-2::before { background: linear-gradient(90deg, #ffd93d, #f9c74f); }
+        .order-3::before { background: linear-gradient(90deg, #6bcb77, #4ade80); }
+
+        .order-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .order-number {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .order-1 .order-number { background: rgba(255, 107, 107, 0.2); color: #ff6b6b; }
+        .order-2 .order-number { background: rgba(255, 217, 61, 0.2); color: #ffd93d; }
+        .order-3 .order-number { background: rgba(107, 203, 119, 0.2); color: #6bcb77; }
+
+        .order-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #888;
+        }
+
+        .order-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .order-1 .order-title { color: #ff6b6b; }
+        .order-2 .order-title { color: #ffd93d; }
+        .order-3 .order-title { color: #6bcb77; }
+
+        .order-timing {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 16px;
+        }
+
+        .effect-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .effect-item:last-child {
+            border-bottom: none;
+        }
+
+        .effect-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .effect-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .effect-industry {
+            font-size: 13px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+
+        .effect-detail {
+            font-size: 11px;
+            color: #888;
+            line-height: 1.4;
+        }
+
+        .effect-metric {
+            font-size: 12px;
+            font-weight: 700;
+            white-space: nowrap;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .metric-up {
+            background: rgba(107, 203, 119, 0.15);
+            color: #6bcb77;
+        }
+
+        .metric-down {
+            background: rgba(255, 107, 107, 0.15);
+            color: #ff6b6b;
+        }
+
+        .metric-neutral {
+            background: rgba(255, 217, 61, 0.15);
+            color: #ffd93d;
+        }
+
+        /* Flow arrows */
+        .flow-arrow {
+            position: absolute;
+            top: 50%;
+            right: -18px;
+            transform: translateY(-50%);
+            color: #333;
+            font-size: 24px;
+            z-index: 2;
+        }
+
+        .order-column:last-child .flow-arrow {
+            display: none;
+        }
+
+        /* Key insight box */
+        .insight-box {
+            position: absolute;
+            bottom: 48px;
+            left: 56px;
+            right: 56px;
+            background: linear-gradient(135deg, rgba(0, 212, 170, 0.1) 0%, rgba(0, 150, 120, 0.1) 100%);
+            border: 1px solid rgba(0, 212, 170, 0.3);
+            border-radius: 12px;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .insight-icon {
+            font-size: 24px;
+        }
+
+        .insight-content {
+            flex: 1;
+        }
+
+        .insight-label {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #00d4aa;
+            margin-bottom: 4px;
+        }
+
+        .insight-text {
+            font-size: 13px;
+            color: #ccc;
+            line-height: 1.5;
+        }
+
+        .insight-text strong {
+            color: #fff;
+        }
+
+        /* Footer */
+        .footer {
+            position: absolute;
+            bottom: 16px;
+            left: 56px;
+            right: 56px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">
+            <div class="title">Hormuz Reopening: <span>Cascade Effects</span></div>
+            <div class="date-badge">June 2026 Peace Deal</div>
+        </div>
+
+        <div class="cascade-container">
+            <!-- First Order -->
+            <div class="order-column order-1">
+                <div class="order-header">
+                    <div class="order-number">1</div>
+                    <div class="order-label">First Order</div>
+                </div>
+                <div class="order-title">Direct Impact</div>
+                <div class="order-timing">Immediate — 30 days</div>
+
+                <div class="effect-item">
+                    <div class="effect-icon">🛢️</div>
+                    <div class="effect-content">
+                        <div class="effect-industry">Oil & Gas</div>
+                        <div class="effect-detail">War premium unwinds; Brent -23% this month</div>
+                    </div>
+                    <div class="effect-metric metric-down">-4.8%</div>
+                </div>
+
+                <div class="effect-item">
+                    <div class="effect-icon">🚢</div>
+                    <div class="effect-content">
+                        <div class="effect-industry">Shipping & Tankers</div>
+                        <div class="effect-detail">Insurance premiums drop 60-70%; routes reopen</div>
+                    </div>
+                    <div class="effect-metric metric-up">+8%</div>
+                </div>
+
+                <div class="effect-item">
+                    <div class="effect-icon">✈️</div>
+                    <div class="effect-content">
+                        <div class="effect-industry">Airlines</div>
+                        <div class="effect-detail">Jet fuel costs plummet; 30% of opex</div>
+                    </div>
+                    <div class="effect-metric metric-up">+10%</div>
+                </div>
+
+                <div class="effect-item">
+                    <div class="effect-icon">⛽</div>
+                    <div class="effect-content">
+                        <div class="effect-industry">Gas Stations / Fuel</div>
+                        <div class="effect-detail">Pump prices falling toward $3/gal</div>
+                    </div>
+                    <div class="effect-metric metric-down">Prices↓</div>
+                </div>
+
+                <div class="flow-arrow">→</div>
+            </div>
+
+            <!-- Second Order -->
+            <div class="order-column order-2">
+                <div class="order-header">
+                    <div class="order-number">2</div>
+                    <div class="order-label">Second Order</div>
+                </div>
+                <div class="order-title">Ripple Effects</div>
+                <div class="order-timing">1 — 3 months</div>
+
+                <div class="effect-item">
+                    <div class="effect-icon">🛒</div>
+                    <div class="effect-content">
+                        <div class="effect-industry">Consumer Discretionary</div>
+                        <div class="effect-detail">$85/mo back in pockets from gas savings</div>
+                    </div>
+                    <div class="effect-metric metric-up">+3%</div>
+                </div>
+
+                <div class="effect-item">
+                    <div class="effect-icon">🏭</div>
+                    <div class="effect-content">
+                        <div class="effect-industry">Materials & Chemicals</div>
+                        <div class="effect-detail">Feedstock costs (oil/gas) declining</div>
+                    </div>
+                    <div class="effect-metric metric-up">+5%</div>
+                </div>
+
+                <div class="effect-item">
+                    <div class="effect-icon">🚗</div>
+                    <div class="effect-content">
+                        <div class="effect-industry">Autos & Transport</div>
+                        <div class="effect-detail">Parts flow resuming; shipping normalized</div>
+                    </div>
+                    <div class="effect-metric metric-up">+4%</div>
+                </div>
+
+                <div class="effect-item">
+                    <div class="effect-icon">🏪</div>
+                    <div class="effect-content">
+                        <div class="effect-industry">Retail (WMT, TGT)</div>
+                        <div class="effect-detail">Lower logistics costs; consumer spend up</div>
+                    </div>
+                    <div class="effect-metric metric-up">+5%</div>
+                </div>
+
+                <div class="flow-arrow">→</div>
+            </div>
+
+            <!-- Third Order -->
+            <div class="order-column order-3">
+                <div class="order-header">
+                    <div class="order-number">3</div>
+                    <div class="order-label">Third Order</div>
+                </div>
+                <div class="order-title">Downstream Effects</div>
+                <div class="order-timing">3 — 12 months</div>
+
+                <div class="effect-item">
+                    <div class="effect-icon">💻</div>
+                    <div class="effect-content">
+                        <div class="effect-industry">Semiconductors</div>
+                        <div class="effect-detail">Helium supply slowly recovering (years)</div>
+                    </div>
+                    <div class="effect-metric metric-neutral">Constrained</div>
+                </div>
+
+                <div class="effect-item">
+                    <div class="effect-icon">🌾</div>
+                    <div class="effect-content">
+                        <div class="effect-industry">Agriculture / Food</div>
+                        <div class="effect-detail">Fertilizer & ammonia costs easing</div>
+                    </div>
+                    <div class="effect-metric metric-up">+2%</div>
+                </div>
+
+                <div class="effect-item">
+                    <div class="effect-icon">📉</div>
+                    <div class="effect-content">
+                        <div class="effect-industry">Inflation / CPI</div>
+                        <div class="effect-detail">Energy deflation feeds through to core</div>
+                    </div>
+                    <div class="effect-metric metric-down">-0.5%</div>
+                </div>
+
+                <div class="effect-item">
+                    <div class="effect-icon">🏦</div>
+                    <div class="effect-content">
+                        <div class="effect-industry">Fed Policy / Rates</div>
+                        <div class="effect-detail">Lower inflation = potential rate cuts</div>
+                    </div>
+                    <div class="effect-metric metric-neutral">Easing?</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <div class="insight-icon">💡</div>
+            <div class="insight-content">
+                <div class="insight-label">Key Insight</div>
+                <div class="insight-text">
+                    <strong>Most affected industries:</strong> Airlines (+10%), Shipping (+8%), and Retail (+5%) see immediate benefit.
+                    Oil & Gas (-5%) and Defense face headwinds. <strong>Semiconductors remain constrained</strong> — helium shortage takes years to resolve, limiting tech upside despite peace deal.
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div>Sources: CNBC, PBS, Fortune, Xeneta, EIA</div>
+            <div>Iran Situation Dashboard | June 2026</div>
+        </div>
+    </div>
+</body>
+</html>
