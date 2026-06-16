@@ -54,9 +54,231 @@
             border-bottom: 2px solid transparent;
         }
 
-        nav a:hover {
+        nav a:hover, nav a.active {
             color: #0071e3;
             border-bottom-color: #0071e3;
+        }
+
+        nav a.active {
+            font-weight: 600;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Tab Header */
+        .tab-header {
+            margin-bottom: 24px;
+        }
+
+        .tab-header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .tab-overview {
+            color: #86868b;
+            font-size: 15px;
+            line-height: 1.5;
+            max-width: 800px;
+        }
+
+        /* Insight Box */
+        .insight-box {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f4fd 100%);
+            border: 1px solid #0071e3;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .insight-box h3 {
+            color: #0071e3;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .insight-box p {
+            color: #1d1d1f;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Sources */
+        .sources {
+            margin-top: 32px;
+            padding-top: 16px;
+            border-top: 1px solid #d2d2d7;
+        }
+
+        .sources h4 {
+            font-size: 12px;
+            font-weight: 600;
+            color: #86868b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .sources ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .sources li {
+            font-size: 12px;
+            color: #86868b;
+        }
+
+        /* Risk Assessor */
+        .risk-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .risk-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+
+        .risk-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            border-color: #0071e3;
+        }
+
+        .risk-card.expanded {
+            border-color: #0071e3;
+        }
+
+        .risk-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .risk-icon {
+            font-size: 24px;
+        }
+
+        .risk-header h3 {
+            flex: 1;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .risk-probability {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 12px;
+            background: #f5f5f7;
+            color: #86868b;
+        }
+
+        .risk-probability.high {
+            background: #ffebee;
+            color: #d32f2f;
+        }
+
+        .risk-probability.medium {
+            background: #fff8e1;
+            color: #f57c00;
+        }
+
+        .risk-probability.low {
+            background: #e8f5e9;
+            color: #388e3c;
+        }
+
+        .risk-trigger {
+            font-size: 13px;
+            color: #86868b;
+            margin-bottom: 12px;
+        }
+
+        .cascade-effects {
+            display: none;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .risk-card.expanded .cascade-effects {
+            display: block;
+        }
+
+        .cascade-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .cascade-column h4 {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid;
+        }
+
+        .cascade-column.first h4 {
+            color: #ff6b6b;
+            border-color: #ff6b6b;
+        }
+
+        .cascade-column.second h4 {
+            color: #ffd93d;
+            border-color: #ffd93d;
+        }
+
+        .cascade-column.third h4 {
+            color: #6bcb77;
+            border-color: #6bcb77;
+        }
+
+        .cascade-column ul {
+            list-style: none;
+        }
+
+        .cascade-column li {
+            font-size: 12px;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .cascade-column li strong {
+            color: #1d1d1f;
+        }
+
+        .expand-hint {
+            font-size: 11px;
+            color: #0071e3;
+            margin-top: 8px;
+        }
+
+        .risk-card.expanded .expand-hint {
+            display: none;
         }
 
         /* Header */
@@ -1021,14 +1243,15 @@
 <body>
     <nav>
         <ul>
-            <li><a href="#markets">Markets</a></li>
-            <li><a href="#sectors">Sectors</a></li>
-            <li><a href="#energy">Energy</a></li>
-            <li><a href="#sentiment">Consumer Sentiment</a></li>
-            <li><a href="#political">Political</a></li>
-            <li><a href="#supply-chain">Supply Chain</a></li>
-            <li><a href="#scenarios">Scenarios</a></li>
-            <li><a href="#industries">Industry Impact</a></li>
+            <li><a href="#" data-tab="markets" class="active" onclick="switchTab('markets'); return false;">Markets</a></li>
+            <li><a href="#" data-tab="sectors" onclick="switchTab('sectors'); return false;">Sectors</a></li>
+            <li><a href="#" data-tab="energy" onclick="switchTab('energy'); return false;">Energy</a></li>
+            <li><a href="#" data-tab="sentiment" onclick="switchTab('sentiment'); return false;">Consumer Sentiment</a></li>
+            <li><a href="#" data-tab="political" onclick="switchTab('political'); return false;">Political</a></li>
+            <li><a href="#" data-tab="supply-chain" onclick="switchTab('supply-chain'); return false;">Supply Chain</a></li>
+            <li><a href="#" data-tab="scenarios" onclick="switchTab('scenarios'); return false;">Scenarios</a></li>
+            <li><a href="#" data-tab="industries" onclick="switchTab('industries'); return false;">Industry Impact</a></li>
+            <li><a href="#" data-tab="risk-assessor" onclick="switchTab('risk-assessor'); return false;" style="color: #0071e3; font-weight: 600;">Risk Assessor</a></li>
         </ul>
     </nav>
 
@@ -1058,9 +1281,13 @@
             </div>
         </header>
 
-        <!-- Markets Section -->
-        <div class="section" id="markets">
-            <h2 class="section-title">Markets</h2>
+        <!-- Markets Tab -->
+        <div class="tab-content active" id="tab-markets">
+            <div class="tab-header">
+                <h1>Markets</h1>
+                <p class="tab-overview">Real-time market indicators tracking the economic impact of the Iran conflict since February 27, 2026. All changes are measured from the war start baseline.</p>
+            </div>
+            <h2 class="section-title">Key Indicators</h2>
             <div class="metrics-grid">
                 <div class="metric-card">
                     <div class="metric-label"><span class="live-dot"></span>S&P 500</div>
@@ -1099,21 +1326,50 @@
                     <div class="metric-source">Yahoo Finance</div>
                 </div>
             </div>
+
+            <div class="insight-box">
+                <h3>Key Insight</h3>
+                <p>Gold has surged over 50% since the conflict began, reflecting flight-to-safety behavior. The VIX remains elevated but below crisis peaks, suggesting markets are pricing in the peace deal framework but remain cautious about implementation risks.</p>
+            </div>
+
+            <div class="sources">
+                <h4>Data Sources</h4>
+                <ul>
+                    <li>S&P 500, MSCI World, VIX, Treasury, Gold, Copper: Yahoo Finance (real-time)</li>
+                </ul>
+            </div>
         </div>
 
-        <!-- Sectors Section -->
-        <div class="section" id="sectors">
-            <div class="section-header">
-                <h2 class="section-title">Sector Performance (GICS) - Click Any Sector</h2>
-                <span style="font-size: 12px; color: #86868b;">Since Feb 27, 2026</span>
+        <!-- Sectors Tab -->
+        <div class="tab-content" id="tab-sectors">
+            <div class="tab-header">
+                <h1>Sector Performance</h1>
+                <p class="tab-overview">All 11 GICS sectors tracked since February 27, 2026. Click any sector card for detailed analysis including historical price charts and industry breakdown.</p>
             </div>
+            <h2 class="section-title">GICS Sectors - Click Any Sector for Details</h2>
             <div class="sector-grid" id="sector-grid">
                 <!-- Populated by JavaScript -->
             </div>
+
+            <div class="insight-box">
+                <h3>Key Insight</h3>
+                <p>Energy (+31%) and Communication Services (+35%) have been the top performers since the war began. Consumer Discretionary (-39%) and Utilities (-34%) have struggled as consumer spending shifted and rate expectations changed.</p>
+            </div>
+
+            <div class="sources">
+                <h4>Data Sources</h4>
+                <ul>
+                    <li>Sector ETFs (XLK, XLE, XLF, XLV, XLY, XLP, XLI, XLB, XLU, XLRE, XLC): Yahoo Finance with 90-day historical data</li>
+                </ul>
+            </div>
         </div>
 
-        <!-- Energy Section -->
-        <div class="section" id="energy">
+        <!-- Energy Tab -->
+        <div class="tab-content" id="tab-energy">
+            <div class="tab-header">
+                <h1>Energy Markets</h1>
+                <p class="tab-overview">Crude oil and natural gas prices have been the most volatile indicators since the conflict began. The Strait of Hormuz disruption drove prices to multi-year highs before the peace deal framework.</p>
+            </div>
             <h2 class="section-title">Energy</h2>
             <div class="metrics-grid">
                 <div class="metric-card highlight">
@@ -1147,14 +1403,29 @@
                     <div class="metric-source">AAA / EIA</div>
                 </div>
             </div>
+
+            <div class="insight-box">
+                <h3>Key Insight</h3>
+                <p>Brent crude dropped 5% on June 15 following the peace deal announcement. Gas prices have fallen from $4.56 to $4.12 per gallon, saving the average household approximately $40/month. DHL forecasts 4-6 months for shipping to fully normalize.</p>
+            </div>
+
+            <div class="sources">
+                <h4>Data Sources</h4>
+                <ul>
+                    <li>Brent, WTI, Henry Hub: Yahoo Finance (real-time)</li>
+                    <li>Dutch TTF: ICE Exchange</li>
+                    <li>US Gas Prices: AAA, EIA</li>
+                </ul>
+            </div>
         </div>
 
-        <!-- Consumer Sentiment Section -->
-        <div class="section" id="sentiment">
-            <div class="section-header">
-                <h2 class="section-title">Consumer Sentiment & Economic Outlook</h2>
-                <span style="font-size: 12px; color: #86868b;">U of Michigan Survey of Consumers</span>
+        <!-- Consumer Sentiment Tab -->
+        <div class="tab-content" id="tab-sentiment">
+            <div class="tab-header">
+                <h1>Consumer Sentiment</h1>
+                <p class="tab-overview">The University of Michigan Survey of Consumers tracks how American households feel about the economy. Sentiment hit record lows during the conflict but is beginning to recover with the peace deal framework.</p>
             </div>
+            <h2 class="section-title">Economic Outlook</h2>
 
             <!-- Overall Sentiment Overview -->
             <div class="consumer-overview" id="consumer-overview">
@@ -1217,11 +1488,28 @@
                     </div>
                 </div>
             </div>
+
+            <div class="insight-box">
+                <h3>Key Insight</h3>
+                <p>Consumer sentiment hit a record low of 44.8 in May 2026 before recovering slightly to 48.9 in June. Lower-income households showed the biggest improvement as gas prices began falling. 1-year inflation expectations remain elevated at 4.6%.</p>
+            </div>
+
+            <div class="sources">
+                <h4>Data Sources</h4>
+                <ul>
+                    <li>Consumer Sentiment, Inflation Expectations: University of Michigan Survey of Consumers</li>
+                    <li>Gas Prices: AAA, EIA</li>
+                </ul>
+            </div>
         </div>
 
-        <!-- Political Section -->
-        <div class="section" id="political">
-            <h2 class="section-title">Political</h2>
+        <!-- Political Tab -->
+        <div class="tab-content" id="tab-political">
+            <div class="tab-header">
+                <h1>Political</h1>
+                <p class="tab-overview">Approval ratings and global economic indicators. The Iran conflict has impacted public opinion and macroeconomic forecasts from major institutions.</p>
+            </div>
+            <h2 class="section-title">Key Metrics</h2>
             <div class="metrics-grid">
                 <div class="metric-card">
                     <div class="metric-label"><span class="manual-dot"></span>Trump Net Approval</div>
@@ -1248,14 +1536,28 @@
                     <div class="metric-source">IMF / World Bank</div>
                 </div>
             </div>
+
+            <div class="insight-box">
+                <h3>Key Insight</h3>
+                <p>Public opinion on the Iran conflict has been mixed. The peace deal announcement has begun to shift sentiment, but implementation risks remain a key variable for both approval ratings and economic forecasts.</p>
+            </div>
+
+            <div class="sources">
+                <h4>Data Sources</h4>
+                <ul>
+                    <li>Approval Ratings: Silver Bulletin, RealClearPolitics aggregate</li>
+                    <li>GDP, Inflation Forecasts: IMF World Economic Outlook, World Bank</li>
+                </ul>
+            </div>
         </div>
 
-        <!-- Supply Chain Section -->
-        <div class="section" id="supply-chain">
-            <div class="section-header">
-                <h2 class="section-title">Supply Chain Disruptions</h2>
-                <span style="font-size: 12px; color: #86868b;">Second & third-order effects</span>
+        <!-- Supply Chain Tab -->
+        <div class="tab-content" id="tab-supply-chain">
+            <div class="tab-header">
+                <h1>Supply Chain</h1>
+                <p class="tab-overview">The Strait of Hormuz disruption created cascading effects across global supply chains. Commodity prices, shipping rates, and manufacturing inputs have all been impacted.</p>
             </div>
+            <h2 class="section-title">Supply Chain Disruptions</h2>
 
             <!-- Live Commodity Prices -->
             <div class="supply-section-label">
@@ -1272,11 +1574,28 @@
             <div class="supply-grid" id="supply-manual-grid">
                 <!-- Populated by JavaScript -->
             </div>
+
+            <div class="insight-box">
+                <h3>Key Insight</h3>
+                <p>Lithium (+100%) and uranium (+68%) have seen the largest increases as energy security concerns drove demand. Helium remains the critical bottleneck for semiconductors, with recovery expected to take years. The nickel index shows data anomalies that require verification.</p>
+            </div>
+
+            <div class="sources">
+                <h4>Data Sources</h4>
+                <ul>
+                    <li>Commodity ETFs (URA, LIT, BDRY, MOS, REMX, SLX, DBA): Yahoo Finance (real-time)</li>
+                    <li>Supply Chain Analysis: Industry reports, company filings</li>
+                </ul>
+            </div>
         </div>
 
-        <!-- Scenario Analysis Section -->
-        <div class="section" id="scenarios">
-            <h2 class="section-title">Scenario Analysis (3-6 Month Outlook)</h2>
+        <!-- Scenarios Tab -->
+        <div class="tab-content" id="tab-scenarios">
+            <div class="tab-header">
+                <h1>Scenario Analysis</h1>
+                <p class="tab-overview">Probability-weighted scenarios for the 3-6 month outlook. These scenarios inform portfolio positioning and risk management decisions.</p>
+            </div>
+            <h2 class="section-title">3-6 Month Outlook</h2>
             <div class="scenario-container">
                 <div class="scenario-tabs" id="scenario-tabs">
                     <!-- Populated by JavaScript -->
@@ -1285,11 +1604,27 @@
                     <!-- Populated by JavaScript -->
                 </div>
             </div>
+
+            <div class="insight-box">
+                <h3>Key Insight</h3>
+                <p>The peace deal framework has shifted probability toward the de-escalation scenario. However, implementation risks remain high, and the market is pricing in a cautious recovery rather than an immediate normalization.</p>
+            </div>
+
+            <div class="sources">
+                <h4>Data Sources</h4>
+                <ul>
+                    <li>Scenario Analysis: Internal modeling based on historical precedents, analyst estimates</li>
+                </ul>
+            </div>
         </div>
 
-        <!-- Industry Impact Section -->
-        <div class="section" id="industries">
-            <h2 class="section-title">Industry Impact Analysis</h2>
+        <!-- Industries Tab -->
+        <div class="tab-content" id="tab-industries">
+            <div class="tab-header">
+                <h1>Industry Impact</h1>
+                <p class="tab-overview">Winners and losers from the Iran conflict. The peace deal framework is reshaping which sectors benefit and which face headwinds.</p>
+            </div>
+            <h2 class="section-title">Winners & Losers</h2>
             <div class="impact-grid">
                 <div class="impact-section">
                     <div class="impact-title winners">Winners</div>
@@ -1303,6 +1638,295 @@
                         <!-- Populated by JavaScript -->
                     </div>
                 </div>
+            </div>
+
+            <div class="insight-box">
+                <h3>Key Insight</h3>
+                <p>Airlines (+4%), Shipping (+3%), and Refiners (+3%) are immediate beneficiaries of the peace deal. Energy stocks face headwinds as war premium unwinds. Semiconductor supply remains constrained by helium shortage regardless of the peace deal.</p>
+            </div>
+
+            <div class="sources">
+                <h4>Data Sources</h4>
+                <ul>
+                    <li>Industry Analysis: Sector ETF performance, company earnings reports, analyst estimates</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Risk Assessor Tab -->
+        <div class="tab-content" id="tab-risk-assessor">
+            <div class="tab-header">
+                <h1>Risk Assessor</h1>
+                <p class="tab-overview">Predictive analysis for key geopolitical events. Click any scenario to see the projected first, second, and third order effects across industries and markets.</p>
+            </div>
+            <h2 class="section-title">Event Scenarios</h2>
+            <p style="color: #86868b; margin-bottom: 20px; font-size: 13px;">Click a scenario card to expand and see cascade effects</p>
+
+            <div class="risk-grid">
+                <!-- War Resumes -->
+                <div class="risk-card" onclick="this.classList.toggle('expanded')">
+                    <div class="risk-header">
+                        <span class="risk-icon">⚔️</span>
+                        <h3>War Resumes</h3>
+                        <span class="risk-probability medium">15% probability</span>
+                    </div>
+                    <p class="risk-trigger">Trigger: Ceasefire breakdown, military escalation, failed negotiations</p>
+                    <p class="expand-hint">Click to expand</p>
+                    <div class="cascade-effects">
+                        <div class="cascade-grid">
+                            <div class="cascade-column first">
+                                <h4>1st Order (Immediate)</h4>
+                                <ul>
+                                    <li><strong>Oil:</strong> +30-40% spike, Brent to $110+</li>
+                                    <li><strong>Shipping:</strong> Hormuz closes, insurance 10x</li>
+                                    <li><strong>Defense:</strong> +15% (RTX, LMT, NOC)</li>
+                                    <li><strong>Gold:</strong> +10% flight to safety</li>
+                                </ul>
+                            </div>
+                            <div class="cascade-column second">
+                                <h4>2nd Order (1-3 Months)</h4>
+                                <ul>
+                                    <li><strong>Airlines:</strong> -20% on fuel surge</li>
+                                    <li><strong>Consumer:</strong> Gas to $5.50+/gal</li>
+                                    <li><strong>Retail:</strong> Discretionary spending drops</li>
+                                    <li><strong>Autos:</strong> Supply chain re-disrupted</li>
+                                </ul>
+                            </div>
+                            <div class="cascade-column third">
+                                <h4>3rd Order (3-12 Months)</h4>
+                                <ul>
+                                    <li><strong>Inflation:</strong> +1.5-2% CPI impact</li>
+                                    <li><strong>Fed:</strong> Rate cuts delayed indefinitely</li>
+                                    <li><strong>Tech:</strong> Helium crisis deepens</li>
+                                    <li><strong>GDP:</strong> -0.5 to -1% global growth</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Peace Deal Collapses -->
+                <div class="risk-card" onclick="this.classList.toggle('expanded')">
+                    <div class="risk-header">
+                        <span class="risk-icon">📜</span>
+                        <h3>Peace Deal Collapses</h3>
+                        <span class="risk-probability medium">25% probability</span>
+                    </div>
+                    <p class="risk-trigger">Trigger: Negotiation breakdown, domestic opposition, compliance failure</p>
+                    <p class="expand-hint">Click to expand</p>
+                    <div class="cascade-effects">
+                        <div class="cascade-grid">
+                            <div class="cascade-column first">
+                                <h4>1st Order (Immediate)</h4>
+                                <ul>
+                                    <li><strong>Oil:</strong> +15-20%, reverses recent drop</li>
+                                    <li><strong>Stocks:</strong> -3-5% broad selloff</li>
+                                    <li><strong>VIX:</strong> Spike to 25-30</li>
+                                    <li><strong>Treasury:</strong> Flight to safety rally</li>
+                                </ul>
+                            </div>
+                            <div class="cascade-column second">
+                                <h4>2nd Order (1-3 Months)</h4>
+                                <ul>
+                                    <li><strong>Shipping:</strong> Backlog persists, rates stay high</li>
+                                    <li><strong>Consumer:</strong> Sentiment reverses gains</li>
+                                    <li><strong>Energy:</strong> E&P stocks rally</li>
+                                    <li><strong>Airlines:</strong> Give back recent gains</li>
+                                </ul>
+                            </div>
+                            <div class="cascade-column third">
+                                <h4>3rd Order (3-12 Months)</h4>
+                                <ul>
+                                    <li><strong>Inflation:</strong> Remains elevated</li>
+                                    <li><strong>Fed:</strong> Hawkish stance continues</li>
+                                    <li><strong>Supply Chain:</strong> Normalization delayed</li>
+                                    <li><strong>Recession:</strong> Risk increases</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oil Embargo -->
+                <div class="risk-card" onclick="this.classList.toggle('expanded')">
+                    <div class="risk-header">
+                        <span class="risk-icon">🛢️</span>
+                        <h3>Oil Embargo Imposed</h3>
+                        <span class="risk-probability low">10% probability</span>
+                    </div>
+                    <p class="risk-trigger">Trigger: New sanctions, OPEC retaliation, supply weaponization</p>
+                    <p class="expand-hint">Click to expand</p>
+                    <div class="cascade-effects">
+                        <div class="cascade-grid">
+                            <div class="cascade-column first">
+                                <h4>1st Order (Immediate)</h4>
+                                <ul>
+                                    <li><strong>Oil:</strong> +50-75%, 1970s-style shock</li>
+                                    <li><strong>Energy:</strong> XLE +20%+ surge</li>
+                                    <li><strong>SPR:</strong> Strategic reserves deployed</li>
+                                    <li><strong>Rationing:</strong> Emergency measures</li>
+                                </ul>
+                            </div>
+                            <div class="cascade-column second">
+                                <h4>2nd Order (1-3 Months)</h4>
+                                <ul>
+                                    <li><strong>Transport:</strong> Freight costs 3x</li>
+                                    <li><strong>Airlines:</strong> Route cuts, bankruptcies</li>
+                                    <li><strong>Consumer:</strong> Demand destruction</li>
+                                    <li><strong>Agriculture:</strong> Fertilizer crisis</li>
+                                </ul>
+                            </div>
+                            <div class="cascade-column third">
+                                <h4>3rd Order (3-12 Months)</h4>
+                                <ul>
+                                    <li><strong>Stagflation:</strong> 1970s redux</li>
+                                    <li><strong>Recession:</strong> Deep and prolonged</li>
+                                    <li><strong>Renewables:</strong> Accelerated investment</li>
+                                    <li><strong>Geopolitics:</strong> Realignment</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Israel Strikes -->
+                <div class="risk-card" onclick="this.classList.toggle('expanded')">
+                    <div class="risk-header">
+                        <span class="risk-icon">🎯</span>
+                        <h3>Israel Strikes Iran</h3>
+                        <span class="risk-probability medium">20% probability</span>
+                    </div>
+                    <p class="risk-trigger">Trigger: Nuclear threshold, proxy escalation, preemptive action</p>
+                    <p class="expand-hint">Click to expand</p>
+                    <div class="cascade-effects">
+                        <div class="cascade-grid">
+                            <div class="cascade-column first">
+                                <h4>1st Order (Immediate)</h4>
+                                <ul>
+                                    <li><strong>Oil:</strong> +25-35% on escalation fears</li>
+                                    <li><strong>Defense:</strong> +10-15% (DFEN, ITA)</li>
+                                    <li><strong>Israel:</strong> EIS ETF volatility</li>
+                                    <li><strong>Safe Haven:</strong> Gold, CHF, JPY rally</li>
+                                </ul>
+                            </div>
+                            <div class="cascade-column second">
+                                <h4>2nd Order (1-3 Months)</h4>
+                                <ul>
+                                    <li><strong>Regional:</strong> Gulf states impacted</li>
+                                    <li><strong>Cyber:</strong> Retaliation risk</li>
+                                    <li><strong>Shipping:</strong> Red Sea disruption</li>
+                                    <li><strong>Tech:</strong> Israel tech sector stress</li>
+                                </ul>
+                            </div>
+                            <div class="cascade-column third">
+                                <h4>3rd Order (3-12 Months)</h4>
+                                <ul>
+                                    <li><strong>Nuclear:</strong> Proliferation concerns</li>
+                                    <li><strong>Alliances:</strong> Diplomatic shifts</li>
+                                    <li><strong>Energy:</strong> Long-term supply uncertainty</li>
+                                    <li><strong>Defense:</strong> Budget increases globally</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hormuz Closes Again -->
+                <div class="risk-card" onclick="this.classList.toggle('expanded')">
+                    <div class="risk-header">
+                        <span class="risk-icon">🚢</span>
+                        <h3>Hormuz Closes Again</h3>
+                        <span class="risk-probability low">10% probability</span>
+                    </div>
+                    <p class="risk-trigger">Trigger: Mining, naval blockade, insurance withdrawal</p>
+                    <p class="expand-hint">Click to expand</p>
+                    <div class="cascade-effects">
+                        <div class="cascade-grid">
+                            <div class="cascade-column first">
+                                <h4>1st Order (Immediate)</h4>
+                                <ul>
+                                    <li><strong>Oil:</strong> +40%, 20% of global supply</li>
+                                    <li><strong>LNG:</strong> Qatar exports halted</li>
+                                    <li><strong>Shipping:</strong> Insurance voided</li>
+                                    <li><strong>Tankers:</strong> Rates 5-10x</li>
+                                </ul>
+                            </div>
+                            <div class="cascade-column second">
+                                <h4>2nd Order (1-3 Months)</h4>
+                                <ul>
+                                    <li><strong>Europe:</strong> Energy crisis deepens</li>
+                                    <li><strong>Asia:</strong> Manufacturing slowdown</li>
+                                    <li><strong>Refiners:</strong> Feedstock shortage</li>
+                                    <li><strong>Petrochemicals:</strong> Production cuts</li>
+                                </ul>
+                            </div>
+                            <div class="cascade-column third">
+                                <h4>3rd Order (3-12 Months)</h4>
+                                <ul>
+                                    <li><strong>Helium:</strong> Crisis becomes permanent</li>
+                                    <li><strong>Chips:</strong> Production halted</li>
+                                    <li><strong>Global Trade:</strong> -5% volume</li>
+                                    <li><strong>Pipelines:</strong> Alternative route investment</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Full Sanctions Lifted -->
+                <div class="risk-card" onclick="this.classList.toggle('expanded')">
+                    <div class="risk-header">
+                        <span class="risk-icon">✅</span>
+                        <h3>Full Sanctions Lifted</h3>
+                        <span class="risk-probability low">20% probability</span>
+                    </div>
+                    <p class="risk-trigger">Trigger: Successful implementation, nuclear deal, normalization</p>
+                    <p class="expand-hint">Click to expand</p>
+                    <div class="cascade-effects">
+                        <div class="cascade-grid">
+                            <div class="cascade-column first">
+                                <h4>1st Order (Immediate)</h4>
+                                <ul>
+                                    <li><strong>Oil:</strong> -15-20%, Iran supply returns</li>
+                                    <li><strong>Stocks:</strong> Risk-on rally</li>
+                                    <li><strong>Airlines:</strong> +15% on fuel outlook</li>
+                                    <li><strong>Shipping:</strong> Full normalization</li>
+                                </ul>
+                            </div>
+                            <div class="cascade-column second">
+                                <h4>2nd Order (1-3 Months)</h4>
+                                <ul>
+                                    <li><strong>Consumer:</strong> Gas under $3/gal</li>
+                                    <li><strong>Retail:</strong> Spending surge</li>
+                                    <li><strong>Travel:</strong> Record bookings</li>
+                                    <li><strong>Manufacturing:</strong> Costs normalize</li>
+                                </ul>
+                            </div>
+                            <div class="cascade-column third">
+                                <h4>3rd Order (3-12 Months)</h4>
+                                <ul>
+                                    <li><strong>Inflation:</strong> Returns to 2% target</li>
+                                    <li><strong>Fed:</strong> Rate cuts accelerate</li>
+                                    <li><strong>Helium:</strong> Qatar production resumes</li>
+                                    <li><strong>Growth:</strong> GDP boost +0.5%</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="insight-box">
+                <h3>Key Insight</h3>
+                <p>These scenarios are not mutually exclusive. The peace deal framework reduces the probability of severe outcomes but implementation risks remain. Markets are currently pricing a cautious optimism scenario with significant downside hedging.</p>
+            </div>
+
+            <div class="sources">
+                <h4>Data Sources</h4>
+                <ul>
+                    <li>Probability estimates: Internal analysis based on historical precedents, expert assessments</li>
+                    <li>Impact estimates: Historical analogues, sector sensitivity analysis</li>
+                </ul>
             </div>
         </div>
 
@@ -1384,6 +2008,42 @@
     <script>
         let data = {};
         let sectorChart = null;
+
+        // Tab switching function
+        function switchTab(tabId) {
+            // Hide all tab content
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Remove active from all nav links
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Show selected tab
+            const selectedTab = document.getElementById('tab-' + tabId);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
+
+            // Activate nav link
+            const selectedLink = document.querySelector(`nav a[data-tab="${tabId}"]`);
+            if (selectedLink) {
+                selectedLink.classList.add('active');
+            }
+
+            // Update URL hash for bookmarking
+            history.replaceState(null, null, '#' + tabId);
+        }
+
+        // Handle URL hash on page load
+        window.addEventListener('load', function() {
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById('tab-' + hash)) {
+                switchTab(hash);
+            }
+        });
 
         // Sector analysis data
         const sectorAnalysis = {
