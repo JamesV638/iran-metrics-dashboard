@@ -154,10 +154,15 @@ def fetch_sector_etfs():
                     hist = ticker.history(start="2026-02-27", interval="1d")
                     if not hist.empty:
                         for date, row in hist.iterrows():
+                            close_val = row["Close"]
+                            vol_val = row["Volume"]
+                            # Skip NaN values
+                            if close_val != close_val:  # NaN check
+                                continue
                             history.append({
                                 "date": date.strftime("%Y-%m-%d"),
-                                "close": round(row["Close"], 2),
-                                "volume": int(row["Volume"]) if row["Volume"] else 0
+                                "close": round(float(close_val), 2),
+                                "volume": int(vol_val) if vol_val == vol_val and vol_val else 0
                             })
                 except Exception as e:
                     print(f"    Could not fetch history for {symbol}: {e}")
@@ -649,6 +654,20 @@ def get_manual_data():
         }
     }
 
+import math
+
+def clean_for_json(obj):
+    """Recursively clean NaN and Inf values from data."""
+    if isinstance(obj, dict):
+        return {k: clean_for_json(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [clean_for_json(item) for item in obj]
+    elif isinstance(obj, float):
+        if math.isnan(obj) or math.isinf(obj):
+            return None
+        return obj
+    return obj
+
 def save_data(data):
     """Save data to JSON file."""
     output_path = Path(__file__).parent / "data.json"
@@ -656,7 +675,7 @@ def save_data(data):
     full_data = {
         "last_updated": datetime.now().isoformat(),
         "baseline_date": "2026-02-27",
-        "metrics": data
+        "metrics": clean_for_json(data)
     }
 
     with open(output_path, "w") as f:

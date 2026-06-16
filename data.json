@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-16T08:59:25.703904",
+  "last_updated": "2026-06-16T09:03:22.283807",
   "baseline_date": "2026-02-27",
   "metrics": {
     "sp500": {
@@ -16,44 +16,44 @@
       "live": true
     },
     "brent": {
-      "value": 79.81,
-      "change_pct": 17.59,
+      "value": 79.97,
+      "change_pct": 17.83,
       "source": "Yahoo Finance",
       "live": true
     },
     "wti": {
-      "value": 76.19,
-      "change_pct": 13.72,
+      "value": 76.31,
+      "change_pct": 13.9,
       "source": "Yahoo Finance",
       "live": true
     },
     "henryhub": {
-      "value": 3.16,
-      "change_pct": 0.32,
+      "value": 3.18,
+      "change_pct": 1.02,
       "source": "Yahoo Finance",
       "live": true
     },
     "vix": {
-      "value": 16.13,
-      "change_pct": 7.53,
+      "value": 16.12,
+      "change_pct": 7.47,
       "source": "Yahoo Finance",
       "live": true
     },
     "treasury": {
       "value": 4.44,
-      "change_pct": 4.45,
+      "change_pct": 4.42,
       "source": "Yahoo Finance",
       "live": true
     },
     "gold": {
-      "value": 4370.2,
-      "change_pct": 53.34,
+      "value": 4372.5,
+      "change_pct": 53.42,
       "source": "Yahoo Finance",
       "live": true
     },
     "copper": {
       "value": 6.5,
-      "change_pct": 52.89,
+      "change_pct": 52.98,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -442,15 +442,10 @@
             "date": "2026-06-12",
             "close": 184.8,
             "volume": 15014300
-          },
-          {
-            "date": "2026-06-15",
-            "close": NaN,
-            "volume": 13041914
           }
         ],
-        "week_change": 6.1,
-        "month_change": 6.85
+        "week_change": 4.13,
+        "month_change": 8.45
       },
       "xle": {
         "symbol": "XLE",
@@ -830,15 +825,10 @@
             "date": "2026-06-12",
             "close": 57.55,
             "volume": 31964700
-          },
-          {
-            "date": "2026-06-15",
-            "close": NaN,
-            "volume": 43541322
           }
         ],
-        "week_change": -3.21,
-        "month_change": -4.34
+        "week_change": -4.77,
+        "month_change": -3.61
       },
       "xlf": {
         "symbol": "XLF",
@@ -1218,15 +1208,10 @@
             "date": "2026-06-12",
             "close": 53.34,
             "volume": 51023300
-          },
-          {
-            "date": "2026-06-15",
-            "close": NaN,
-            "volume": 35209182
           }
         ],
-        "week_change": 2.1,
-        "month_change": 4.43
+        "week_change": 3.06,
+        "month_change": 5.04
       },
       "xlv": {
         "symbol": "XLV",
@@ -1606,15 +1591,10 @@
             "date": "2026-06-12",
             "close": 153.81,
             "volume": 9111000
-          },
-          {
-            "date": "2026-06-15",
-            "close": NaN,
-            "volume": 9060216
           }
         ],
-        "week_change": -1.09,
-        "month_change": 4.27
+        "week_change": 0.16,
+        "month_change": 4.21
       },
       "xly": {
         "symbol": "XLY",
@@ -1994,15 +1974,10 @@
             "date": "2026-06-12",
             "close": 116.6,
             "volume": 7655200
-          },
-          {
-            "date": "2026-06-15",
-            "close": NaN,
-            "volume": 6558333
           }
         ],
-        "week_change": 2.33,
-        "month_change": -0.08
+        "week_change": 2.76,
+        "month_change": -0.13
       },
       "xlp": {
         "symbol": "XLP",
@@ -2382,15 +2357,10 @@
             "date": "2026-06-12",
             "close": 85.82,
             "volume": 9363000
-          },
-          {
-            "date": "2026-06-15",
-            "close": NaN,
-            "volume": 10960348
           }
         ],
-        "week_change": 1.64,
-        "month_change": 0.59
+        "week_change": 2.9,
+        "month_change": 0.9
       },
       "xli": {
         "symbol": "XLI",
@@ -2770,15 +2740,10 @@
             "date": "2026-06-12",
             "close": 176.18,
             "volume": 6961600
-          },
-          {
-            "date": "2026-06-15",
-            "close": NaN,
-            "volume": 7259812
           }
         ],
-        "week_change": 1.75,
-        "month_change": 2.39
+        "week_change": 2.91,
+        "month_change": 2.91
       },
       "xlb": {
         "symbol": "XLB",
@@ -3158,15 +3123,10 @@
             "date": "2026-06-12",
             "close": 52.18,
             "volume": 15194700
-          },
-          {
-            "date": "2026-06-15",
-            "close": NaN,
-            "volume": 14628203
           }
         ],
-        "week_change": 3.41,
-        "month_change": 1.61
+        "week_change": 5.08,
+        "month_change": 0.85
       },
       "xlu": {
         "symbol": "XLU",
@@ -3546,15 +3506,10 @@
             "date": "2026-06-12",
             "close": 44.53,
             "volume": 17942600
-          },
-          {
-            "date": "2026-06-15",
-            "close": NaN,
-            "volume": 18396397
           }
         ],
-        "week_change": 1.73,
-        "month_change": -0.36
+        "week_change": 2.8,
+        "month_change": 0.16
       },
       "xlre": {
         "symbol": "XLRE",
