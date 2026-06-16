@@ -365,11 +365,46 @@
             border-radius: 12px;
             padding: 16px;
             border: 1px solid #e5e5e5;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .metric-card:hover {
+            border-color: #0071e3;
+            box-shadow: 0 2px 8px rgba(0,113,227,0.1);
+        }
+
+        .metric-card.expanded {
+            border-color: #0071e3;
+            box-shadow: 0 2px 8px rgba(0,113,227,0.15);
         }
 
         .metric-card.highlight {
             border-color: #0071e3;
             box-shadow: 0 0 0 1px #0071e3;
+        }
+
+        .metric-context {
+            display: none;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #e5e5e5;
+            font-size: 12px;
+            color: #1d1d1f;
+            line-height: 1.5;
+        }
+
+        .metric-card.expanded .metric-context {
+            display: block;
+        }
+
+        .metric-context-title {
+            font-weight: 600;
+            color: #0071e3;
+            margin-bottom: 4px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
         }
 
         .metric-label {
@@ -1289,41 +1324,65 @@
             </div>
             <h2 class="section-title">Key Indicators</h2>
             <div class="metrics-grid">
-                <div class="metric-card">
+                <div class="metric-card" onclick="this.classList.toggle('expanded')">
                     <div class="metric-label"><span class="live-dot"></span>S&P 500</div>
                     <div class="metric-value" id="sp500-value">--</div>
                     <div class="metric-change" id="sp500-change">--</div>
                     <div class="metric-source">Yahoo Finance</div>
+                    <div class="metric-context">
+                        <div class="metric-context-title">Why it matters</div>
+                        The S&P 500 is the benchmark for US large-cap equities. Since the war began, it has been volatile but resilient, supported by energy sector gains offsetting tech weakness. The peace deal framework has reduced tail risk.
+                    </div>
                 </div>
-                <div class="metric-card">
+                <div class="metric-card" onclick="this.classList.toggle('expanded')">
                     <div class="metric-label"><span class="live-dot"></span>MSCI World</div>
                     <div class="metric-value" id="msci-value">--</div>
                     <div class="metric-change" id="msci-change">--</div>
                     <div class="metric-source">Yahoo Finance (URTH)</div>
+                    <div class="metric-context">
+                        <div class="metric-context-title">Why it matters</div>
+                        MSCI World tracks developed market equities globally. European markets have been more impacted due to energy dependence on the Gulf region. The index reflects global risk appetite.
+                    </div>
                 </div>
-                <div class="metric-card">
+                <div class="metric-card" onclick="this.classList.toggle('expanded')">
                     <div class="metric-label"><span class="live-dot"></span>VIX</div>
                     <div class="metric-value" id="vix-value">--</div>
                     <div class="metric-change" id="vix-change">--</div>
                     <div class="metric-source">CBOE</div>
+                    <div class="metric-context">
+                        <div class="metric-context-title">Why it matters</div>
+                        The VIX measures expected S&P 500 volatility over 30 days. Elevated readings indicate hedging demand and uncertainty. The peace deal has brought VIX down from crisis peaks but it remains above pre-war levels.
+                    </div>
                 </div>
-                <div class="metric-card">
+                <div class="metric-card" onclick="this.classList.toggle('expanded')">
                     <div class="metric-label"><span class="live-dot"></span>10-Year Treasury</div>
                     <div class="metric-value" id="treasury-value">--</div>
                     <div class="metric-change" id="treasury-change">--</div>
                     <div class="metric-source">Yahoo Finance</div>
+                    <div class="metric-context">
+                        <div class="metric-context-title">Why it matters</div>
+                        The 10-year Treasury yield is the benchmark for borrowing costs. Higher oil prices have kept inflation elevated, forcing the Fed to maintain higher rates. A sustained peace could ease inflation and allow rate cuts.
+                    </div>
                 </div>
-                <div class="metric-card">
+                <div class="metric-card" onclick="this.classList.toggle('expanded')">
                     <div class="metric-label"><span class="live-dot"></span>Gold</div>
                     <div class="metric-value" id="gold-value">--</div>
                     <div class="metric-change" id="gold-change">--</div>
                     <div class="metric-source">Yahoo Finance</div>
+                    <div class="metric-context">
+                        <div class="metric-context-title">Why it matters</div>
+                        Gold is the traditional safe-haven asset. The 50%+ surge since February reflects geopolitical fear and inflation hedging. Central bank buying has also accelerated. A durable peace could reduce safe-haven demand.
+                    </div>
                 </div>
-                <div class="metric-card">
+                <div class="metric-card" onclick="this.classList.toggle('expanded')">
                     <div class="metric-label"><span class="live-dot"></span>Copper</div>
                     <div class="metric-value" id="copper-value">--</div>
                     <div class="metric-change" id="copper-change">--</div>
                     <div class="metric-source">Yahoo Finance</div>
+                    <div class="metric-context">
+                        <div class="metric-context-title">Why it matters</div>
+                        Copper is a leading indicator of global economic activity ("Dr. Copper"). The surge reflects supply disruptions and energy transition demand. It signals expectations for industrial activity despite conflict uncertainty.
+                    </div>
                 </div>
             </div>
 
@@ -1372,35 +1431,55 @@
             </div>
             <h2 class="section-title">Energy</h2>
             <div class="metrics-grid">
-                <div class="metric-card highlight">
+                <div class="metric-card highlight" onclick="this.classList.toggle('expanded')">
                     <div class="metric-label"><span class="live-dot"></span>Brent Crude</div>
                     <div class="metric-value" id="brent-value">--</div>
                     <div class="metric-change" id="brent-change">--</div>
                     <div class="metric-source">Yahoo Finance</div>
+                    <div class="metric-context">
+                        <div class="metric-context-title">Why it matters</div>
+                        Brent is the global oil benchmark. The Strait of Hormuz carries 20% of global oil supply. The war premium added $20-30/barrel. The peace deal dropped prices 5% on June 15, with more declines expected as supply normalizes.
+                    </div>
                 </div>
-                <div class="metric-card highlight">
+                <div class="metric-card highlight" onclick="this.classList.toggle('expanded')">
                     <div class="metric-label"><span class="live-dot"></span>WTI Crude</div>
                     <div class="metric-value" id="wti-value">--</div>
                     <div class="metric-change" id="wti-change">--</div>
                     <div class="metric-source">Yahoo Finance</div>
+                    <div class="metric-context">
+                        <div class="metric-context-title">Why it matters</div>
+                        WTI is the US oil benchmark. US producers have benefited from higher prices, ramping up shale production. Lower prices from the peace deal will pressure US drillers but benefit consumers at the pump.
+                    </div>
                 </div>
-                <div class="metric-card">
+                <div class="metric-card" onclick="this.classList.toggle('expanded')">
                     <div class="metric-label"><span class="live-dot"></span>Henry Hub Gas</div>
                     <div class="metric-value" id="henryhub-value">--</div>
                     <div class="metric-change" id="henryhub-change">--</div>
                     <div class="metric-source">Yahoo Finance</div>
+                    <div class="metric-context">
+                        <div class="metric-context-title">Why it matters</div>
+                        Henry Hub is the US natural gas benchmark. US LNG exports to Europe surged during the conflict. Domestic prices have been relatively stable due to strong US production, unlike European gas prices.
+                    </div>
                 </div>
-                <div class="metric-card">
+                <div class="metric-card" onclick="this.classList.toggle('expanded')">
                     <div class="metric-label"><span class="manual-dot"></span>Dutch TTF</div>
                     <div class="metric-value" id="ttf-value">--</div>
                     <div class="metric-change" id="ttf-change">--</div>
                     <div class="metric-source">ICE Exchange</div>
+                    <div class="metric-context">
+                        <div class="metric-context-title">Why it matters</div>
+                        TTF is the European natural gas benchmark. Europe depends on LNG imports that transit the Gulf. Prices spiked on supply fears but have moderated with the peace deal. Still elevated vs. pre-war levels.
+                    </div>
                 </div>
-                <div class="metric-card">
+                <div class="metric-card" onclick="this.classList.toggle('expanded')">
                     <div class="metric-label"><span class="manual-dot"></span>US Gas Prices</div>
                     <div class="metric-value" id="fuel-value">--</div>
                     <div class="metric-change" id="fuel-change">--</div>
                     <div class="metric-source">AAA / EIA</div>
+                    <div class="metric-context">
+                        <div class="metric-context-title">Why it matters</div>
+                        Retail gas prices directly impact consumer spending. Prices peaked above $4.50/gal and are now falling toward $4. Every $0.10 drop saves US households roughly $12/month. This frees up spending for retail and travel.
+                    </div>
                 </div>
             </div>
 
@@ -1511,29 +1590,45 @@
             </div>
             <h2 class="section-title">Key Metrics</h2>
             <div class="metrics-grid">
-                <div class="metric-card">
+                <div class="metric-card" onclick="this.classList.toggle('expanded')">
                     <div class="metric-label"><span class="manual-dot"></span>Trump Net Approval</div>
                     <div class="metric-value" id="trump-approval">--</div>
                     <div class="metric-change" id="trump-change">--</div>
                     <div class="metric-source">Silver Bulletin / RCP</div>
+                    <div class="metric-context">
+                        <div class="metric-context-title">Why it matters</div>
+                        Net approval (approve minus disapprove) tracks overall presidential support. The Iran conflict has been polarizing. The peace deal framework could boost approval if it leads to lower gas prices and economic stability.
+                    </div>
                 </div>
-                <div class="metric-card">
+                <div class="metric-card" onclick="this.classList.toggle('expanded')">
                     <div class="metric-label"><span class="manual-dot"></span>Iran War Net Approval</div>
                     <div class="metric-value" id="iran-approval">--</div>
                     <div class="metric-change" id="iran-change">--</div>
                     <div class="metric-source">Aggregate Polling</div>
+                    <div class="metric-context">
+                        <div class="metric-context-title">Why it matters</div>
+                        Public support for military action has been mixed. Economic pain from high gas prices has eroded support. A successful peace deal could vindicate the administration's approach, while a collapse would intensify criticism.
+                    </div>
                 </div>
-                <div class="metric-card">
+                <div class="metric-card" onclick="this.classList.toggle('expanded')">
                     <div class="metric-label"><span class="manual-dot"></span>Global GDP 2026</div>
                     <div class="metric-value" id="gdp-value">--</div>
                     <div class="metric-change" id="gdp-change">--</div>
                     <div class="metric-source">IMF</div>
+                    <div class="metric-context">
+                        <div class="metric-context-title">Why it matters</div>
+                        IMF global growth forecasts reflect expected economic activity worldwide. The conflict has shaved 0.3-0.5% off global GDP through energy disruption and trade uncertainty. A sustained peace could restore growth momentum.
+                    </div>
                 </div>
-                <div class="metric-card">
+                <div class="metric-card" onclick="this.classList.toggle('expanded')">
                     <div class="metric-label"><span class="manual-dot"></span>Global Inflation</div>
                     <div class="metric-value" id="inflation-value">--</div>
                     <div class="metric-change" id="inflation-change">--</div>
                     <div class="metric-source">IMF / World Bank</div>
+                    <div class="metric-context">
+                        <div class="metric-context-title">Why it matters</div>
+                        Energy prices are a key driver of global inflation. The conflict added 0.5-1% to global CPI. Lower oil prices from the peace deal should provide disinflation over the next 3-6 months, easing pressure on central banks.
+                    </div>
                 </div>
             </div>
 
