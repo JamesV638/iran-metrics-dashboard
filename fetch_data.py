@@ -399,6 +399,28 @@ def get_manual_data():
             "source": "Aggregate Polling",
             "live": False
         },
+        # Peace deal status
+        "peace_deal": {
+            "status": "Framework Agreed",
+            "announced": "June 14, 2026",
+            "signing_date": "June 19, 2026",
+            "location": "Switzerland",
+            "key_terms": [
+                "60-day ceasefire extension",
+                "Strait of Hormuz reopening",
+                "US naval blockade lifted",
+                "Lebanon hostilities ended"
+            ],
+            "unresolved": [
+                "Nuclear enrichment limits",
+                "Highly enriched uranium stockpiles",
+                "Sanctions relief timeline",
+                "Frozen asset releases"
+            ],
+            "mediators": ["Pakistan", "Oman"],
+            "source": "CNBC, Al Jazeera, NPR",
+            "live": False
+        },
         # Consumer sentiment comprehensive data (from U of M reports - manual update)
         # Removed old partisan_sentiment - now in consumer_data
         "consumer_data": {
@@ -502,126 +524,127 @@ def get_manual_data():
             "live": False
         },
         # Supply chain impacts (manual analysis for non-tradeable commodities)
+        # UPDATED June 15, 2026: Peace deal announced, Hormuz reopening
         "supply_chain_manual": {
             "helium": {
-                "status": "critical",
-                "change": "+180%",
+                "status": "improving",
+                "change": "+180% (easing)",
                 "impact": "Semiconductor manufacturing, MRI machines, aerospace, fiber optics",
-                "notes": "Qatar supplies 30% of global high-purity helium. Strait of Hormuz disruption cutting supplies. No substitute for chip cooling.",
+                "notes": "PEACE DEAL: Hormuz reopening will restore Qatar helium shipments. Prices expected to normalize over 4-8 weeks. Backlog clearing.",
                 "affected_industries": ["Semiconductors", "Healthcare", "Aerospace", "Telecom"],
                 "live": False
             },
-            "neon": {
-                "status": "elevated",
-                "change": "+45%",
-                "impact": "Chip lithography, laser manufacturing",
-                "notes": "Used in EUV lithography for advanced chips. US/EU alternative sources ramping but insufficient.",
-                "affected_industries": ["Semiconductors", "Lasers"],
+            "strait_of_hormuz": {
+                "status": "reopening",
+                "change": "Open as of June 19",
+                "impact": "20% of global oil, 25% of LNG transits",
+                "notes": "Peace deal signed June 14. Toll-free shipping resumes. US naval blockade lifting. Insurance premiums expected to drop 60-70%.",
+                "affected_industries": ["Energy", "Shipping", "All sectors"],
                 "live": False
             },
             "container_shipping": {
-                "status": "disrupted",
-                "change": "+85%",
+                "status": "improving",
+                "change": "+85% (normalizing)",
                 "impact": "Container rates, delivery times, inventory costs",
-                "notes": "Red Sea/Suez diversions adding 10-14 days to Asia-Europe routes. Insurance premiums spiking.",
+                "notes": "PEACE DEAL: Red Sea/Suez routes reopening. Transit times returning to normal. Rates expected to drop 40-50% over next month.",
                 "affected_industries": ["Retail", "Manufacturing", "Auto"],
                 "live": False
             },
+            "oil_supply": {
+                "status": "stabilizing",
+                "change": "Brent falling",
+                "impact": "Global energy prices, inflation",
+                "notes": "Peace deal removing war premium from oil. Analysts expect Brent to fall to $75-80 range within weeks if deal holds.",
+                "affected_industries": ["Energy", "Transport", "Manufacturing"],
+                "live": False
+            },
             "petrochemicals": {
-                "status": "stressed",
-                "change": "+35%",
+                "status": "improving",
+                "change": "+35% (easing)",
                 "impact": "Plastics, packaging, synthetic materials",
-                "notes": "Higher oil/gas feedstock costs. Middle East accounts for 15% of global petrochemical exports.",
+                "notes": "Lower oil/gas feedstock costs expected. Middle East exports resuming normal flows.",
                 "affected_industries": ["Packaging", "Consumer Goods", "Construction"],
                 "live": False
             },
             "ammonia": {
-                "status": "critical",
-                "change": "+65%",
+                "status": "improving",
+                "change": "+65% (easing)",
                 "impact": "Fertilizer production, food prices",
-                "notes": "Natural gas is key input. Middle East major exporter. Food price inflation risk.",
+                "notes": "Natural gas prices declining on peace news. Middle East exports resuming. Food inflation pressure easing.",
                 "affected_industries": ["Agriculture", "Food"],
                 "live": False
             },
-            "pharmaceuticals": {
-                "status": "stressed",
-                "change": "+20%",
-                "impact": "API supply, generic drugs",
-                "notes": "Some active pharmaceutical ingredients sourced from region. Shipping delays affecting supply.",
-                "affected_industries": ["Healthcare", "Pharma"],
+            "neon": {
+                "status": "stable",
+                "change": "+45% (holding)",
+                "impact": "Chip lithography, laser manufacturing",
+                "notes": "Less affected by Hormuz than other commodities. US/EU sources continue ramping.",
+                "affected_industries": ["Semiconductors", "Lasers"],
                 "live": False
             },
             "automotive_parts": {
-                "status": "constrained",
-                "change": "Lead times +4 weeks",
+                "status": "improving",
+                "change": "Lead times -2 weeks",
                 "impact": "Vehicle production, EV batteries",
-                "notes": "Chip shortage compounded by shipping delays. Battery material costs elevated.",
+                "notes": "Chip supply improving as helium flows resume. Shipping normalization helping parts delivery.",
                 "affected_industries": ["Auto", "EV"],
-                "live": False
-            },
-            "data_centers": {
-                "status": "stressed",
-                "change": "Capacity -15%",
-                "impact": "AI infrastructure, cloud computing",
-                "notes": "Helium shortage affecting HDD production. Chip constraints limiting GPU availability.",
-                "affected_industries": ["Tech", "AI", "Cloud"],
                 "live": False
             }
         },
-        # Scenario projections
+        # Scenario projections - UPDATED June 15, 2026 for peace deal
         "scenarios": {
+            "deescalation": {
+                "name": "Peace Deal Holds",
+                "probability": "55%",
+                "oil_price": "$70-80",
+                "inflation_impact": "-0.5 to -1.0%",
+                "gdp_impact": "+0.2 to +0.4%",
+                "duration": "Resolved",
+                "description": "June 19 signing holds. Hormuz open, sanctions relief phased in, nuclear talks continue. Markets normalize over 2-3 months."
+            },
             "baseline": {
-                "name": "Limited Conflict",
-                "probability": "45%",
-                "oil_price": "$85-95",
-                "inflation_impact": "+0.5-1.0%",
-                "gdp_impact": "-0.1 to -0.3%",
+                "name": "Partial Resolution",
+                "probability": "30%",
+                "oil_price": "$80-90",
+                "inflation_impact": "+0.3-0.5%",
+                "gdp_impact": "-0.1%",
                 "duration": "3-6 months",
-                "description": "Hormuz stays open, limited military engagement, diplomatic off-ramps pursued"
+                "description": "Deal signed but implementation delayed. Nuclear issues unresolved. Reduced but ongoing uncertainty."
             },
             "escalation": {
-                "name": "Hormuz Disruption",
-                "probability": "35%",
-                "oil_price": "$120-150",
-                "inflation_impact": "+2.0-3.5%",
-                "gdp_impact": "-0.8 to -1.5%",
+                "name": "Deal Collapse",
+                "probability": "12%",
+                "oil_price": "$100-120",
+                "inflation_impact": "+1.5-2.5%",
+                "gdp_impact": "-0.5 to -1.0%",
                 "duration": "6-12 months",
-                "description": "30-60 day Strait closure, oil supply shock, global recession risk"
+                "description": "Hardliners derail deal. Hostilities resume. Hormuz re-closed. Return to conflict scenario."
             },
             "severe": {
-                "name": "Extended Conflict",
-                "probability": "15%",
-                "oil_price": "$150-200+",
+                "name": "Major Escalation",
+                "probability": "3%",
+                "oil_price": "$150+",
                 "inflation_impact": "+4.0-6.0%",
                 "gdp_impact": "-2.0 to -3.5%",
                 "duration": "12+ months",
-                "description": "Prolonged military engagement, sustained supply disruption, stagflation"
-            },
-            "deescalation": {
-                "name": "Diplomatic Resolution",
-                "probability": "5%",
-                "oil_price": "$70-80",
-                "inflation_impact": "-0.5%",
-                "gdp_impact": "+0.2%",
-                "duration": "1-3 months",
-                "description": "Ceasefire, sanctions relief framework, rapid normalization"
+                "description": "Deal rejected, expanded military engagement, full regional war. Least likely given current momentum."
             }
         },
-        # Industry impact analysis
+        # Industry impact analysis - UPDATED June 15 for peace deal
         "industry_impacts": {
             "winners": [
-                {"industry": "Defense/Aerospace", "etf": "XLI/ITA", "reason": "Increased military spending"},
-                {"industry": "US Oil & Gas", "etf": "XLE", "reason": "Higher prices, domestic production"},
-                {"industry": "Alternative Energy", "etf": "ICLN", "reason": "Accelerated transition"},
-                {"industry": "Cybersecurity", "etf": "CIBR", "reason": "Elevated threat environment"},
-                {"industry": "Gold/Precious Metals", "etf": "GLD", "reason": "Safe haven demand"}
+                {"industry": "Airlines", "etf": "JETS", "reason": "Fuel costs dropping, routes reopening"},
+                {"industry": "Shipping/Logistics", "etf": "IYT", "reason": "Hormuz open, rates normalizing"},
+                {"industry": "Consumer Discretionary", "etf": "XLY", "reason": "Gas prices falling, confidence rising"},
+                {"industry": "Semiconductors", "etf": "SMH", "reason": "Helium supply resuming from Qatar"},
+                {"industry": "Retail", "etf": "XRT", "reason": "Consumer spending to recover"}
             ],
             "losers": [
-                {"industry": "Airlines", "etf": "JETS", "reason": "Fuel costs, route disruptions"},
-                {"industry": "Autos", "etf": "CARZ", "reason": "Chip shortage, consumer pullback"},
-                {"industry": "Retail", "etf": "XRT", "reason": "Consumer spending decline"},
-                {"industry": "Shipping/Logistics", "etf": "IYT", "reason": "Route disruptions, costs"},
-                {"industry": "Semiconductors", "etf": "SMH", "reason": "Helium shortage, demand uncertainty"}
+                {"industry": "Defense/Aerospace", "etf": "ITA", "reason": "War premium fading, peace reducing urgency"},
+                {"industry": "US Oil & Gas", "etf": "XLE", "reason": "Oil prices falling on peace deal"},
+                {"industry": "Gold/Precious Metals", "etf": "GLD", "reason": "Safe haven demand declining"},
+                {"industry": "Alternative Energy", "etf": "ICLN", "reason": "Oil price drop reduces urgency"},
+                {"industry": "Cybersecurity", "etf": "CIBR", "reason": "Threat premium easing"}
             ]
         }
     }

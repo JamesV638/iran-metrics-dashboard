@@ -1021,6 +1021,21 @@
         <header>
             <h1>Iran Situation Dashboard</h1>
             <p class="subtitle">Economic, market, and geopolitical indicators since February 27, 2026</p>
+
+            <!-- Peace Deal Alert Banner -->
+            <div id="peace-deal-banner" style="background: linear-gradient(135deg, #34c759 0%, #30d158 100%); color: white; padding: 16px 20px; border-radius: 12px; margin: 16px 0; display: none;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                    <div>
+                        <div style="font-size: 18px; font-weight: 600;">Peace Deal Framework Agreed</div>
+                        <div style="font-size: 14px; opacity: 0.9;" id="peace-deal-details">Signing scheduled June 19 in Switzerland. Strait of Hormuz reopening.</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 12px; opacity: 0.8;">Status</div>
+                        <div style="font-size: 16px; font-weight: 600;" id="peace-deal-status">Framework Agreed</div>
+                    </div>
+                </div>
+            </div>
+
             <div class="meta-row">
                 <span>Last updated: <strong id="lastUpdated">Loading...</strong></span>
                 <span>Baseline: <strong>February 27, 2026</strong></span>
@@ -1281,22 +1296,23 @@
             <h2 class="analysis-title">Situation Analysis</h2>
             <div class="analysis-grid">
                 <div class="analysis-box">
-                    <h3>Current State</h3>
+                    <h3>Peace Deal Breakthrough (June 14-15)</h3>
                     <ul>
-                        <li><strong>Diplomacy stalled.</strong> Israel-Lebanon negotiations at standstill.</li>
-                        <li><strong>Regional escalation.</strong> Iran struck Kuwait airport; targeting US forces.</li>
-                        <li><strong>Iran economy deteriorating.</strong> IMF projects -6.1% GDP, 68.9% inflation.</li>
-                        <li><strong>Congress acts.</strong> House voted 215-208 on war powers resolution.</li>
-                        <li><strong>Public support declining.</strong> Net support at -22.8%, down from -9%.</li>
+                        <li><strong>Deal announced.</strong> US-Iran framework agreed via Pakistan/Oman mediation.</li>
+                        <li><strong>Hormuz reopening.</strong> Toll-free shipping resumes; naval blockade lifting.</li>
+                        <li><strong>Signing June 19.</strong> Formal ceremony scheduled in Switzerland.</li>
+                        <li><strong>60-day ceasefire.</strong> Extended truce while final terms negotiated.</li>
+                        <li><strong>Lebanon included.</strong> Related hostilities ended under framework.</li>
                     </ul>
                 </div>
                 <div class="analysis-box">
-                    <h3>Outlook</h3>
+                    <h3>Unresolved Issues & Risks</h3>
                     <ul>
-                        <li>Most probable: limited agreement with guarded Strait of Hormuz reopening.</li>
-                        <li><strong>Domestic politics:</strong> Midterms 5 months out; GOP defections possible.</li>
-                        <li><strong>US-Israel:</strong> Netanyahu escalation led Iran to suspend talks.</li>
-                        <li>As of June 4, Hezbollah rejected US-brokered ceasefire.</li>
+                        <li><strong>Nuclear program:</strong> Enrichment limits, HEU stockpiles deferred to follow-on talks.</li>
+                        <li><strong>Sanctions relief:</strong> Timeline and scope still being negotiated.</li>
+                        <li><strong>Frozen assets:</strong> $6B+ in frozen funds release TBD.</li>
+                        <li><strong>Hardliner risk:</strong> June 11 US strikes nearly derailed talks.</li>
+                        <li><strong>Implementation:</strong> Deal could still collapse before/after signing.</li>
                     </ul>
                 </div>
             </div>
@@ -1951,6 +1967,16 @@
                 // Update timestamp
                 const lastUpdated = new Date(jsonData.last_updated);
                 document.getElementById('lastUpdated').textContent = lastUpdated.toLocaleString();
+
+                // Peace deal banner
+                if (data.peace_deal) {
+                    const banner = document.getElementById('peace-deal-banner');
+                    banner.style.display = 'block';
+                    document.getElementById('peace-deal-status').textContent = data.peace_deal.status;
+                    const terms = data.peace_deal.key_terms ? data.peace_deal.key_terms.slice(0, 2).join('. ') + '.' : '';
+                    document.getElementById('peace-deal-details').textContent =
+                        `Signing ${data.peace_deal.signing_date} in ${data.peace_deal.location}. ${terms}`;
+                }
 
                 // Markets
                 if (data.sp500) updateMetric('sp500', formatNumber(data.sp500.value), data.sp500.change_pct, true);
