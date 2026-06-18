@@ -2,21 +2,18 @@ name: Update Dashboard Data
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Every hour
-  workflow_dispatch:  # Manual trigger
-
-permissions:
-  contents: write
+    # Run every hour during US market hours (9 AM - 5 PM ET, Mon-Fri)
+    # Cron is in UTC, so 9 AM ET = 13:00 UTC, 5 PM ET = 21:00 UTC
+    - cron: '0 13-21 * * 1-5'
+  workflow_dispatch:  # Allow manual trigger
 
 jobs:
-  update-and-deploy:
+  update-data:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ github.token }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -24,16 +21,16 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install yfinance requests
+        run: |
+          pip install yfinance requests
 
-      - name: Fetch latest data
+      - name: Run data fetcher
         run: python fetch_data.py
 
-      - name: Commit updated data
+      - name: Commit and push if changed
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add data.json
-          git diff --staged --quiet || git commit -m "Update data $(date -u +%Y-%m-%d-%H%M)"
+          git diff --staged --quiet || git commit -m "Auto-update data - $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push
-        # GitHub Pages auto-deploys on push to main
