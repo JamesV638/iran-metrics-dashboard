@@ -393,56 +393,56 @@ def get_manual_data():
             "note": "Fallback value - live pull via FRED if API key set"
         },
         "ttf": {
-            "value": 48.75,
-            "change_pct": calc_change(48.75, BASELINE["ttf"]),
+            "value": 41.25,
+            "change_pct": calc_change(41.25, BASELINE["ttf"]),
             "source": "ICE Exchange",
             "live": False
         },
         "gdp": {
-            "value": "2.5%",
-            "change": "-0.2%",
-            "source": "IMF",
+            "value": "3.1%",
+            "change": "-0.2 pp",
+            "source": "IMF WEO April 2026",
             "live": False
         },
         "inflation": {
-            "value": "3.8% - 6.1%",
-            "change": "+1.1% to +3.3%",
-            "source": "IMF/World Bank",
+            "value": "4.4%",
+            "change": "+0.9 pp",
+            "source": "IMF WEO April 2026",
             "live": False
         },
         "trump_approval": {
-            "value": -19.1,
-            "change": "-6 pts",
+            "value": -18.7,
+            "change": "-7.5 pts from inauguration",
             "source": "Silver Bulletin",
             "live": False,
             "url": "https://www.natesilver.net"
         },
         "iran_war_approval": {
-            "value": -22.8,
-            "change": "-9 pts",
-            "source": "Aggregate Polling",
+            "value": -25,
+            "change": "29% approve, 54% disapprove",
+            "source": "Reuters/Ipsos June 2026",
             "live": False
         },
         # Peace deal status
         "peace_deal": {
-            "status": "Framework Agreed",
+            "status": "MoU Signed",
             "announced": "June 14, 2026",
-            "signing_date": "June 19, 2026",
-            "location": "Switzerland",
+            "signed": "June 15, 2026",
+            "formal_signing": "June 19, 2026 (Switzerland)",
             "key_terms": [
-                "60-day ceasefire extension",
+                "60-day ceasefire and nuclear talks",
                 "Strait of Hormuz reopening",
                 "US naval blockade lifted",
-                "Lebanon hostilities ended"
+                "Up to $25B frozen assets (conditional)"
             ],
             "unresolved": [
                 "Nuclear enrichment limits",
-                "Highly enriched uranium stockpiles",
-                "Sanctions relief timeline",
-                "Frozen asset releases"
+                "HEU stockpile disposition",
+                "Sanctions relief sequence",
+                "Israel-Lebanon tensions (ongoing)"
             ],
             "mediators": ["Pakistan", "Oman"],
-            "source": "CNBC, Al Jazeera, NPR",
+            "source": "CNN, NPR, Atlantic Council",
             "live": False
         },
         # Consumer sentiment comprehensive data (from U of M reports - manual update)
