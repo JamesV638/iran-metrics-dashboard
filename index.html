@@ -1295,11 +1295,6 @@
             <h1>Iran Situation Dashboard</h1>
             <p class="subtitle">Economic, market, and geopolitical indicators since February 27, 2026</p>
 
-            <!-- Peace Deal Alert Banner -->
-            <div id="peace-deal-banner" style="background: linear-gradient(135deg, #34c759 0%, #30d158 100%); color: white; padding: 16px 20px; border-radius: 12px; margin: 16px 0; display: none; text-align: center;">
-                <div style="font-size: 18px; font-weight: 600;">Peace deal framework agreed</div>
-            </div>
-
             <div class="meta-row">
                 <span>Last updated: <strong id="lastUpdated">Loading...</strong></span>
                 <span>Baseline: <strong>February 27, 2026</strong></span>
@@ -2816,11 +2811,6 @@
                 // Update timestamp with relative time
                 window.dataFetchTime = new Date(jsonData.last_updated);
                 updateRelativeTime();
-
-                // Peace deal banner
-                if (data.peace_deal) {
-                    document.getElementById('peace-deal-banner').style.display = 'block';
-                }
 
                 // Markets
                 if (data.sp500) updateMetric('sp500', formatNumber(data.sp500.value), data.sp500.change_pct, true);
