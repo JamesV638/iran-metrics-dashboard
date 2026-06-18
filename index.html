@@ -1296,17 +1296,8 @@
             <p class="subtitle">Economic, market, and geopolitical indicators since February 27, 2026</p>
 
             <!-- Peace Deal Alert Banner -->
-            <div id="peace-deal-banner" style="background: linear-gradient(135deg, #34c759 0%, #30d158 100%); color: white; padding: 16px 20px; border-radius: 12px; margin: 16px 0; display: none;">
-                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-                    <div>
-                        <div style="font-size: 18px; font-weight: 600;">Peace Deal Framework Agreed</div>
-                        <div style="font-size: 14px; opacity: 0.9;" id="peace-deal-details">Signing scheduled June 19 in Switzerland. Strait of Hormuz reopening.</div>
-                    </div>
-                    <div style="text-align: right;">
-                        <div style="font-size: 12px; opacity: 0.8;">Status</div>
-                        <div style="font-size: 16px; font-weight: 600;" id="peace-deal-status">Framework Agreed</div>
-                    </div>
-                </div>
+            <div id="peace-deal-banner" style="background: linear-gradient(135deg, #34c759 0%, #30d158 100%); color: white; padding: 16px 20px; border-radius: 12px; margin: 16px 0; display: none; text-align: center;">
+                <div style="font-size: 18px; font-weight: 600;">Peace deal framework agreed</div>
             </div>
 
             <div class="meta-row">
@@ -2828,12 +2819,7 @@
 
                 // Peace deal banner
                 if (data.peace_deal) {
-                    const banner = document.getElementById('peace-deal-banner');
-                    banner.style.display = 'block';
-                    document.getElementById('peace-deal-status').textContent = data.peace_deal.status;
-                    const terms = data.peace_deal.key_terms ? data.peace_deal.key_terms.slice(0, 2).join('. ') + '.' : '';
-                    document.getElementById('peace-deal-details').textContent =
-                        `Signing ${data.peace_deal.signing_date} in ${data.peace_deal.location}. ${terms}`;
+                    document.getElementById('peace-deal-banner').style.display = 'block';
                 }
 
                 // Markets
