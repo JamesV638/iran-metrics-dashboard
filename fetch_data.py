@@ -418,10 +418,11 @@ def get_manual_data():
             "url": "https://www.natesilver.net"
         },
         "iran_war_approval": {
-            "value": -25,
-            "change": "29% approve, 54% disapprove",
-            "source": "Reuters/Ipsos June 2026",
-            "live": False
+            "value": -21.2,
+            "change": "Net approval of Iran war handling",
+            "source": "Silver Bulletin War Popularity Index",
+            "live": False,
+            "url": "https://www.natesilver.net"
         },
         # Peace deal status
         "peace_deal": {
