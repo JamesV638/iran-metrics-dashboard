@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-18T20:33:50.583162",
+  "last_updated": "2026-06-18T22:59:19.157741",
   "baseline_date": "2026-02-27",
   "metrics": {
     "sp500": {
@@ -16,20 +16,20 @@
       "live": true
     },
     "brent": {
-      "value": 79.37,
-      "change_pct": 16.94,
+      "value": 79.27,
+      "change_pct": 16.8,
       "source": "Yahoo Finance",
       "live": true
     },
     "wti": {
-      "value": 75.46,
-      "change_pct": 12.63,
+      "value": 75.36,
+      "change_pct": 12.48,
       "source": "Yahoo Finance",
       "live": true
     },
     "henryhub": {
-      "value": 3.22,
-      "change_pct": 2.25,
+      "value": 3.21,
+      "change_pct": 2.03,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -46,14 +46,14 @@
       "live": true
     },
     "gold": {
-      "value": 4235.0,
-      "change_pct": 48.6,
+      "value": 4224.1,
+      "change_pct": 48.21,
       "source": "Yahoo Finance",
       "live": true
     },
     "copper": {
-      "value": 6.39,
-      "change_pct": 50.26,
+      "value": 6.38,
+      "change_pct": 50.0,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -1670,7 +1670,7 @@
           {
             "date": "2026-06-18",
             "close": 149.4,
-            "volume": 10788820
+            "volume": 10860488
           }
         ],
         "week_change": -2.87,
@@ -2476,7 +2476,7 @@
           {
             "date": "2026-06-18",
             "close": 83.3,
-            "volume": 8875376
+            "volume": 10428188
           }
         ],
         "week_change": -2.94,
@@ -2879,7 +2879,7 @@
           {
             "date": "2026-06-18",
             "close": 180.91,
-            "volume": 8026719
+            "volume": 8057410
           }
         ],
         "week_change": 2.68,
@@ -3685,7 +3685,7 @@
           {
             "date": "2026-06-18",
             "close": 44.76,
-            "volume": 36173354
+            "volume": 36805672
           }
         ],
         "week_change": 0.52,
@@ -4491,7 +4491,7 @@
           {
             "date": "2026-06-18",
             "close": 109.45,
-            "volume": 9561709
+            "volume": 11638303
           }
         ],
         "week_change": -1.97,
