@@ -314,6 +314,22 @@ def fetch_fred_data():
                     data["inflation_1yr"]["change_pct"] = round(value - BASELINE["inflation_1yr"], 2)
                     data["inflation_1yr"]["live"] = True
                     print(f"  1-Year Inflation Exp: {value}%")
+
+            # US Regular Gasoline Price (Weekly)
+            url = f"https://api.stlouisfed.org/fred/series/observations?series_id=GASREGW&api_key={fred_key}&file_type=json&sort_order=desc&limit=1"
+            response = requests.get(url, timeout=10)
+            if response.ok:
+                result = response.json()
+                if result.get("observations"):
+                    value = float(result["observations"][0]["value"])
+                    data["gas_price"] = {
+                        "value": round(value, 2),
+                        "change_pct": calc_change(value, BASELINE["fuel"]),
+                        "source": "EIA via FRED",
+                        "live": True,
+                        "baseline": BASELINE["fuel"]
+                    }
+                    print(f"  Gas Price: ${value}/gal")
         except Exception as e:
             print(f"  Error fetching FRED data: {e}")
     else:
@@ -370,10 +386,11 @@ def get_manual_data():
 
     return {
         "fuel": {
-            "value": 4.24,
-            "change_pct": calc_change(4.24, BASELINE["fuel"]),
-            "source": "EIA/AAA",
-            "live": False
+            "value": 4.00,
+            "change_pct": calc_change(4.00, BASELINE["fuel"]),
+            "source": "EIA via FRED",
+            "live": False,
+            "note": "Fallback value - live pull via FRED if API key set"
         },
         "ttf": {
             "value": 48.75,
@@ -483,11 +500,11 @@ def get_manual_data():
                 }
             },
             "gas_price_impact": {
-                "current_price": 4.24,
+                "current_price": 4.00,
                 "baseline_price": 2.98,
-                "pct_increase": 42.3,
-                "monthly_cost_increase": 85,
-                "description": "Average household paying $85/month more for gas"
+                "pct_increase": 34.2,
+                "monthly_cost_increase": 40,
+                "description": "Average household paying ~$40/month more for gas"
             },
             "by_party": {
                 "democrat": {
@@ -710,6 +727,24 @@ def main():
 
     # Add manual data
     all_data.update(get_manual_data())
+
+    # Override fuel with live gas_price if fetched from FRED
+    if "gas_price" in all_data and all_data["gas_price"].get("live"):
+        all_data["fuel"] = all_data["gas_price"]
+        # Also update consumer_impact gas_price_impact
+        if "consumer_impact" in all_data:
+            gas_val = all_data["gas_price"]["value"]
+            baseline = BASELINE["fuel"]
+            pct_change = round(((gas_val - baseline) / baseline) * 100, 1)
+            monthly_increase = round((gas_val - baseline) * 40, 0)  # ~40 gallons/month avg
+            all_data["consumer_impact"]["gas_price_impact"] = {
+                "current_price": gas_val,
+                "baseline_price": baseline,
+                "pct_increase": pct_change,
+                "monthly_cost_increase": int(monthly_increase),
+                "description": f"Average household paying ~${int(monthly_increase)}/month more for gas"
+            }
+        print(f"  Updated fuel with live FRED data: ${all_data['fuel']['value']}/gal")
 
     # Save to JSON
     save_data(all_data)
