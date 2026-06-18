@@ -33,9 +33,32 @@ jobs:
         run: python fetch_data.py
 
       - name: Commit and push if changed
+        id: commit
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add data.json
-          git diff --staged --quiet || git commit -m "Auto-update data - $(date -u '+%Y-%m-%d %H:%M UTC')"
-          git push
+          if git diff --staged --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            git commit -m "Auto-update data - $(date -u '+%Y-%m-%d %H:%M UTC')"
+            git push
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Send notification
+        if: steps.commit.outputs.changed == 'true'
+        run: |
+          # Extract key metrics from data.json
+          SP500=$(python -c "import json; d=json.load(open('data.json')); print(f\"{d['metrics']['sp500']['value']:.0f} ({d['metrics']['sp500']['change_pct']:+.1f}%)\")")
+          BRENT=$(python -c "import json; d=json.load(open('data.json')); print(f\"\\${d['metrics']['brent']['value']:.2f} ({d['metrics']['brent']['change_pct']:+.1f}%)\")")
+          GOLD=$(python -c "import json; d=json.load(open('data.json')); print(f\"\\${d['metrics']['gold']['value']:.0f} ({d['metrics']['gold']['change_pct']:+.1f}%)\")")
+          VIX=$(python -c "import json; d=json.load(open('data.json')); print(f\"{d['metrics']['vix']['value']:.1f} ({d['metrics']['vix']['change_pct']:+.1f}%)\")")
+
+          curl -d "Dashboard Updated $(date -u '+%H:%M UTC')
+
+          S&P: $SP500
+          Brent: $BRENT
+          Gold: $GOLD
+          VIX: $VIX" \
+            ntfy.sh/iran-dashboard-updates
