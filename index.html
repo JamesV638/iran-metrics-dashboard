@@ -2124,31 +2124,6 @@
             }
         });
 
-        // Relative time display
-        function updateRelativeTime() {
-            if (!window.dataFetchTime) return;
-            const now = new Date();
-            const diff = Math.floor((now - window.dataFetchTime) / 1000);
-
-            let text;
-            if (diff < 60) {
-                text = 'Just now';
-            } else if (diff < 3600) {
-                const mins = Math.floor(diff / 60);
-                text = `${mins} minute${mins > 1 ? 's' : ''} ago`;
-            } else if (diff < 86400) {
-                const hours = Math.floor(diff / 3600);
-                text = `${hours} hour${hours > 1 ? 's' : ''} ago`;
-            } else {
-                text = window.dataFetchTime.toLocaleString();
-            }
-
-            document.getElementById('lastUpdated').textContent = text;
-        }
-
-        // Update relative time every 30 seconds
-        setInterval(updateRelativeTime, 30000);
-
         // Sector analysis data
         const sectorAnalysis = {
             xlk: {
@@ -2807,10 +2782,6 @@
                 data = jsonData.metrics;
                 if (!data) throw new Error('No metrics in data');
 
-                // Update timestamp with relative time
-                window.dataFetchTime = new Date(jsonData.last_updated);
-                updateRelativeTime();
-
                 // Markets
                 if (data.sp500) updateMetric('sp500', formatNumber(data.sp500.value), data.sp500.change_pct, true);
                 if (data.msci) updateMetric('msci', formatNumber(data.msci.value), data.msci.change_pct, true);
@@ -2900,17 +2871,8 @@
 
             } catch (error) {
                 console.error('Error fetching data:', error);
-                document.getElementById('lastUpdated').textContent = 'Error: ' + error.message;
             }
         }
-
-        async function refreshAllData() {
-            document.getElementById('lastUpdated').textContent = 'Refreshing...';
-            await fetchAndRender();
-        }
-
-        // Auto-refresh every 5 minutes
-        setInterval(refreshAllData, 5 * 60 * 1000);
 
         // Initial load
         document.addEventListener('DOMContentLoaded', fetchAndRender);
