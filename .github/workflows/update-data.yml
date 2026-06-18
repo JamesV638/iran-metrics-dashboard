@@ -49,16 +49,25 @@ jobs:
       - name: Send notification
         if: steps.commit.outputs.changed == 'true'
         run: |
-          # Extract key metrics from data.json
-          SP500=$(python -c "import json; d=json.load(open('data.json')); print(f\"{d['metrics']['sp500']['value']:.0f} ({d['metrics']['sp500']['change_pct']:+.1f}%)\")")
-          BRENT=$(python -c "import json; d=json.load(open('data.json')); print(f\"\\${d['metrics']['brent']['value']:.2f} ({d['metrics']['brent']['change_pct']:+.1f}%)\")")
-          GOLD=$(python -c "import json; d=json.load(open('data.json')); print(f\"\\${d['metrics']['gold']['value']:.0f} ({d['metrics']['gold']['change_pct']:+.1f}%)\")")
-          VIX=$(python -c "import json; d=json.load(open('data.json')); print(f\"{d['metrics']['vix']['value']:.1f} ({d['metrics']['vix']['change_pct']:+.1f}%)\")")
+          python << 'PYEOF'
+          import json
+          import subprocess
+          from datetime import datetime
 
-          curl -d "Dashboard Updated $(date -u '+%H:%M UTC')
+          d = json.load(open('data.json'))
+          m = d['metrics']
 
-          S&P: $SP500
-          Brent: $BRENT
-          Gold: $GOLD
-          VIX: $VIX" \
-            ntfy.sh/iran-dashboard-updates
+          sp500 = f"{m['sp500']['value']:.0f} ({m['sp500']['change_pct']:+.1f}%)"
+          brent = f"${m['brent']['value']:.2f} ({m['brent']['change_pct']:+.1f}%)"
+          gold = f"${m['gold']['value']:.0f} ({m['gold']['change_pct']:+.1f}%)"
+          vix = f"{m['vix']['value']:.1f} ({m['vix']['change_pct']:+.1f}%)"
+
+          msg = f"""Dashboard Updated {datetime.utcnow().strftime('%H:%M UTC')}
+
+          S&P: {sp500}
+          Brent: {brent}
+          Gold: {gold}
+          VIX: {vix}"""
+
+          subprocess.run(['curl', '-d', msg, 'ntfy.sh/iran-dashboard-updates'])
+          PYEOF
