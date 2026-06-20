@@ -426,10 +426,11 @@ def get_manual_data():
         },
         # Peace deal status
         "peace_deal": {
-            "status": "MoU Signed",
+            "status": "At Risk",
             "announced": "June 14, 2026",
             "signed": "June 15, 2026",
             "formal_signing": "June 19, 2026 (Switzerland)",
+            "latest": "Iran claims Hormuz re-closed June 19 over Israel-Lebanon strikes. Vance disputes closure.",
             "key_terms": [
                 "60-day ceasefire and nuclear talks",
                 "Strait of Hormuz reopening",
@@ -440,10 +441,10 @@ def get_manual_data():
                 "Nuclear enrichment limits",
                 "HEU stockpile disposition",
                 "Sanctions relief sequence",
-                "Israel-Lebanon tensions (ongoing)"
+                "Israel-Lebanon tensions (escalating)"
             ],
             "mediators": ["Pakistan", "Oman"],
-            "source": "CNN, NPR, Atlantic Council",
+            "source": "Times of Israel, CNN",
             "live": False
         },
         # Consumer sentiment comprehensive data (from U of M reports - manual update)
@@ -560,10 +561,10 @@ def get_manual_data():
                 "live": False
             },
             "strait_of_hormuz": {
-                "status": "reopening",
-                "change": "Opening June 19",
+                "status": "disputed",
+                "change": "Iran claims re-closed June 19",
                 "impact": "20% of global oil, 25% of LNG transits",
-                "notes": "Peace deal signed June 14. Formal reopening June 19. Oil down 5% on news. Full normalization depends on deal implementation.",
+                "notes": "Iran says Hormuz closed again over Israel strikes in Lebanon, citing 'breach of promise.' Vance says 'no evidence' strait is closed. Peace deal status uncertain. ~550 vessels stranded.",
                 "affected_industries": ["Energy", "Shipping", "All sectors"],
                 "live": False
             },
