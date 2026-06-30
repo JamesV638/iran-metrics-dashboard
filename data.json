@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-30T21:00:20.862082",
+  "last_updated": "2026-06-30T22:22:50.699865",
   "baseline_date": "2026-02-27",
   "metrics": {
     "sp500": {
@@ -16,20 +16,20 @@
       "live": true
     },
     "brent": {
-      "value": 73.42,
-      "change_pct": 8.18,
+      "value": 73.38,
+      "change_pct": 8.12,
       "source": "Yahoo Finance",
       "live": true
     },
     "wti": {
-      "value": 70.06,
-      "change_pct": 4.57,
+      "value": 69.98,
+      "change_pct": 4.45,
       "source": "Yahoo Finance",
       "live": true
     },
     "henryhub": {
       "value": 3.26,
-      "change_pct": 3.37,
+      "change_pct": 3.33,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -46,14 +46,14 @@
       "live": true
     },
     "gold": {
-      "value": 4025.5,
-      "change_pct": 41.25,
+      "value": 4029.1,
+      "change_pct": 41.37,
       "source": "Yahoo Finance",
       "live": true
     },
     "copper": {
       "value": 6.25,
-      "change_pct": 47.05,
+      "change_pct": 47.06,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -4888,9 +4888,9 @@
         "symbol": "ALI=F",
         "name": "Aluminum",
         "category": "metals",
-        "price": 3265.75,
+        "price": 3269.25,
         "baseline": 2450.0,
-        "change_pct": 33.3,
+        "change_pct": 33.44,
         "status": "stressed",
         "unit": "$/ton",
         "live": true
