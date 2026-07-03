@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-02T21:15:33.922733",
+  "last_updated": "2026-07-03T15:15:08.245185",
   "baseline_date": "2026-02-27",
   "metrics": {
     "sp500": {
@@ -16,26 +16,26 @@
       "live": true
     },
     "brent": {
-      "value": 71.54,
-      "change_pct": 5.41,
+      "value": 71.94,
+      "change_pct": 6.0,
       "source": "Yahoo Finance",
       "live": true
     },
     "wti": {
-      "value": 68.46,
-      "change_pct": 2.18,
+      "value": 68.62,
+      "change_pct": 2.42,
       "source": "Yahoo Finance",
       "live": true
     },
     "henryhub": {
-      "value": 3.2,
-      "change_pct": 1.75,
+      "value": 3.23,
+      "change_pct": 2.7,
       "source": "Yahoo Finance",
       "live": true
     },
     "vix": {
-      "value": 16.15,
-      "change_pct": 7.67,
+      "value": 15.8,
+      "change_pct": 5.33,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -46,20 +46,20 @@
       "live": true
     },
     "gold": {
-      "value": 4135.5,
-      "change_pct": 45.11,
+      "value": 4184.0,
+      "change_pct": 46.81,
       "source": "Yahoo Finance",
       "live": true
     },
     "copper": {
-      "value": 6.18,
-      "change_pct": 45.31,
+      "value": 6.22,
+      "change_pct": 46.47,
       "source": "Yahoo Finance",
       "live": true
     },
     "wheat": {
-      "value": 600.25,
-      "change_pct": 4.39,
+      "value": 590.5,
+      "change_pct": 2.7,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -506,7 +506,7 @@
           {
             "date": "2026-07-02",
             "close": 180.59,
-            "volume": 13803178
+            "volume": 14173100
           }
         ],
         "week_change": -0.29,
@@ -954,7 +954,7 @@
           {
             "date": "2026-07-02",
             "close": 53.22,
-            "volume": 28458319
+            "volume": 28525600
           }
         ],
         "week_change": -1.15,
@@ -1402,7 +1402,7 @@
           {
             "date": "2026-07-02",
             "close": 55.62,
-            "volume": 46234687
+            "volume": 46246100
           }
         ],
         "week_change": 3.83,
@@ -1850,7 +1850,7 @@
           {
             "date": "2026-07-02",
             "close": 163.74,
-            "volume": 12372405
+            "volume": 14719400
           }
         ],
         "week_change": 2.12,
@@ -2298,7 +2298,7 @@
           {
             "date": "2026-07-02",
             "close": 117.12,
-            "volume": 10804958
+            "volume": 10882400
           }
         ],
         "week_change": 2.4,
@@ -2746,7 +2746,7 @@
           {
             "date": "2026-07-02",
             "close": 84.99,
-            "volume": 15703382
+            "volume": 16704700
           }
         ],
         "week_change": 0.33,
@@ -3194,7 +3194,7 @@
           {
             "date": "2026-07-02",
             "close": 183.91,
-            "volume": 6530693
+            "volume": 6530800
           }
         ],
         "week_change": 1.5,
@@ -3642,7 +3642,7 @@
           {
             "date": "2026-07-02",
             "close": 52.01,
-            "volume": 10969358
+            "volume": 12373700
           }
         ],
         "week_change": 0.79,
@@ -4090,7 +4090,7 @@
           {
             "date": "2026-07-02",
             "close": 45.76,
-            "volume": 24231010
+            "volume": 24327900
           }
         ],
         "week_change": -0.95,
@@ -4538,7 +4538,7 @@
           {
             "date": "2026-07-02",
             "close": 44.68,
-            "volume": 5442945
+            "volume": 5502500
           }
         ],
         "week_change": -1.24,
@@ -4986,7 +4986,7 @@
           {
             "date": "2026-07-02",
             "close": 109.6,
-            "volume": 7569403
+            "volume": 8388900
           }
         ],
         "week_change": 3.22,
@@ -4998,9 +4998,9 @@
         "symbol": "ALI=F",
         "name": "Aluminum",
         "category": "metals",
-        "price": 3254.0,
+        "price": 3255.0,
         "baseline": 2450.0,
-        "change_pct": 32.82,
+        "change_pct": 32.86,
         "status": "stressed",
         "unit": "$/ton",
         "live": true
@@ -6299,7 +6299,7 @@
           "docs": "https://siliconanalysts.com/developers",
           "freshness": {
             "cadence": "Mon/Wed/Fri \u2014 HBM qualification & market refresh runs 09:00 UTC on those days.",
-            "next_refresh": "2026-07-03T09:00:00.000Z",
+            "next_refresh": "2026-07-06T09:00:00.000Z",
             "delta_check": "https://siliconanalysts.com/api/v1/changes?window=7d \u2014 the cheap way to stay current. An empty movements list means nothing moved past its significance threshold: that is signal, not staleness."
           }
         }
