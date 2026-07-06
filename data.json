@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-06T20:58:13.742650",
+  "last_updated": "2026-07-06T22:21:38.807908",
   "baseline_date": "2026-02-27",
   "metrics": {
     "sp500": {
@@ -16,20 +16,20 @@
       "live": true
     },
     "brent": {
-      "value": 72.06,
-      "change_pct": 6.17,
+      "value": 72.13,
+      "change_pct": 6.28,
       "source": "Yahoo Finance",
       "live": true
     },
     "wti": {
-      "value": 68.66,
-      "change_pct": 2.48,
+      "value": 68.67,
+      "change_pct": 2.49,
       "source": "Yahoo Finance",
       "live": true
     },
     "henryhub": {
       "value": 3.25,
-      "change_pct": 3.11,
+      "change_pct": 3.21,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -46,14 +46,14 @@
       "live": true
     },
     "gold": {
-      "value": 4174.7,
-      "change_pct": 46.48,
+      "value": 4176.1,
+      "change_pct": 46.53,
       "source": "Yahoo Finance",
       "live": true
     },
     "copper": {
-      "value": 6.25,
-      "change_pct": 47.12,
+      "value": 6.26,
+      "change_pct": 47.19,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -964,7 +964,7 @@
           {
             "date": "2026-07-06",
             "close": 53.13,
-            "volume": 24699649
+            "volume": 24700758
           }
         ],
         "week_change": -0.84,
@@ -1870,7 +1870,7 @@
           {
             "date": "2026-07-06",
             "close": 161.96,
-            "volume": 15629308
+            "volume": 15642679
           }
         ],
         "week_change": 0.76,
@@ -5041,7 +5041,7 @@
           {
             "date": "2026-07-06",
             "close": 110.21,
-            "volume": 8938645
+            "volume": 8938710
           }
         ],
         "week_change": 2.16,
