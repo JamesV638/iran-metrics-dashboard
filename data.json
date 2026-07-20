@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-20T20:26:08.243552",
+  "last_updated": "2026-07-20T22:05:34.811659",
   "baseline_date": "2026-02-27",
   "metrics": {
     "sp500": {
@@ -16,8 +16,8 @@
       "live": true
     },
     "brent": {
-      "value": 88.9,
-      "change_pct": 30.99,
+      "value": 88.92,
+      "change_pct": 31.02,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -29,13 +29,13 @@
     },
     "henryhub": {
       "value": 2.84,
-      "change_pct": -9.87,
+      "change_pct": -9.94,
       "source": "Yahoo Finance",
       "live": true
     },
     "vix": {
-      "value": 18.68,
-      "change_pct": 24.53,
+      "value": 18.65,
+      "change_pct": 24.33,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -46,14 +46,14 @@
       "live": true
     },
     "gold": {
-      "value": 4011.3,
-      "change_pct": 40.75,
+      "value": 4011.8,
+      "change_pct": 40.76,
       "source": "Yahoo Finance",
       "live": true
     },
     "copper": {
       "value": 6.34,
-      "change_pct": 49.18,
+      "change_pct": 49.19,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -531,9 +531,9 @@
         "symbol": "XLE",
         "name": "Energy",
         "industries": "Oil & Gas, Energy Equipment",
-        "price": 57.96,
+        "price": 57.94,
         "baseline": 42.3,
-        "change_pct": 37.02,
+        "change_pct": 36.97,
         "live": true,
         "history": [
           {
@@ -983,12 +983,12 @@
           },
           {
             "date": "2026-07-20",
-            "close": 57.96,
-            "volume": 27214897
+            "close": 57.94,
+            "volume": 27309535
           }
         ],
-        "week_change": 1.77,
-        "month_change": 6.78
+        "week_change": 1.74,
+        "month_change": 6.74
       },
       "xlf": {
         "symbol": "XLF",
@@ -1447,7 +1447,7 @@
           {
             "date": "2026-07-20",
             "close": 56.04,
-            "volume": 36990102
+            "volume": 37198969
           }
         ],
         "week_change": -0.25,
@@ -3762,7 +3762,7 @@
           {
             "date": "2026-07-20",
             "close": 50.03,
-            "volume": 9816413
+            "volume": 10674717
           }
         ],
         "week_change": -1.2,
@@ -4225,7 +4225,7 @@
           {
             "date": "2026-07-20",
             "close": 44.94,
-            "volume": 16617035
+            "volume": 17824569
           }
         ],
         "week_change": -1.64,
@@ -5185,9 +5185,9 @@
         "symbol": "URA",
         "name": "Uranium (ETF)",
         "category": "energy",
-        "price": 38.64,
+        "price": 38.67,
         "baseline": 28.5,
-        "change_pct": 35.58,
+        "change_pct": 35.68,
         "status": "elevated",
         "unit": "$",
         "live": true
