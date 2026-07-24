@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-24T20:24:40.380793",
+  "last_updated": "2026-07-24T22:10:11.961138",
   "baseline_date": "2026-02-27",
   "metrics": {
     "sp500": {
@@ -16,26 +16,26 @@
       "live": true
     },
     "brent": {
-      "value": 98.02,
-      "change_pct": 44.42,
+      "value": 98.38,
+      "change_pct": 44.95,
       "source": "Yahoo Finance",
       "live": true
     },
     "wti": {
-      "value": 90.13,
-      "change_pct": 34.52,
+      "value": 90.47,
+      "change_pct": 35.03,
       "source": "Yahoo Finance",
       "live": true
     },
     "henryhub": {
-      "value": 2.9,
-      "change_pct": -8.06,
+      "value": 2.91,
+      "change_pct": -7.68,
       "source": "Yahoo Finance",
       "live": true
     },
     "vix": {
-      "value": 18.63,
-      "change_pct": 24.2,
+      "value": 18.58,
+      "change_pct": 23.87,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -46,14 +46,14 @@
       "live": true
     },
     "gold": {
-      "value": 4054.8,
-      "change_pct": 42.27,
+      "value": 4055.7,
+      "change_pct": 42.31,
       "source": "Yahoo Finance",
       "live": true
     },
     "copper": {
-      "value": 6.33,
-      "change_pct": 49.0,
+      "value": 6.34,
+      "change_pct": 49.16,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -521,7 +521,7 @@
           {
             "date": "2026-07-24",
             "close": 175.88,
-            "volume": 7573296
+            "volume": 7725125
           }
         ],
         "week_change": 0.1,
@@ -3299,7 +3299,7 @@
           {
             "date": "2026-07-24",
             "close": 182.66,
-            "volume": 5474504
+            "volume": 5502865
           }
         ],
         "week_change": 2.55,
@@ -4688,7 +4688,7 @@
           {
             "date": "2026-07-24",
             "close": 45.95,
-            "volume": 4711021
+            "volume": 4719561
           }
         ],
         "week_change": 1.59,
@@ -5151,7 +5151,7 @@
           {
             "date": "2026-07-24",
             "close": 106.3,
-            "volume": 6142439
+            "volume": 6143968
           }
         ],
         "week_change": -4.06,
