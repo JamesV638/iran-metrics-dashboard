@@ -1,65 +1,65 @@
 {
-  "last_updated": "2026-08-17T13:42:59.115559",
+  "last_updated": "2026-08-17T14:33:46.970308",
   "baseline_date": "2026-02-27",
   "metrics": {
     "sp500": {
-      "value": 7776.71,
-      "change_pct": 13.08,
+      "value": 7775.59,
+      "change_pct": 13.06,
       "source": "Yahoo Finance",
       "live": true
     },
     "msci": {
-      "value": 5115.73,
-      "etf_price": 211.04,
-      "change_pct": 12.28,
+      "value": 5116.7,
+      "etf_price": 211.09,
+      "change_pct": 12.3,
       "source": "Yahoo Finance (URTH)",
       "live": true
     },
     "brent": {
-      "value": 89.04,
-      "change_pct": 31.19,
+      "value": 88.57,
+      "change_pct": 30.5,
       "source": "Yahoo Finance",
       "live": true
     },
     "wti": {
-      "value": 82.76,
-      "change_pct": 23.52,
+      "value": 82.26,
+      "change_pct": 22.78,
       "source": "Yahoo Finance",
       "live": true
     },
     "henryhub": {
-      "value": 2.69,
-      "change_pct": -14.6,
+      "value": 2.71,
+      "change_pct": -14.03,
       "source": "Yahoo Finance",
       "live": true
     },
     "vix": {
-      "value": 15.03,
-      "change_pct": 0.2,
+      "value": 14.96,
+      "change_pct": -0.27,
       "source": "Yahoo Finance",
       "live": true
     },
     "treasury": {
       "value": 4.7,
-      "change_pct": 10.68,
+      "change_pct": 10.59,
       "source": "Yahoo Finance",
       "live": true
     },
     "gold": {
-      "value": 4442.9,
-      "change_pct": 55.89,
+      "value": 4481.9,
+      "change_pct": 57.26,
       "source": "Yahoo Finance",
       "live": true
     },
     "copper": {
-      "value": 6.6,
-      "change_pct": 55.29,
+      "value": 6.61,
+      "change_pct": 55.47,
       "source": "Yahoo Finance",
       "live": true
     },
     "wheat": {
-      "value": 682.0,
-      "change_pct": 18.61,
+      "value": 688.0,
+      "change_pct": 19.65,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -68,9 +68,9 @@
         "symbol": "XLK",
         "name": "Technology",
         "industries": "Semiconductors, Software, Hardware",
-        "price": 190.7,
+        "price": 190.81,
         "baseline": 210.5,
-        "change_pct": -9.41,
+        "change_pct": -9.35,
         "live": true,
         "history": [
           {
@@ -520,20 +520,20 @@
           },
           {
             "date": "2026-08-17",
-            "close": 190.7,
-            "volume": 864582
+            "close": 190.81,
+            "volume": 1886839
           }
         ],
-        "week_change": 2.48,
-        "month_change": 8.61
+        "week_change": 2.54,
+        "month_change": 8.67
       },
       "xle": {
         "symbol": "XLE",
         "name": "Energy",
         "industries": "Oil & Gas, Energy Equipment",
-        "price": 62.1,
+        "price": 62.37,
         "baseline": 42.3,
-        "change_pct": 46.81,
+        "change_pct": 47.45,
         "live": true,
         "history": [
           {
@@ -983,20 +983,20 @@
           },
           {
             "date": "2026-08-17",
-            "close": 62.1,
-            "volume": 2215841
+            "close": 62.37,
+            "volume": 5580893
           }
         ],
-        "week_change": 1.92,
-        "month_change": 7.66
+        "week_change": 2.36,
+        "month_change": 8.13
       },
       "xlf": {
         "symbol": "XLF",
         "name": "Financials",
         "industries": "Banks, Insurance, Capital Markets",
-        "price": 58.22,
+        "price": 58.04,
         "baseline": 48.2,
-        "change_pct": 20.79,
+        "change_pct": 20.43,
         "live": true,
         "history": [
           {
@@ -1446,20 +1446,20 @@
           },
           {
             "date": "2026-08-17",
-            "close": 58.22,
-            "volume": 1859817
+            "close": 58.04,
+            "volume": 5811299
           }
         ],
-        "week_change": 0.73,
-        "month_change": 3.48
+        "week_change": 0.42,
+        "month_change": 3.17
       },
       "xlv": {
         "symbol": "XLV",
         "name": "Health Care",
         "industries": "Pharma, Biotech, Medical Devices",
-        "price": 166.38,
+        "price": 167.8,
         "baseline": 145.8,
-        "change_pct": 14.12,
+        "change_pct": 15.09,
         "live": true,
         "history": [
           {
@@ -1909,20 +1909,20 @@
           },
           {
             "date": "2026-08-17",
-            "close": 166.38,
-            "volume": 946376
+            "close": 167.8,
+            "volume": 2082971
           }
         ],
-        "week_change": -0.97,
-        "month_change": 3.29
+        "week_change": -0.12,
+        "month_change": 4.17
       },
       "xly": {
         "symbol": "XLY",
         "name": "Consumer Discretionary",
         "industries": "Retail, Autos, Hotels",
-        "price": 117.5,
+        "price": 117.28,
         "baseline": 195.4,
-        "change_pct": -39.87,
+        "change_pct": -39.98,
         "live": true,
         "history": [
           {
@@ -2372,20 +2372,20 @@
           },
           {
             "date": "2026-08-17",
-            "close": 117.5,
-            "volume": 475913
+            "close": 117.28,
+            "volume": 1298002
           }
         ],
-        "week_change": -1.46,
-        "month_change": 1.78
+        "week_change": -1.64,
+        "month_change": 1.59
       },
       "xlp": {
         "symbol": "XLP",
         "name": "Consumer Staples",
         "industries": "Food, Beverages, Household",
-        "price": 85.28,
+        "price": 85.32,
         "baseline": 78.5,
-        "change_pct": 8.64,
+        "change_pct": 8.68,
         "live": true,
         "history": [
           {
@@ -2835,20 +2835,20 @@
           },
           {
             "date": "2026-08-17",
-            "close": 85.28,
-            "volume": 718750
+            "close": 85.32,
+            "volume": 2471223
           }
         ],
-        "week_change": 0.7,
-        "month_change": 0.11
+        "week_change": 0.74,
+        "month_change": 0.15
       },
       "xli": {
         "symbol": "XLI",
         "name": "Industrials",
         "industries": "Aerospace, Defense, Machinery",
-        "price": 186.8,
+        "price": 186.82,
         "baseline": 168.3,
-        "change_pct": 10.99,
+        "change_pct": 11.0,
         "live": true,
         "history": [
           {
@@ -3298,20 +3298,20 @@
           },
           {
             "date": "2026-08-17",
-            "close": 186.8,
-            "volume": 307571
+            "close": 186.82,
+            "volume": 1319033
           }
         ],
-        "week_change": 0.59,
-        "month_change": 4.12
+        "week_change": 0.6,
+        "month_change": 4.13
       },
       "xlb": {
         "symbol": "XLB",
         "name": "Materials",
         "industries": "Chemicals, Metals, Mining",
-        "price": 52.2,
+        "price": 52.33,
         "baseline": 82.4,
-        "change_pct": -36.65,
+        "change_pct": -36.5,
         "live": true,
         "history": [
           {
@@ -3761,20 +3761,20 @@
           },
           {
             "date": "2026-08-17",
-            "close": 52.2,
-            "volume": 1150636
+            "close": 52.33,
+            "volume": 2288980
           }
         ],
-        "week_change": -1.95,
-        "month_change": 3.3
+        "week_change": -1.72,
+        "month_change": 3.55
       },
       "xlu": {
         "symbol": "XLU",
         "name": "Utilities",
         "industries": "Electric, Gas, Water",
-        "price": 44.16,
+        "price": 44.1,
         "baseline": 68.9,
-        "change_pct": -35.91,
+        "change_pct": -36.0,
         "live": true,
         "history": [
           {
@@ -4224,27 +4224,22 @@
           },
           {
             "date": "2026-08-17",
-            "close": 44.16,
-            "volume": 1156616
+            "close": 44.1,
+            "volume": 3518104
           }
         ],
-        "week_change": 1.21,
-        "month_change": -2.24
+        "week_change": 1.07,
+        "month_change": -2.38
       },
       "xlre": {
         "symbol": "XLRE",
         "name": "Real Estate",
         "industries": "REITs, Property Management",
-        "price": 45.04,
+        "price": 44.93,
         "baseline": 42.1,
-        "change_pct": 6.98,
+        "change_pct": 6.71,
         "live": true,
         "history": [
-          {
-            "date": "2026-04-08",
-            "close": 42.07,
-            "volume": 5836500
-          },
           {
             "date": "2026-04-09",
             "close": 42.36,
@@ -4671,6 +4666,11 @@
             "volume": 5294800
           },
           {
+            "date": "2026-08-11",
+            "close": 44.08,
+            "volume": 5552300
+          },
+          {
             "date": "2026-08-12",
             "close": 44.49,
             "volume": 4723500
@@ -4687,27 +4687,22 @@
           },
           {
             "date": "2026-08-17",
-            "close": 45.04,
-            "volume": 456904
+            "close": 44.93,
+            "volume": 2314955
           }
         ],
-        "week_change": 1.44,
-        "month_change": -0.92
+        "week_change": 1.92,
+        "month_change": -1.09
       },
       "xlc": {
         "symbol": "XLC",
         "name": "Communication Services",
         "industries": "Media, Telecom, Entertainment",
-        "price": 112.43,
+        "price": 111.98,
         "baseline": 82.7,
-        "change_pct": 35.95,
+        "change_pct": 35.41,
         "live": true,
         "history": [
-          {
-            "date": "2026-04-08",
-            "close": 113.51,
-            "volume": 4579400
-          },
           {
             "date": "2026-04-09",
             "close": 113.97,
@@ -5134,6 +5129,11 @@
             "volume": 4257000
           },
           {
+            "date": "2026-08-11",
+            "close": 111.27,
+            "volume": 3383300
+          },
+          {
             "date": "2026-08-12",
             "close": 110.27,
             "volume": 5534200
@@ -5150,12 +5150,12 @@
           },
           {
             "date": "2026-08-17",
-            "close": 112.43,
-            "volume": 198620
+            "close": 111.98,
+            "volume": 510032
           }
         ],
-        "week_change": 0.54,
-        "month_change": -0.2
+        "week_change": 0.64,
+        "month_change": 1.2
       }
     },
     "supply_chain_live": {
@@ -5163,9 +5163,9 @@
         "symbol": "ALI=F",
         "name": "Aluminum",
         "category": "metals",
-        "price": 3429.75,
+        "price": 3444.75,
         "baseline": 2450.0,
-        "change_pct": 39.99,
+        "change_pct": 40.6,
         "status": "elevated",
         "unit": "$/ton",
         "live": true
@@ -5174,9 +5174,9 @@
         "symbol": "^SPGSIN",
         "name": "Nickel",
         "category": "metals",
-        "price": 612.85,
+        "price": 614.83,
         "baseline": 16500.0,
-        "change_pct": -96.29,
+        "change_pct": -96.27,
         "status": "easing",
         "unit": "$/ton",
         "live": true
@@ -5185,9 +5185,9 @@
         "symbol": "URA",
         "name": "Uranium (ETF)",
         "category": "energy",
-        "price": 45.09,
+        "price": 45.51,
         "baseline": 28.5,
-        "change_pct": 58.21,
+        "change_pct": 59.68,
         "status": "elevated",
         "unit": "$",
         "live": true
@@ -5196,9 +5196,9 @@
         "symbol": "LIT",
         "name": "Lithium (ETF)",
         "category": "battery",
-        "price": 76.18,
+        "price": 76.25,
         "baseline": 42.0,
-        "change_pct": 81.37,
+        "change_pct": 81.54,
         "status": "critical",
         "unit": "$",
         "live": true
@@ -5218,9 +5218,9 @@
         "symbol": "MOS",
         "name": "Fertilizers (Mosaic)",
         "category": "agriculture",
-        "price": 21.47,
+        "price": 21.05,
         "baseline": 48.0,
-        "change_pct": -55.27,
+        "change_pct": -56.16,
         "status": "easing",
         "unit": "$",
         "live": true
@@ -5229,9 +5229,9 @@
         "symbol": "REMX",
         "name": "Rare Earth Metals",
         "category": "metals",
-        "price": 79.04,
+        "price": 79.08,
         "baseline": 68.0,
-        "change_pct": 16.24,
+        "change_pct": 16.29,
         "status": "stressed",
         "unit": "$",
         "live": true
@@ -5240,9 +5240,9 @@
         "symbol": "SLX",
         "name": "Steel",
         "category": "metals",
-        "price": 107.96,
+        "price": 107.9,
         "baseline": 78.0,
-        "change_pct": 38.41,
+        "change_pct": 38.33,
         "status": "elevated",
         "unit": "$",
         "live": true
@@ -5251,9 +5251,9 @@
         "symbol": "DBA",
         "name": "Agriculture",
         "category": "agriculture",
-        "price": 27.96,
+        "price": 28.08,
         "baseline": 22.5,
-        "change_pct": 24.26,
+        "change_pct": 24.82,
         "status": "stressed",
         "unit": "$",
         "live": true
@@ -5262,8 +5262,8 @@
         "symbol": "SOYB",
         "name": "Soybeans (ETF)",
         "category": "agriculture",
-        "price": 25.5,
-        "baseline": 25.50200080871582,
+        "price": 25.6,
+        "baseline": 25.600900650024414,
         "change_pct": 0.0,
         "status": "stable",
         "unit": "$",
@@ -5273,8 +5273,8 @@
         "symbol": "CORN",
         "name": "Corn (ETF)",
         "category": "agriculture",
-        "price": 18.3,
-        "baseline": 18.299999237060547,
+        "price": 18.35,
+        "baseline": 18.354999542236328,
         "change_pct": 0.0,
         "status": "stable",
         "unit": "$",
@@ -5284,8 +5284,8 @@
         "symbol": "PALL",
         "name": "Palladium",
         "category": "metals",
-        "price": 24.08,
-        "baseline": 24.079999923706055,
+        "price": 24.22,
+        "baseline": 24.222000122070312,
         "change_pct": 0.0,
         "status": "stable",
         "unit": "$",
@@ -5295,8 +5295,8 @@
         "symbol": "PPLT",
         "name": "Platinum",
         "category": "metals",
-        "price": 15.97,
-        "baseline": 15.974800109863281,
+        "price": 16.1,
+        "baseline": 16.099899291992188,
         "change_pct": 0.0,
         "status": "stable",
         "unit": "$",
