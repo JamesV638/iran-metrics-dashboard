@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-01T20:52:55.060054",
+  "last_updated": "2026-09-01T23:12:17.442031",
   "baseline_date": "2026-02-27",
   "metrics": {
     "sp500": {
@@ -16,20 +16,20 @@
       "live": true
     },
     "brent": {
-      "value": 95.03,
-      "change_pct": 40.02,
+      "value": 95.3,
+      "change_pct": 40.42,
       "source": "Yahoo Finance",
       "live": true
     },
     "wti": {
-      "value": 90.54,
-      "change_pct": 35.13,
+      "value": 90.82,
+      "change_pct": 35.55,
       "source": "Yahoo Finance",
       "live": true
     },
     "henryhub": {
-      "value": 2.95,
-      "change_pct": -6.41,
+      "value": 2.96,
+      "change_pct": -6.13,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -46,8 +46,8 @@
       "live": true
     },
     "gold": {
-      "value": 4376.4,
-      "change_pct": 53.56,
+      "value": 4374.0,
+      "change_pct": 53.47,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -73,6 +73,11 @@
         "change_pct": -12.76,
         "live": true,
         "history": [
+          {
+            "date": "2026-04-23",
+            "close": 155.65,
+            "volume": 12151400
+          },
           {
             "date": "2026-04-24",
             "close": 160.03,
@@ -509,11 +514,6 @@
             "volume": 8136000
           },
           {
-            "date": "2026-08-28",
-            "close": 185.69,
-            "volume": 6300200
-          },
-          {
             "date": "2026-08-31",
             "close": 186.5,
             "volume": 4874800
@@ -521,11 +521,11 @@
           {
             "date": "2026-09-01",
             "close": 183.64,
-            "volume": 7552161
+            "volume": 7555296
           }
         ],
-        "week_change": 0.44,
-        "month_change": 3.15
+        "week_change": 1.05,
+        "month_change": 4.73
       },
       "xle": {
         "symbol": "XLE",
@@ -984,7 +984,7 @@
           {
             "date": "2026-09-01",
             "close": 64.77,
-            "volume": 33005667
+            "volume": 33074746
           }
         ],
         "week_change": 3.75,
@@ -1447,7 +1447,7 @@
           {
             "date": "2026-09-01",
             "close": 57.2,
-            "volume": 32295091
+            "volume": 32355532
           }
         ],
         "week_change": -1.82,
@@ -1910,7 +1910,7 @@
           {
             "date": "2026-09-01",
             "close": 171.67,
-            "volume": 7589292
+            "volume": 7813853
           }
         ],
         "week_change": -1.08,
@@ -1925,6 +1925,11 @@
         "change_pct": -41.36,
         "live": true,
         "history": [
+          {
+            "date": "2026-04-23",
+            "close": 117.51,
+            "volume": 7530900
+          },
           {
             "date": "2026-04-24",
             "close": 118.45,
@@ -2361,11 +2366,6 @@
             "volume": 5231500
           },
           {
-            "date": "2026-08-28",
-            "close": 117.21,
-            "volume": 4505600
-          },
-          {
             "date": "2026-08-31",
             "close": 116.59,
             "volume": 4912700
@@ -2373,11 +2373,11 @@
           {
             "date": "2026-09-01",
             "close": 114.59,
-            "volume": 5868562
+            "volume": 5870171
           }
         ],
-        "week_change": -2.19,
-        "month_change": -3.06
+        "week_change": -2.85,
+        "month_change": -1.29
       },
       "xlp": {
         "symbol": "XLP",
@@ -2388,6 +2388,11 @@
         "change_pct": 8.6,
         "live": true,
         "history": [
+          {
+            "date": "2026-04-23",
+            "close": 82.9,
+            "volume": 12354400
+          },
           {
             "date": "2026-04-24",
             "close": 82.66,
@@ -2824,11 +2829,6 @@
             "volume": 8492100
           },
           {
-            "date": "2026-08-28",
-            "close": 85.45,
-            "volume": 6807200
-          },
-          {
             "date": "2026-08-31",
             "close": 84.98,
             "volume": 7012600
@@ -2836,11 +2836,11 @@
           {
             "date": "2026-09-01",
             "close": 85.25,
-            "volume": 9233332
+            "volume": 9238776
           }
         ],
-        "week_change": -1.18,
-        "month_change": 0.46
+        "week_change": -1.47,
+        "month_change": 0.24
       },
       "xli": {
         "symbol": "XLI",
@@ -2851,6 +2851,11 @@
         "change_pct": 2.63,
         "live": true,
         "history": [
+          {
+            "date": "2026-04-23",
+            "close": 173.64,
+            "volume": 14418800
+          },
           {
             "date": "2026-04-24",
             "close": 172.05,
@@ -3287,11 +3292,6 @@
             "volume": 5464700
           },
           {
-            "date": "2026-08-28",
-            "close": 177.14,
-            "volume": 8234400
-          },
-          {
             "date": "2026-08-31",
             "close": 175.13,
             "volume": 7362100
@@ -3299,11 +3299,11 @@
           {
             "date": "2026-09-01",
             "close": 172.73,
-            "volume": 8911784
+            "volume": 9112323
           }
         ],
-        "week_change": -4.22,
-        "month_change": -5.69
+        "week_change": -3.18,
+        "month_change": -3.95
       },
       "xlb": {
         "symbol": "XLB",
@@ -3314,6 +3314,11 @@
         "change_pct": -36.81,
         "live": true,
         "history": [
+          {
+            "date": "2026-04-23",
+            "close": 51.62,
+            "volume": 13728200
+          },
           {
             "date": "2026-04-24",
             "close": 51.73,
@@ -3750,11 +3755,6 @@
             "volume": 7784600
           },
           {
-            "date": "2026-08-28",
-            "close": 53.18,
-            "volume": 13594400
-          },
-          {
             "date": "2026-08-31",
             "close": 52.69,
             "volume": 12112700
@@ -3762,11 +3762,11 @@
           {
             "date": "2026-09-01",
             "close": 52.07,
-            "volume": 15469271
+            "volume": 15475252
           }
         ],
-        "week_change": -2.98,
-        "month_change": 2.08
+        "week_change": -2.82,
+        "month_change": 3.25
       },
       "xlu": {
         "symbol": "XLU",
@@ -3777,6 +3777,11 @@
         "change_pct": -38.23,
         "live": true,
         "history": [
+          {
+            "date": "2026-04-23",
+            "close": 45.8,
+            "volume": 23864300
+          },
           {
             "date": "2026-04-24",
             "close": 45.89,
@@ -4213,11 +4218,6 @@
             "volume": 16033500
           },
           {
-            "date": "2026-08-28",
-            "close": 42.73,
-            "volume": 20360500
-          },
-          {
             "date": "2026-08-31",
             "close": 42.23,
             "volume": 31622300
@@ -4225,11 +4225,11 @@
           {
             "date": "2026-09-01",
             "close": 42.56,
-            "volume": 30594895
+            "volume": 30607780
           }
         ],
-        "week_change": -2.18,
-        "month_change": -4.06
+        "week_change": -1.73,
+        "month_change": -4.04
       },
       "xlre": {
         "symbol": "XLRE",
@@ -4688,7 +4688,7 @@
           {
             "date": "2026-09-01",
             "close": 44.04,
-            "volume": 6694392
+            "volume": 6730934
           }
         ],
         "week_change": -2.33,
@@ -4703,6 +4703,11 @@
         "change_pct": 34.07,
         "live": true,
         "history": [
+          {
+            "date": "2026-04-23",
+            "close": 117.09,
+            "volume": 3503600
+          },
           {
             "date": "2026-04-24",
             "close": 115.24,
@@ -5139,11 +5144,6 @@
             "volume": 4425600
           },
           {
-            "date": "2026-08-28",
-            "close": 112.99,
-            "volume": 3743500
-          },
-          {
             "date": "2026-08-31",
             "close": 111.46,
             "volume": 3317200
@@ -5151,11 +5151,11 @@
           {
             "date": "2026-09-01",
             "close": 110.88,
-            "volume": 5135749
+            "volume": 5136085
           }
         ],
-        "week_change": -1.54,
-        "month_change": -0.41
+        "week_change": -2.03,
+        "month_change": 2.44
       }
     },
     "supply_chain_live": {
@@ -5163,9 +5163,9 @@
         "symbol": "ALI=F",
         "name": "Aluminum",
         "category": "metals",
-        "price": 3428.5,
+        "price": 3440.0,
         "baseline": 2450.0,
-        "change_pct": 39.94,
+        "change_pct": 40.41,
         "status": "elevated",
         "unit": "$/ton",
         "live": true
