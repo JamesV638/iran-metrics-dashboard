@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-09T20:47:12.568252",
+  "last_updated": "2026-09-09T23:06:32.093505",
   "baseline_date": "2026-02-27",
   "metrics": {
     "sp500": {
@@ -16,20 +16,20 @@
       "live": true
     },
     "brent": {
-      "value": 101.63,
-      "change_pct": 49.74,
+      "value": 101.97,
+      "change_pct": 50.24,
       "source": "Yahoo Finance",
       "live": true
     },
     "wti": {
-      "value": 96.63,
-      "change_pct": 44.22,
+      "value": 96.99,
+      "change_pct": 44.76,
       "source": "Yahoo Finance",
       "live": true
     },
     "henryhub": {
-      "value": 2.8,
-      "change_pct": -10.98,
+      "value": 2.81,
+      "change_pct": -10.92,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -46,14 +46,14 @@
       "live": true
     },
     "gold": {
-      "value": 4446.2,
-      "change_pct": 56.01,
+      "value": 4442.2,
+      "change_pct": 55.87,
       "source": "Yahoo Finance",
       "live": true
     },
     "copper": {
       "value": 6.86,
-      "change_pct": 61.29,
+      "change_pct": 61.36,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -521,7 +521,7 @@
           {
             "date": "2026-09-09",
             "close": 187.87,
-            "volume": 5959201
+            "volume": 5972161
           }
         ],
         "week_change": 2.33,
@@ -984,7 +984,7 @@
           {
             "date": "2026-09-09",
             "close": 65.31,
-            "volume": 25063241
+            "volume": 25178949
           }
         ],
         "week_change": 0.32,
@@ -1447,7 +1447,7 @@
           {
             "date": "2026-09-09",
             "close": 57.06,
-            "volume": 27256421
+            "volume": 27341993
           }
         ],
         "week_change": -1.04,
@@ -1910,7 +1910,7 @@
           {
             "date": "2026-09-09",
             "close": 166.58,
-            "volume": 7984202
+            "volume": 7997013
           }
         ],
         "week_change": -3.68,
@@ -2373,7 +2373,7 @@
           {
             "date": "2026-09-09",
             "close": 112.46,
-            "volume": 7637201
+            "volume": 7648466
           }
         ],
         "week_change": -2.09,
@@ -2836,7 +2836,7 @@
           {
             "date": "2026-09-09",
             "close": 83.05,
-            "volume": 12181953
+            "volume": 12200149
           }
         ],
         "week_change": -2.9,
@@ -3299,7 +3299,7 @@
           {
             "date": "2026-09-09",
             "close": 171.79,
-            "volume": 6374079
+            "volume": 6379102
           }
         ],
         "week_change": -0.57,
@@ -3762,7 +3762,7 @@
           {
             "date": "2026-09-09",
             "close": 51.39,
-            "volume": 13095077
+            "volume": 13103490
           }
         ],
         "week_change": -2.95,
@@ -4225,7 +4225,7 @@
           {
             "date": "2026-09-09",
             "close": 42.94,
-            "volume": 16837084
+            "volume": 16890067
           }
         ],
         "week_change": 0.63,
@@ -4688,7 +4688,7 @@
           {
             "date": "2026-09-09",
             "close": 43.41,
-            "volume": 5832499
+            "volume": 5833062
           }
         ],
         "week_change": -0.73,
@@ -5151,7 +5151,7 @@
           {
             "date": "2026-09-09",
             "close": 110.83,
-            "volume": 4800543
+            "volume": 4802307
           }
         ],
         "week_change": -1.41,
@@ -5163,9 +5163,9 @@
         "symbol": "ALI=F",
         "name": "Aluminum",
         "category": "metals",
-        "price": 3559.5,
+        "price": 3541.25,
         "baseline": 2450.0,
-        "change_pct": 45.29,
+        "change_pct": 44.54,
         "status": "elevated",
         "unit": "$/ton",
         "live": true
