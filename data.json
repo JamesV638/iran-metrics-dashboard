@@ -1,59 +1,59 @@
 {
-  "last_updated": "2026-10-09T18:43:20.268666",
+  "last_updated": "2026-10-09T23:07:08.016902",
   "baseline_date": "2026-02-27",
   "metrics": {
     "sp500": {
-      "value": 7811.75,
+      "value": 7811.54,
       "change_pct": 13.59,
       "source": "Yahoo Finance",
       "live": true
     },
     "msci": {
-      "value": 5066.64,
-      "etf_price": 209.02,
-      "change_pct": 11.2,
+      "value": 5069.55,
+      "etf_price": 209.14,
+      "change_pct": 11.26,
       "source": "Yahoo Finance (URTH)",
       "live": true
     },
     "brent": {
-      "value": 104.65,
-      "change_pct": 54.19,
+      "value": 104.43,
+      "change_pct": 53.87,
       "source": "Yahoo Finance",
       "live": true
     },
     "wti": {
-      "value": 91.8,
-      "change_pct": 37.01,
+      "value": 91.66,
+      "change_pct": 36.81,
       "source": "Yahoo Finance",
       "live": true
     },
     "henryhub": {
-      "value": 3.22,
-      "change_pct": 2.32,
+      "value": 3.2,
+      "change_pct": 1.71,
       "source": "Yahoo Finance",
       "live": true
     },
     "vix": {
-      "value": 14.87,
-      "change_pct": -0.87,
+      "value": 14.84,
+      "change_pct": -1.07,
       "source": "Yahoo Finance",
       "live": true
     },
     "treasury": {
-      "value": 5.25,
-      "change_pct": 23.48,
+      "value": 5.24,
+      "change_pct": 23.39,
       "source": "Yahoo Finance",
       "live": true
     },
     "gold": {
-      "value": 4218.5,
-      "change_pct": 48.02,
+      "value": 4220.3,
+      "change_pct": 48.08,
       "source": "Yahoo Finance",
       "live": true
     },
     "copper": {
-      "value": 6.7,
-      "change_pct": 57.74,
+      "value": 6.71,
+      "change_pct": 57.91,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -68,9 +68,9 @@
         "symbol": "XLK",
         "name": "Technology",
         "industries": "Semiconductors, Software, Hardware",
-        "price": 198.79,
+        "price": 198.78,
         "baseline": 210.5,
-        "change_pct": -5.56,
+        "change_pct": -5.57,
         "live": true,
         "history": [
           {
@@ -520,8 +520,8 @@
           },
           {
             "date": "2026-10-09",
-            "close": 198.79,
-            "volume": 3934907
+            "close": 198.78,
+            "volume": 5507363
           }
         ],
         "week_change": -1.07,
@@ -531,9 +531,9 @@
         "symbol": "XLE",
         "name": "Energy",
         "industries": "Oil & Gas, Energy Equipment",
-        "price": 65.21,
+        "price": 65.08,
         "baseline": 42.3,
-        "change_pct": 54.17,
+        "change_pct": 53.85,
         "live": true,
         "history": [
           {
@@ -979,24 +979,24 @@
           {
             "date": "2026-10-08",
             "close": 65.24,
-            "volume": 51290700
+            "volume": 51304400
           },
           {
             "date": "2026-10-09",
-            "close": 65.21,
-            "volume": 17858517
+            "close": 65.08,
+            "volume": 27270976
           }
         ],
-        "week_change": 2.78,
-        "month_change": 1.03
+        "week_change": 2.57,
+        "month_change": 0.82
       },
       "xlf": {
         "symbol": "XLF",
         "name": "Financials",
         "industries": "Banks, Insurance, Capital Markets",
-        "price": 54.75,
+        "price": 54.73,
         "baseline": 48.2,
-        "change_pct": 13.59,
+        "change_pct": 13.55,
         "live": true,
         "history": [
           {
@@ -1442,24 +1442,24 @@
           {
             "date": "2026-10-08",
             "close": 54.23,
-            "volume": 47641500
+            "volume": 47700100
           },
           {
             "date": "2026-10-09",
-            "close": 54.75,
-            "volume": 15317335
+            "close": 54.73,
+            "volume": 35412884
           }
         ],
-        "week_change": 1.61,
-        "month_change": -3.39
+        "week_change": 1.58,
+        "month_change": -3.42
       },
       "xlv": {
         "symbol": "XLV",
         "name": "Health Care",
         "industries": "Pharma, Biotech, Medical Devices",
-        "price": 170.79,
+        "price": 170.81,
         "baseline": 145.8,
-        "change_pct": 17.14,
+        "change_pct": 17.15,
         "live": true,
         "history": [
           {
@@ -1909,20 +1909,20 @@
           },
           {
             "date": "2026-10-09",
-            "close": 170.79,
-            "volume": 3737045
+            "close": 170.81,
+            "volume": 7035528
           }
         ],
-        "week_change": 2.04,
-        "month_change": 3.49
+        "week_change": 2.06,
+        "month_change": 3.5
       },
       "xly": {
         "symbol": "XLY",
         "name": "Consumer Discretionary",
         "industries": "Retail, Autos, Hotels",
-        "price": 112.81,
+        "price": 112.85,
         "baseline": 195.4,
-        "change_pct": -42.27,
+        "change_pct": -42.25,
         "live": true,
         "history": [
           {
@@ -2372,20 +2372,20 @@
           },
           {
             "date": "2026-10-09",
-            "close": 112.81,
-            "volume": 3213976
+            "close": 112.85,
+            "volume": 6872601
           }
         ],
-        "week_change": 2.16,
-        "month_change": 0.98
+        "week_change": 2.2,
+        "month_change": 1.02
       },
       "xlp": {
         "symbol": "XLP",
         "name": "Consumer Staples",
         "industries": "Food, Beverages, Household",
-        "price": 83.47,
+        "price": 83.43,
         "baseline": 78.5,
-        "change_pct": 6.33,
+        "change_pct": 6.28,
         "live": true,
         "history": [
           {
@@ -2831,24 +2831,24 @@
           {
             "date": "2026-10-08",
             "close": 83.42,
-            "volume": 14621500
+            "volume": 14642100
           },
           {
             "date": "2026-10-09",
-            "close": 83.47,
-            "volume": 5195044
+            "close": 83.43,
+            "volume": 7702695
           }
         ],
-        "week_change": 3.0,
-        "month_change": 1.11
+        "week_change": 2.95,
+        "month_change": 1.07
       },
       "xli": {
         "symbol": "XLI",
         "name": "Industrials",
         "industries": "Aerospace, Defense, Machinery",
-        "price": 169.22,
+        "price": 169.25,
         "baseline": 168.3,
-        "change_pct": 0.55,
+        "change_pct": 0.56,
         "live": true,
         "history": [
           {
@@ -3298,20 +3298,20 @@
           },
           {
             "date": "2026-10-09",
-            "close": 169.22,
-            "volume": 2444137
+            "close": 169.25,
+            "volume": 3836171
           }
         ],
-        "week_change": -0.52,
-        "month_change": -0.51
+        "week_change": -0.5,
+        "month_change": -0.49
       },
       "xlb": {
         "symbol": "XLB",
         "name": "Materials",
         "industries": "Chemicals, Metals, Mining",
-        "price": 49.51,
+        "price": 49.43,
         "baseline": 82.4,
-        "change_pct": -39.92,
+        "change_pct": -40.01,
         "live": true,
         "history": [
           {
@@ -3761,20 +3761,20 @@
           },
           {
             "date": "2026-10-09",
-            "close": 49.51,
-            "volume": 4320869
+            "close": 49.43,
+            "volume": 7064616
           }
         ],
-        "week_change": 0.01,
-        "month_change": -2.03
+        "week_change": -0.14,
+        "month_change": -2.18
       },
       "xlu": {
         "symbol": "XLU",
         "name": "Utilities",
         "industries": "Electric, Gas, Water",
-        "price": 41.37,
+        "price": 41.41,
         "baseline": 68.9,
-        "change_pct": -39.96,
+        "change_pct": -39.9,
         "live": true,
         "history": [
           {
@@ -4220,24 +4220,24 @@
           {
             "date": "2026-10-08",
             "close": 41.07,
-            "volume": 28764000
+            "volume": 28810500
           },
           {
             "date": "2026-10-09",
-            "close": 41.37,
-            "volume": 11201714
+            "close": 41.41,
+            "volume": 16735225
           }
         ],
-        "week_change": 3.49,
-        "month_change": -2.0
+        "week_change": 3.6,
+        "month_change": -1.9
       },
       "xlre": {
         "symbol": "XLRE",
         "name": "Real Estate",
         "industries": "REITs, Property Management",
-        "price": 41.53,
+        "price": 41.61,
         "baseline": 42.1,
-        "change_pct": -1.35,
+        "change_pct": -1.16,
         "live": true,
         "history": [
           {
@@ -4687,20 +4687,20 @@
           },
           {
             "date": "2026-10-09",
-            "close": 41.53,
-            "volume": 4488849
+            "close": 41.61,
+            "volume": 7006779
           }
         ],
-        "week_change": 2.11,
-        "month_change": -2.72
+        "week_change": 2.31,
+        "month_change": -2.53
       },
       "xlc": {
         "symbol": "XLC",
         "name": "Communication Services",
         "industries": "Media, Telecom, Entertainment",
-        "price": 110.47,
+        "price": 110.38,
         "baseline": 82.7,
-        "change_pct": 33.59,
+        "change_pct": 33.47,
         "live": true,
         "history": [
           {
@@ -5150,12 +5150,12 @@
           },
           {
             "date": "2026-10-09",
-            "close": 110.47,
-            "volume": 3162220
+            "close": 110.38,
+            "volume": 5995002
           }
         ],
-        "week_change": -1.02,
-        "month_change": -0.59
+        "week_change": -1.1,
+        "month_change": -0.67
       }
     },
     "supply_chain_live": {
@@ -5163,9 +5163,9 @@
         "symbol": "ALI=F",
         "name": "Aluminum",
         "category": "metals",
-        "price": 3185.0,
+        "price": 3191.0,
         "baseline": 2450.0,
-        "change_pct": 30.0,
+        "change_pct": 30.24,
         "status": "stressed",
         "unit": "$/ton",
         "live": true
@@ -5174,7 +5174,7 @@
         "symbol": "^SPGSIN",
         "name": "Nickel",
         "category": "metals",
-        "price": 607.6,
+        "price": 607.03,
         "baseline": 16500.0,
         "change_pct": -96.32,
         "status": "easing",
@@ -5185,9 +5185,9 @@
         "symbol": "URA",
         "name": "Uranium (ETF)",
         "category": "energy",
-        "price": 38.88,
+        "price": 38.9,
         "baseline": 28.5,
-        "change_pct": 36.4,
+        "change_pct": 36.49,
         "status": "elevated",
         "unit": "$",
         "live": true
@@ -5196,9 +5196,9 @@
         "symbol": "LIT",
         "name": "Lithium (ETF)",
         "category": "battery",
-        "price": 69.78,
+        "price": 69.73,
         "baseline": 42.0,
-        "change_pct": 66.14,
+        "change_pct": 66.02,
         "status": "elevated",
         "unit": "$",
         "live": true
@@ -5207,9 +5207,9 @@
         "symbol": "BDRY",
         "name": "Dry Bulk Shipping",
         "category": "shipping",
-        "price": 13.96,
+        "price": 13.89,
         "baseline": 8.5,
-        "change_pct": 64.2,
+        "change_pct": 63.41,
         "status": "elevated",
         "unit": "$",
         "live": true
@@ -5218,9 +5218,9 @@
         "symbol": "MOS",
         "name": "Fertilizers (Mosaic)",
         "category": "agriculture",
-        "price": 18.77,
+        "price": 18.74,
         "baseline": 48.0,
-        "change_pct": -60.9,
+        "change_pct": -60.96,
         "status": "easing",
         "unit": "$",
         "live": true
@@ -5229,9 +5229,9 @@
         "symbol": "REMX",
         "name": "Rare Earth Metals",
         "category": "metals",
-        "price": 60.98,
+        "price": 60.97,
         "baseline": 68.0,
-        "change_pct": -10.32,
+        "change_pct": -10.34,
         "status": "stable",
         "unit": "$",
         "live": true
@@ -5240,9 +5240,9 @@
         "symbol": "SLX",
         "name": "Steel",
         "category": "metals",
-        "price": 103.56,
+        "price": 103.8,
         "baseline": 78.0,
-        "change_pct": 32.77,
+        "change_pct": 33.08,
         "status": "stressed",
         "unit": "$",
         "live": true
@@ -5251,9 +5251,9 @@
         "symbol": "DBA",
         "name": "Agriculture",
         "category": "agriculture",
-        "price": 28.34,
+        "price": 28.33,
         "baseline": 22.5,
-        "change_pct": 25.98,
+        "change_pct": 25.91,
         "status": "stressed",
         "unit": "$",
         "live": true
@@ -5262,8 +5262,8 @@
         "symbol": "SOYB",
         "name": "Soybeans (ETF)",
         "category": "agriculture",
-        "price": 27.55,
-        "baseline": 27.549999237060547,
+        "price": 27.53,
+        "baseline": 27.530000686645508,
         "change_pct": 0.0,
         "status": "stable",
         "unit": "$",
@@ -5273,8 +5273,8 @@
         "symbol": "CORN",
         "name": "Corn (ETF)",
         "category": "agriculture",
-        "price": 18.46,
-        "baseline": 18.459999084472656,
+        "price": 18.42,
+        "baseline": 18.420000076293945,
         "change_pct": 0.0,
         "status": "stable",
         "unit": "$",
@@ -5284,8 +5284,8 @@
         "symbol": "PALL",
         "name": "Palladium",
         "category": "metals",
-        "price": 20.8,
-        "baseline": 20.798999786376953,
+        "price": 20.77,
+        "baseline": 20.770000457763672,
         "change_pct": 0.0,
         "status": "stable",
         "unit": "$",
@@ -5295,8 +5295,8 @@
         "symbol": "PPLT",
         "name": "Platinum",
         "category": "metals",
-        "price": 15.27,
-        "baseline": 15.265000343322754,
+        "price": 15.25,
+        "baseline": 15.25,
         "change_pct": 0.0,
         "status": "stable",
         "unit": "$",
@@ -5327,873 +5327,7 @@
     "semiconductor": {
       "supply_signals": [],
       "chip_costs": {},
-      "hbm_market": {
-        "success": true,
-        "data": {
-          "accelerators": [
-            {
-              "brand": "NVIDIA",
-              "product": "H100",
-              "arch": "Hopper",
-              "spec": "HBM3",
-              "stacks": 5,
-              "capacity": 80,
-              "bandwidth": 3.35,
-              "year": 2022,
-              "type": "8hi",
-              "notes": "Yield managed (5/6 stacks active)",
-              "suppliers": "SK Hynix (~70%), Samsung (~30%)",
-              "priceDisplay": "$1,200 - $1,400",
-              "priceMin": 1200,
-              "priceMax": 1400,
-              "config": "5x 16GB Stacks",
-              "provenance": {
-                "last_updated": "2026-09-13T00:00:00.000Z",
-                "source_type": "research",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0"
-              }
-            },
-            {
-              "brand": "NVIDIA",
-              "product": "H200",
-              "arch": "Hopper",
-              "spec": "HBM3E",
-              "stacks": 6,
-              "capacity": 141,
-              "bandwidth": 4.8,
-              "year": 2023,
-              "type": "8hi",
-              "notes": "First HBM3E, unlocks 6th stack",
-              "suppliers": "SK Hynix (~70%), Micron (~20%)",
-              "priceDisplay": "$2,400 (Est.)",
-              "priceMin": 2300,
-              "priceMax": 2500,
-              "config": "6x 24GB Stacks",
-              "provenance": {
-                "last_updated": "2026-09-13T00:00:00.000Z",
-                "source_type": "research",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0"
-              }
-            },
-            {
-              "brand": "NVIDIA",
-              "product": "B200",
-              "arch": "Blackwell",
-              "spec": "HBM3E",
-              "stacks": 8,
-              "capacity": 192,
-              "bandwidth": 8,
-              "year": 2024,
-              "type": "8hi",
-              "notes": "Dual-die MCM, 10 TB/s NV-HBI",
-              "suppliers": "SK Hynix (>60%), Micron (~25%)",
-              "priceDisplay": "$3,250 (Est.)",
-              "priceMin": 3100,
-              "priceMax": 3400,
-              "config": "8x 24GB Stacks",
-              "provenance": {
-                "last_updated": "2026-09-13T00:00:00.000Z",
-                "source_type": "research",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0"
-              }
-            },
-            {
-              "brand": "NVIDIA",
-              "product": "B300",
-              "arch": "Blackwell Ultra",
-              "spec": "HBM3E",
-              "stacks": 8,
-              "capacity": 288,
-              "bandwidth": 8,
-              "year": 2025,
-              "type": "12hi",
-              "notes": "Mid-cycle refresh, 12-hi stacks",
-              "suppliers": "SK Hynix, Micron, Samsung",
-              "priceDisplay": "$4,900 (Est.)",
-              "priceMin": 4700,
-              "priceMax": 5100,
-              "config": "8x 36GB Stacks",
-              "provenance": {
-                "last_updated": "2026-09-13T00:00:00.000Z",
-                "source_type": "research",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0"
-              }
-            },
-            {
-              "brand": "NVIDIA",
-              "product": "Rubin (VR200)",
-              "arch": "Rubin",
-              "spec": "HBM4",
-              "stacks": 8,
-              "capacity": 288,
-              "bandwidth": 22,
-              "year": 2026,
-              "type": "12hi",
-              "notes": "2 compute + 2 I/O dies on CoWoS-L; broad shipments fall 2026",
-              "suppliers": "SK Hynix (First 16-Hi demo)",
-              "priceDisplay": "$4,500 (Est.)",
-              "priceMin": 4400,
-              "priceMax": 4800,
-              "config": "8x 36GB Stacks",
-              "provenance": {
-                "last_updated": "2026-09-13T00:00:00.000Z",
-                "source_type": "research",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0"
-              }
-            },
-            {
-              "brand": "NVIDIA",
-              "product": "VR300",
-              "arch": "Rubin Ultra",
-              "spec": "HBM4E",
-              "stacks": 16,
-              "capacity": 576,
-              "bandwidth": 16,
-              "year": 2027,
-              "type": "16hi",
-              "notes": "Speculative Quad-Die, Hybrid Bonding",
-              "suppliers": "SK Hynix (Lead), Samsung",
-              "priceDisplay": "$4,500+ (Est.)",
-              "priceMin": 4500,
-              "priceMax": 5000,
-              "config": "16x Stacks",
-              "provenance": {
-                "last_updated": "2026-09-13T00:00:00.000Z",
-                "source_type": "research",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0"
-              }
-            },
-            {
-              "brand": "AMD",
-              "product": "MI300X",
-              "arch": "CDNA 3",
-              "spec": "HBM3",
-              "stacks": 8,
-              "capacity": 192,
-              "bandwidth": 5.3,
-              "year": 2023,
-              "type": "12hi",
-              "notes": "Chiplet design, capacity leader",
-              "suppliers": "Samsung (>60%), SK Hynix",
-              "priceDisplay": "$1,100 - $1,300",
-              "priceMin": 1100,
-              "priceMax": 1300,
-              "config": "8x 24GB Stacks",
-              "provenance": {
-                "last_updated": "2026-09-13T00:00:00.000Z",
-                "source_type": "research",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0"
-              }
-            },
-            {
-              "brand": "AMD",
-              "product": "MI325X",
-              "arch": "CDNA 3",
-              "spec": "HBM3E",
-              "stacks": 8,
-              "capacity": 256,
-              "bandwidth": 6,
-              "year": 2024,
-              "type": "12hi",
-              "notes": "Socket compatible refresh",
-              "suppliers": "Samsung (Primary), Micron",
-              "priceDisplay": "$4,350 (Est.)",
-              "priceMin": 4200,
-              "priceMax": 4500,
-              "config": "8x 32GB* Stacks",
-              "provenance": {
-                "last_updated": "2026-09-13T00:00:00.000Z",
-                "source_type": "research",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0"
-              }
-            },
-            {
-              "brand": "AMD",
-              "product": "MI355X",
-              "arch": "CDNA 4",
-              "spec": "HBM3E",
-              "stacks": 8,
-              "capacity": 288,
-              "bandwidth": 8,
-              "year": 2025,
-              "type": "12hi",
-              "notes": "FP4/FP6 support, 3nm node",
-              "suppliers": "Samsung ($3B deal signed)",
-              "priceDisplay": "$4,900 (Est.)",
-              "priceMin": 4700,
-              "priceMax": 5100,
-              "config": "8x 36GB Stacks",
-              "provenance": {
-                "last_updated": "2026-09-13T00:00:00.000Z",
-                "source_type": "research",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0"
-              }
-            },
-            {
-              "brand": "AMD",
-              "product": "MI455X",
-              "arch": "Next-Gen",
-              "spec": "HBM4",
-              "stacks": 12,
-              "capacity": 432,
-              "bandwidth": 23.3,
-              "year": 2026,
-              "type": "12hi",
-              "notes": "Helios rack flagship; HBM4 dominates BOM",
-              "suppliers": "Samsung, SK Hynix",
-              "priceDisplay": "$15,300 (Est.)",
-              "priceMin": 15000,
-              "priceMax": 15600,
-              "config": "12x 36GB Stacks",
-              "provenance": {
-                "last_updated": "2026-09-13T00:00:00.000Z",
-                "source_type": "research",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0"
-              }
-            },
-            {
-              "brand": "Google",
-              "product": "TPU v5p",
-              "arch": "v5",
-              "spec": "HBM2E",
-              "stacks": 4,
-              "capacity": 95,
-              "bandwidth": 2.7,
-              "year": 2023,
-              "type": "8hi",
-              "notes": "Training workhorse, 3D Torus",
-              "suppliers": "Samsung, SK Hynix",
-              "priceDisplay": "~$750 (Est.)",
-              "priceMin": 700,
-              "priceMax": 800,
-              "config": "Custom",
-              "provenance": {
-                "last_updated": "2026-09-13T00:00:00.000Z",
-                "source_type": "research",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0"
-              }
-            },
-            {
-              "brand": "Google",
-              "product": "TPU v6e",
-              "arch": "Trillium",
-              "spec": "HBM3",
-              "stacks": 2,
-              "capacity": 32,
-              "bandwidth": 1.64,
-              "year": 2024,
-              "type": "8hi",
-              "notes": "Gen not Google-stated; 2x819 GB/s matches HBM3 exactly",
-              "suppliers": "Samsung (>60%), SK Hynix",
-              "priceDisplay": "$400 - $500",
-              "priceMin": 400,
-              "priceMax": 500,
-              "config": "2x 16GB Stacks",
-              "provenance": {
-                "last_updated": "2026-09-13T00:00:00.000Z",
-                "source_type": "research",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0"
-              }
-            },
-            {
-              "brand": "Google",
-              "product": "TPU v7",
-              "arch": "Ironwood",
-              "spec": "HBM3E",
-              "stacks": 8,
-              "capacity": 192,
-              "bandwidth": 7.4,
-              "year": 2025,
-              "type": "12hi",
-              "notes": "Optical Circuit Switching",
-              "suppliers": "SK Hynix (First), Samsung",
-              "priceDisplay": "$1,700 - $1,800",
-              "priceMin": 1700,
-              "priceMax": 1800,
-              "config": "8x 24GB Stacks",
-              "provenance": {
-                "last_updated": "2026-09-13T00:00:00.000Z",
-                "source_type": "research",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0"
-              }
-            },
-            {
-              "brand": "AWS",
-              "product": "Trainium 3",
-              "arch": "Trainium",
-              "spec": "HBM3E",
-              "stacks": 4,
-              "capacity": 144,
-              "bandwidth": 4.9,
-              "year": 2025,
-              "type": "12hi",
-              "notes": "Dual-die on CoWoS-R organic interposer",
-              "suppliers": "SK Hynix, Micron (pin speed 9.6 Gbps)",
-              "priceDisplay": "$2,450 (Est.)",
-              "priceMin": 2300,
-              "priceMax": 2600,
-              "config": "4x 36GB Stacks",
-              "provenance": {
-                "last_updated": "2026-09-13T00:00:00.000Z",
-                "source_type": "research",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0"
-              }
-            }
-          ],
-          "specs": [
-            {
-              "type": "HBM2",
-              "bw": "256 GB/s",
-              "cap": "8 GB",
-              "pin": "2.0 Gbps",
-              "note": "Legacy (V100)",
-              "provenance": {
-                "last_updated": "2026-09-13T00:00:00.000Z",
-                "source_type": "research",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0"
-              }
-            },
-            {
-              "type": "HBM2e",
-              "bw": "460 GB/s",
-              "cap": "16 GB",
-              "pin": "3.6 Gbps",
-              "note": "Standard (A100)",
-              "provenance": {
-                "last_updated": "2026-09-13T00:00:00.000Z",
-                "source_type": "research",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0"
-              }
-            },
-            {
-              "type": "HBM3",
-              "bw": "819 GB/s",
-              "cap": "24 GB",
-              "pin": "6.4 Gbps",
-              "note": "Mainstream (H100)",
-              "provenance": {
-                "last_updated": "2026-09-13T00:00:00.000Z",
-                "source_type": "research",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0"
-              }
-            },
-            {
-              "type": "HBM3E",
-              "bw": "1.2 TB/s",
-              "cap": "36 GB",
-              "pin": "8.0+ Gbps",
-              "note": "Cutting Edge (H200)",
-              "provenance": {
-                "last_updated": "2026-09-13T00:00:00.000Z",
-                "source_type": "research",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0"
-              }
-            },
-            {
-              "type": "HBM4",
-              "bw": ">2 TB/s",
-              "cap": "36 GB",
-              "pin": "High",
-              "note": "2026 volume part (12-Hi). 16-Hi 48 GB follows in 2027.",
-              "provenance": {
-                "last_updated": "2026-09-13T00:00:00.000Z",
-                "source_type": "research",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0"
-              }
-            }
-          ],
-          "marketShare": [
-            {
-              "name": "SK Hynix",
-              "share": 62,
-              "color": "#10b981",
-              "note": "Lead in HBM3E",
-              "provenance": {
-                "last_updated": "2026-08-14T00:00:00.000Z",
-                "source_type": "estimated",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0",
-                "data_as_of": "2026-08-14T00:00:00.000Z"
-              }
-            },
-            {
-              "name": "Samsung",
-              "share": 30,
-              "color": "#3b82f6",
-              "note": "Volume Leader",
-              "provenance": {
-                "last_updated": "2026-08-14T00:00:00.000Z",
-                "source_type": "estimated",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0",
-                "data_as_of": "2026-08-14T00:00:00.000Z"
-              }
-            },
-            {
-              "name": "Micron",
-              "share": 8,
-              "color": "#a855f7",
-              "note": "Efficiency",
-              "provenance": {
-                "last_updated": "2026-08-14T00:00:00.000Z",
-                "source_type": "estimated",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0",
-                "data_as_of": "2026-08-14T00:00:00.000Z"
-              }
-            }
-          ],
-          "spotPrices": [
-            {
-              "product": "HBM4 (est.)",
-              "price": "~$16/GB",
-              "trend": "flat",
-              "change": "\u2014",
-              "driver": "Projected Q3 2026 launch; per-GB modest decrease vs HBM3E despite higher bandwidth",
-              "sourceUrl": "https://explainx.ai/blog/stanford-memory-prices-dram-hbm-nand-history-2026",
-              "confidence": "low",
-              "asOf": "2026-03-01",
-              "priceUsd": 16,
-              "priceMin": null,
-              "priceMax": null,
-              "unit": "usd_per_gb",
-              "retired": true,
-              "retiredAt": "2026-07-28",
-              "provenance": {
-                "last_updated": "2026-03-01T00:00:00.000Z",
-                "source_type": "estimated",
-                "confidence_tier": "medium",
-                "dataset_version": "hbmData-v1.0",
-                "data_as_of": "2026-03-01T00:00:00.000Z"
-              }
-            },
-            {
-              "product": "HBM3 (Active)",
-              "price": "$1,200 - $1,400",
-              "trend": "up",
-              "change": "+5%",
-              "driver": "Capacity cut for HBM3E",
-              "sourceUrl": null,
-              "confidence": null,
-              "asOf": "2026-01-01",
-              "priceUsd": 1300,
-              "priceMin": 1200,
-              "priceMax": 1400,
-              "unit": "usd_per_device",
-              "retired": true,
-              "retiredAt": "2026-07-28",
-              "provenance": {
-                "last_updated": "2026-01-01T00:00:00.000Z",
-                "source_type": "estimated",
-                "confidence_tier": "medium",
-                "dataset_version": "hbmData-v1.0",
-                "data_as_of": "2026-01-01T00:00:00.000Z"
-              }
-            },
-            {
-              "product": "HBM3E 8-Hi",
-              "price": "$1,800 - $2,000",
-              "trend": "up",
-              "change": "+10%",
-              "driver": "Standard B200 Supply Tightness",
-              "sourceUrl": null,
-              "confidence": null,
-              "asOf": "2026-01-01",
-              "priceUsd": 1900,
-              "priceMin": 1800,
-              "priceMax": 2000,
-              "unit": "usd_per_device",
-              "retired": true,
-              "retiredAt": "2026-07-28",
-              "provenance": {
-                "last_updated": "2026-01-01T00:00:00.000Z",
-                "source_type": "estimated",
-                "confidence_tier": "medium",
-                "dataset_version": "hbmData-v1.0",
-                "data_as_of": "2026-01-01T00:00:00.000Z"
-              }
-            },
-            {
-              "product": "HBM3E 12-Hi",
-              "price": "$8.33/GB",
-              "trend": "up",
-              "change": "\u2014",
-              "driver": "GPU and ASIC order upward revisions pushing HBM3E prices higher",
-              "sourceUrl": "https://www.trendforce.com/news/2026/01/05/news-sk-hynix-2026-outlook-hbm3e-remains-mainstream-hbm4-dual-strategy-amid-triple-market-headwinds",
-              "confidence": "low",
-              "asOf": "2026-01-01",
-              "priceUsd": 8.33,
-              "priceMin": null,
-              "priceMax": null,
-              "unit": "usd_per_gb",
-              "retired": true,
-              "retiredAt": "2026-07-28",
-              "provenance": {
-                "last_updated": "2026-01-01T00:00:00.000Z",
-                "source_type": "estimated",
-                "confidence_tier": "medium",
-                "dataset_version": "hbmData-v1.0",
-                "data_as_of": "2026-01-01T00:00:00.000Z"
-              }
-            },
-            {
-              "product": "HBM4 12-Hi (contract est.)",
-              "price": "$500 - $600+/stack (36GB)",
-              "trend": "up",
-              "change": "+55-70% vs HBM3E",
-              "driver": "2026 ramp for NVIDIA Vera Rubin; TSMC/foundry base-die cost floor; suppliers seeking multi-fold 2027 increases",
-              "sourceUrl": "https://www.trendforce.com/news/2025/11/27/news-sk-hynixs-hbm4-supply-price-reportedly-set-to-rise-over-50-with-mass-production-slated-for-q4/",
-              "confidence": "medium",
-              "asOf": "2026-01-01",
-              "priceUsd": 550,
-              "priceMin": 500,
-              "priceMax": 600,
-              "unit": "usd_per_stack",
-              "retired": true,
-              "retiredAt": "2026-07-28",
-              "provenance": {
-                "last_updated": "2026-01-01T00:00:00.000Z",
-                "source_type": "estimated",
-                "confidence_tier": "medium",
-                "dataset_version": "hbmData-v1.0",
-                "data_as_of": "2026-01-01T00:00:00.000Z"
-              }
-            }
-          ],
-          "leadingIndicators": [
-            {
-              "name": "AI Server Demand Proxy",
-              "source": "Taiwan MOEA Export Orders",
-              "value": "+38% YoY",
-              "signal": "bullish",
-              "desc": "Surge in \"Info/Comm Products\" (HS Code 8471/8517) signals massive GPU assembly backlog.",
-              "methodology": "Calculation: (Dec 2025 Export Value / Dec 2024 Export Value) - 1. Tracks dollar value of orders received by ODM giants (Foxconn, Quanta) for AI servers.",
-              "update": "Next: Feb 20",
-              "provenance": {
-                "last_updated": "2026-08-14T00:00:00.000Z",
-                "source_type": "estimated",
-                "confidence_tier": "medium",
-                "dataset_version": "hbmData-v1.0",
-                "data_as_of": "2026-08-14T00:00:00.000Z"
-              }
-            },
-            {
-              "name": "Raw Chip Output Signal",
-              "source": "Korea MOTIE Chip Exports",
-              "value": "+32% YoY",
-              "signal": "bullish",
-              "desc": "Rising export value vs. flat volume confirms rising ASP (Super Cycle).",
-              "methodology": "Calculation: (Dec 2025 \"Memory\" Export Value / Dec 2024 Value). A divergence where Value > Volume indicates increasing Average Selling Price (ASP).",
-              "update": "Next: Feb 1",
-              "provenance": {
-                "last_updated": "2026-08-14T00:00:00.000Z",
-                "source_type": "estimated",
-                "confidence_tier": "medium",
-                "dataset_version": "hbmData-v1.0",
-                "data_as_of": "2026-08-14T00:00:00.000Z"
-              }
-            }
-          ],
-          "qualificationFeed": [
-            {
-              "vendor": "SK Hynix",
-              "gen": "HBM3",
-              "target": "NVIDIA H100",
-              "status": "volume_shipping",
-              "note": "Industry-first HBM3 to NVIDIA; mass production began June 2022.",
-              "color": "bg-emerald-100 text-emerald-700 border-emerald-200 dark:bg-emerald-900/30 dark:text-emerald-300 dark:border-emerald-800",
-              "provenance": {
-                "last_updated": "2026-09-13T00:00:00.000Z",
-                "source_type": "research",
-                "confidence_tier": "medium",
-                "dataset_version": "hbmData-v1.0"
-              }
-            }
-          ],
-          "revenueForecast": [
-            {
-              "platform": "NVIDIA Blackwell (B200/GB200)",
-              "units": 3.5,
-              "density": 192,
-              "price": 18.5,
-              "revenue": 28.2,
-              "color": "#10b981",
-              "provenance": {
-                "last_updated": "2026-08-14T00:00:00.000Z",
-                "source_type": "estimated",
-                "confidence_tier": "medium",
-                "dataset_version": "hbmData-v1.0",
-                "data_as_of": "2026-08-14T00:00:00.000Z"
-              }
-            },
-            {
-              "platform": "NVIDIA Blackwell Ultra (B300)",
-              "units": 0.8,
-              "density": 288,
-              "price": 22,
-              "revenue": 11.6,
-              "color": "#059669",
-              "provenance": {
-                "last_updated": "2026-08-14T00:00:00.000Z",
-                "source_type": "estimated",
-                "confidence_tier": "medium",
-                "dataset_version": "hbmData-v1.0",
-                "data_as_of": "2026-08-14T00:00:00.000Z"
-              }
-            },
-            {
-              "platform": "NVIDIA Rubin (VR200)",
-              "units": 0.3,
-              "density": 288,
-              "price": 28,
-              "revenue": 5.5,
-              "color": "#047857",
-              "provenance": {
-                "last_updated": "2026-08-14T00:00:00.000Z",
-                "source_type": "estimated",
-                "confidence_tier": "medium",
-                "dataset_version": "hbmData-v1.0",
-                "data_as_of": "2026-08-14T00:00:00.000Z"
-              }
-            },
-            {
-              "platform": "AMD Instinct (MI325X/350)",
-              "units": 0.6,
-              "density": 272,
-              "price": 16.5,
-              "revenue": 6.2,
-              "color": "#ef4444",
-              "provenance": {
-                "last_updated": "2026-08-14T00:00:00.000Z",
-                "source_type": "estimated",
-                "confidence_tier": "medium",
-                "dataset_version": "hbmData-v1.0",
-                "data_as_of": "2026-08-14T00:00:00.000Z"
-              }
-            },
-            {
-              "platform": "AMD MI455X",
-              "units": 0.1,
-              "density": 432,
-              "price": 28,
-              "revenue": 2.7,
-              "color": "#b91c1c",
-              "provenance": {
-                "last_updated": "2026-08-14T00:00:00.000Z",
-                "source_type": "estimated",
-                "confidence_tier": "medium",
-                "dataset_version": "hbmData-v1.0",
-                "data_as_of": "2026-08-14T00:00:00.000Z"
-              }
-            },
-            {
-              "platform": "Google TPU (v6e/v7)",
-              "units": 3.3,
-              "density": 106,
-              "price": 16,
-              "revenue": 12.6,
-              "color": "#3b82f6",
-              "provenance": {
-                "last_updated": "2026-08-14T00:00:00.000Z",
-                "source_type": "estimated",
-                "confidence_tier": "medium",
-                "dataset_version": "hbmData-v1.0",
-                "data_as_of": "2026-08-14T00:00:00.000Z"
-              }
-            },
-            {
-              "platform": "Other (AWS/ASIC)",
-              "units": 1,
-              "density": 96,
-              "price": 16,
-              "revenue": 3.2,
-              "color": "#64748b",
-              "provenance": {
-                "last_updated": "2026-08-14T00:00:00.000Z",
-                "source_type": "estimated",
-                "confidence_tier": "medium",
-                "dataset_version": "hbmData-v1.0",
-                "data_as_of": "2026-08-14T00:00:00.000Z"
-              }
-            }
-          ],
-          "supplierRevenue": [
-            {
-              "name": "SK Hynix",
-              "share": 58,
-              "revenue": 40.6,
-              "color": "#10b981",
-              "note": "NVIDIA Dominance & HBM4 Lead",
-              "provenance": {
-                "last_updated": "2026-08-14T00:00:00.000Z",
-                "source_type": "estimated",
-                "confidence_tier": "medium",
-                "dataset_version": "hbmData-v1.0",
-                "data_as_of": "2026-08-14T00:00:00.000Z"
-              }
-            },
-            {
-              "name": "Samsung",
-              "share": 28,
-              "revenue": 19.6,
-              "color": "#3b82f6",
-              "note": "AMD/Google Volume",
-              "provenance": {
-                "last_updated": "2026-08-14T00:00:00.000Z",
-                "source_type": "estimated",
-                "confidence_tier": "medium",
-                "dataset_version": "hbmData-v1.0",
-                "data_as_of": "2026-08-14T00:00:00.000Z"
-              }
-            },
-            {
-              "name": "Micron",
-              "share": 14,
-              "revenue": 9.8,
-              "color": "#a855f7",
-              "note": "Capacity Constrained",
-              "provenance": {
-                "last_updated": "2026-08-14T00:00:00.000Z",
-                "source_type": "estimated",
-                "confidence_tier": "medium",
-                "dataset_version": "hbmData-v1.0",
-                "data_as_of": "2026-08-14T00:00:00.000Z"
-              }
-            }
-          ],
-          "validationChecks": [
-            {
-              "company": "Micron (MU)",
-              "model": "$9.8B",
-              "guidance": "\"Multiple billions\" in FY25, sold out 2026",
-              "verdict": "Bullish Case",
-              "analysis": "Assumes strong pricing power due to \"sold out\" status despite 55k wpm capacity constraints.",
-              "statusColor": "text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/20 border-emerald-200 dark:border-emerald-800",
-              "provenance": {
-                "last_updated": "2026-09-13T00:00:00.000Z",
-                "source_type": "derived",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0"
-              }
-            },
-            {
-              "company": "SK Hynix",
-              "model": "$40.6B",
-              "guidance": "Expects HBM market >$70B by 2027",
-              "verdict": "Aligned",
-              "analysis": "Reflects dominance in high-margin HBM4/12-Hi. Aligns with BofA/Goldman estimates.",
-              "statusColor": "text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/20 border-emerald-200 dark:border-emerald-800",
-              "provenance": {
-                "last_updated": "2026-09-13T00:00:00.000Z",
-                "source_type": "derived",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0"
-              }
-            },
-            {
-              "company": "Samsung",
-              "model": "$19.6B",
-              "guidance": "Aiming for 2.5x shipment volume increase",
-              "verdict": "Aggressive",
-              "analysis": "Assumes successful qualification for B200 spillover & dominance in AMD/Google supply chains.",
-              "statusColor": "text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/20 border-amber-200 dark:border-amber-800",
-              "provenance": {
-                "last_updated": "2026-09-13T00:00:00.000Z",
-                "source_type": "derived",
-                "confidence_tier": "high",
-                "dataset_version": "hbmData-v1.0"
-              }
-            }
-          ],
-          "bitDemand": [
-            {
-              "metric": "hbm_bits_sku_class",
-              "entity": "Trainium",
-              "period": "2026",
-              "value_text": "\u22480.06\u20130.09 EB (0.6M units \u00d7 96\u2013144 GB/unit)",
-              "value_num": 0.08,
-              "value_min": 0.06,
-              "value_max": 0.09,
-              "unit": "EB",
-              "observed_week": "2026-09-28",
-              "as_of": "2026-01-01",
-              "confidence": "low",
-              "agreement": "single",
-              "independent_sources": 1,
-              "source_url": "https://presenc.ai/research/gpu-shipment-tracker-blackwell-rubin-2026",
-              "evidence": "Derived: public shipment-mix estimates (0.6M units, 2026) \u00d7 per-SKU HBM content from chipSpecs (96\u2013144 GB). 1 EB = 10^9 GB. NOT a workload split \u2014 SKU-class cut; dominant SKUs are dual-use.",
-              "provenance": {
-                "last_updated": "2026-09-13T00:00:00.000Z",
-                "source_type": "derived",
-                "confidence_tier": "medium",
-                "dataset_version": "hbmData-v1.0"
-              }
-            }
-          ]
-        },
-        "meta": {
-          "source": "Silicon Analysts",
-          "updated": "2026-09-13T00:00:00.000Z",
-          "schema": {
-            "accelerators": "AI accelerator specs (brand, product, capacity, bandwidth, price)",
-            "specs": "HBM generation specs (type, bw, cap)",
-            "marketShare": "Vendor market share estimates",
-            "spotPrices": "RETIRED 2026-07-28 \u2014 frozen spot-price estimates (no public HBM spot market; see meta.spotPricesNote)",
-            "leadingIndicators": "Leading supply/demand indicators",
-            "qualificationFeed": "Vendor qualification status",
-            "revenueForecast": "Platform revenue forecast",
-            "supplierRevenue": "Supplier revenue share",
-            "validationChecks": "Model validation checks",
-            "bitDemand": "Derived HBM bit demand by SKU class + customer type (EB ranges/year, monthly; NOT a training-vs-inference split)"
-          },
-          "bitDemandNote": "bitDemand is NOT a workload split \u2014 it is a SKU-class/customer-type cut. Dominant HBM SKUs are dual-use (training + inference), so a training-vs-inference HBM attribution would be dishonest; no public source publishes one. Values are derived (public shipment-mix estimates \u00d7 per-SKU HBM content), published as EB ranges, refreshed monthly.",
-          "spotPricesNote": "spotPrices is a RETIRED series (2026-07-28): no public HBM spot market exists in any generation \u2014 HBM sells via annual/multi-year LTAs, and this spot-estimate series failed external verification. Rows are frozen as last published and no longer refreshed; they are estimates, not market quotes. Rows mix units (usd_per_device / usd_per_gb / usd_per_stack \u2014 see each row's `unit`); never compare or aggregate across rows. For current, sourced HBM pricing use get_market_dataset with dataset='hbm-pricing' (REST /api/v1/market-data/hbm-pricing; page https://siliconanalysts.com/data/hbm-pricing).",
-          "retiredTables": [
-            "spotPrices"
-          ],
-          "editorialTables": [
-            "marketShare",
-            "leadingIndicators",
-            "revenueForecast",
-            "supplierRevenue"
-          ],
-          "editorialNote": "Silicon Analysts editorial estimate (no single external source), last revised 2026-08-14. Free context \u2014 the sourced HBM feed is qualificationFeed / bitDemand.",
-          "history_access": "key_required",
-          "history_note": "Historical HBM forecast/series data requires a free API key \u2014 anonymous callers receive the latest slice only. Get one at https://siliconanalysts.com/developers; the free tier returns a preview and Pro returns the complete time series.",
-          "get_api_key": "https://siliconanalysts.com/developers",
-          "upgrade": "https://siliconanalysts.com/pro",
-          "try_now": "curl https://siliconanalysts.com/api/v1/hbm",
-          "apiVersion": "1",
-          "endpoint": "/api/v1/hbm",
-          "docs": "https://siliconanalysts.com/developers",
-          "feedback": "Shape the paid tier \u2014 what would make this worth paying for? https://siliconanalysts.com/roadmap",
-          "freshness": {
-            "cadence": "Mon/Thu \u2014 HBM qualification & market refresh runs 09:00 UTC on those days. The bitDemand sub-table refreshes MONTHLY (1st, 10:00 UTC) \u2014 derived shipment-mix \u00d7 per-SKU HBM content, published as ranges.",
-            "next_refresh": "2026-10-12T09:00:00.000Z",
-            "delta_check": "https://siliconanalysts.com/api/v1/changes?window=7d \u2014 the cheap way to stay current. An empty movements list means nothing moved past its significance threshold: that is signal, not staleness."
-          },
-          "hint": "Anonymous quota nearly used (0 of 20 left this window). A free API key raises limits and identifies your agent: https://siliconanalysts.com/developers"
-        }
-      },
+      "hbm_market": {},
       "live": false
     },
     "fuel": {
