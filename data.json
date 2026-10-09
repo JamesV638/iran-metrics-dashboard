@@ -1,65 +1,65 @@
 {
-  "last_updated": "2026-10-09T00:13:25.409938",
+  "last_updated": "2026-10-09T18:43:20.268666",
   "baseline_date": "2026-02-27",
   "metrics": {
     "sp500": {
-      "value": 7765.36,
-      "change_pct": 12.92,
+      "value": 7811.75,
+      "change_pct": 13.59,
       "source": "Yahoo Finance",
       "live": true
     },
     "msci": {
-      "value": 5038.77,
-      "etf_price": 207.87,
-      "change_pct": 10.59,
+      "value": 5066.64,
+      "etf_price": 209.02,
+      "change_pct": 11.2,
       "source": "Yahoo Finance (URTH)",
       "live": true
     },
     "brent": {
-      "value": 104.09,
-      "change_pct": 53.37,
+      "value": 104.65,
+      "change_pct": 54.19,
       "source": "Yahoo Finance",
       "live": true
     },
     "wti": {
-      "value": 91.38,
-      "change_pct": 36.39,
+      "value": 91.8,
+      "change_pct": 37.01,
       "source": "Yahoo Finance",
       "live": true
     },
     "henryhub": {
-      "value": 3.13,
-      "change_pct": -0.48,
+      "value": 3.22,
+      "change_pct": 2.32,
       "source": "Yahoo Finance",
       "live": true
     },
     "vix": {
-      "value": 15.41,
-      "change_pct": 2.73,
+      "value": 14.87,
+      "change_pct": -0.87,
       "source": "Yahoo Finance",
       "live": true
     },
     "treasury": {
-      "value": 5.23,
-      "change_pct": 23.08,
+      "value": 5.25,
+      "change_pct": 23.48,
       "source": "Yahoo Finance",
       "live": true
     },
     "gold": {
-      "value": 4172.9,
-      "change_pct": 46.42,
+      "value": 4218.5,
+      "change_pct": 48.02,
       "source": "Yahoo Finance",
       "live": true
     },
     "copper": {
-      "value": 6.57,
-      "change_pct": 54.64,
+      "value": 6.7,
+      "change_pct": 57.74,
       "source": "Yahoo Finance",
       "live": true
     },
     "wheat": {
-      "value": 685.25,
-      "change_pct": 19.17,
+      "value": 670.75,
+      "change_pct": 16.65,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -68,21 +68,11 @@
         "symbol": "XLK",
         "name": "Technology",
         "industries": "Semiconductors, Software, Hardware",
-        "price": 197.78,
+        "price": 198.79,
         "baseline": 210.5,
-        "change_pct": -6.04,
+        "change_pct": -5.56,
         "live": true,
         "history": [
-          {
-            "date": "2026-06-01",
-            "close": 195.3,
-            "volume": 18968800
-          },
-          {
-            "date": "2026-06-02",
-            "close": 197.74,
-            "volume": 10175200
-          },
           {
             "date": "2026-06-03",
             "close": 195.77,
@@ -522,30 +512,30 @@
             "date": "2026-10-07",
             "close": 201.39,
             "volume": 6326200
+          },
+          {
+            "date": "2026-10-08",
+            "close": 197.78,
+            "volume": 9130400
+          },
+          {
+            "date": "2026-10-09",
+            "close": 198.79,
+            "volume": 3934907
           }
         ],
-        "week_change": -0.02,
-        "month_change": 5.4
+        "week_change": -1.07,
+        "month_change": 7.45
       },
       "xle": {
         "symbol": "XLE",
         "name": "Energy",
         "industries": "Oil & Gas, Energy Equipment",
-        "price": 65.24,
+        "price": 65.21,
         "baseline": 42.3,
-        "change_pct": 54.23,
+        "change_pct": 54.17,
         "live": true,
         "history": [
-          {
-            "date": "2026-06-01",
-            "close": 56.55,
-            "volume": 55879400
-          },
-          {
-            "date": "2026-06-02",
-            "close": 57.2,
-            "volume": 23842600
-          },
           {
             "date": "2026-06-03",
             "close": 57.95,
@@ -985,30 +975,30 @@
             "date": "2026-10-07",
             "close": 63.36,
             "volume": 27139200
+          },
+          {
+            "date": "2026-10-08",
+            "close": 65.24,
+            "volume": 51290700
+          },
+          {
+            "date": "2026-10-09",
+            "close": 65.21,
+            "volume": 17858517
           }
         ],
-        "week_change": 4.05,
-        "month_change": 1.32
+        "week_change": 2.78,
+        "month_change": 1.03
       },
       "xlf": {
         "symbol": "XLF",
         "name": "Financials",
         "industries": "Banks, Insurance, Capital Markets",
-        "price": 54.23,
+        "price": 54.75,
         "baseline": 48.2,
-        "change_pct": 12.51,
+        "change_pct": 13.59,
         "live": true,
         "history": [
-          {
-            "date": "2026-06-01",
-            "close": 51.07,
-            "volume": 34507600
-          },
-          {
-            "date": "2026-06-02",
-            "close": 51.1,
-            "volume": 30988800
-          },
           {
             "date": "2026-06-03",
             "close": 50.51,
@@ -1448,30 +1438,30 @@
             "date": "2026-10-07",
             "close": 53.75,
             "volume": 36827300
+          },
+          {
+            "date": "2026-10-08",
+            "close": 54.23,
+            "volume": 47641500
+          },
+          {
+            "date": "2026-10-09",
+            "close": 54.75,
+            "volume": 15317335
           }
         ],
-        "week_change": 1.44,
-        "month_change": -5.03
+        "week_change": 1.61,
+        "month_change": -3.39
       },
       "xlv": {
         "symbol": "XLV",
         "name": "Health Care",
         "industries": "Pharma, Biotech, Medical Devices",
-        "price": 168.16,
+        "price": 170.79,
         "baseline": 145.8,
-        "change_pct": 15.34,
+        "change_pct": 17.14,
         "live": true,
         "history": [
-          {
-            "date": "2026-06-01",
-            "close": 146.63,
-            "volume": 12582900
-          },
-          {
-            "date": "2026-06-02",
-            "close": 145.2,
-            "volume": 12024300
-          },
           {
             "date": "2026-06-03",
             "close": 146.34,
@@ -1911,30 +1901,30 @@
             "date": "2026-10-07",
             "close": 168.81,
             "volume": 8880900
+          },
+          {
+            "date": "2026-10-08",
+            "close": 168.16,
+            "volume": 11123100
+          },
+          {
+            "date": "2026-10-09",
+            "close": 170.79,
+            "volume": 3737045
           }
         ],
-        "week_change": 1.18,
-        "month_change": 1.0
+        "week_change": 2.04,
+        "month_change": 3.49
       },
       "xly": {
         "symbol": "XLY",
         "name": "Consumer Discretionary",
         "industries": "Retail, Autos, Hotels",
-        "price": 111.71,
+        "price": 112.81,
         "baseline": 195.4,
-        "change_pct": -42.83,
+        "change_pct": -42.27,
         "live": true,
         "history": [
-          {
-            "date": "2026-06-01",
-            "close": 117.7,
-            "volume": 11012100
-          },
-          {
-            "date": "2026-06-02",
-            "close": 117.1,
-            "volume": 8219300
-          },
           {
             "date": "2026-06-03",
             "close": 116.24,
@@ -2374,30 +2364,30 @@
             "date": "2026-10-07",
             "close": 111.36,
             "volume": 6704400
+          },
+          {
+            "date": "2026-10-08",
+            "close": 111.71,
+            "volume": 5696500
+          },
+          {
+            "date": "2026-10-09",
+            "close": 112.81,
+            "volume": 3213976
           }
         ],
-        "week_change": 2.67,
-        "month_change": -1.78
+        "week_change": 2.16,
+        "month_change": 0.98
       },
       "xlp": {
         "symbol": "XLP",
         "name": "Consumer Staples",
         "industries": "Food, Beverages, Household",
-        "price": 83.42,
+        "price": 83.47,
         "baseline": 78.5,
-        "change_pct": 6.27,
+        "change_pct": 6.33,
         "live": true,
         "history": [
-          {
-            "date": "2026-06-01",
-            "close": 80.93,
-            "volume": 20246700
-          },
-          {
-            "date": "2026-06-02",
-            "close": 80.74,
-            "volume": 15723400
-          },
           {
             "date": "2026-06-03",
             "close": 81.06,
@@ -2837,30 +2827,30 @@
             "date": "2026-10-07",
             "close": 81.7,
             "volume": 9440000
+          },
+          {
+            "date": "2026-10-08",
+            "close": 83.42,
+            "volume": 14621500
+          },
+          {
+            "date": "2026-10-09",
+            "close": 83.47,
+            "volume": 5195044
           }
         ],
-        "week_change": 3.85,
-        "month_change": -0.06
+        "week_change": 3.0,
+        "month_change": 1.11
       },
       "xli": {
         "symbol": "XLI",
         "name": "Industrials",
         "industries": "Aerospace, Defense, Machinery",
-        "price": 168.4,
+        "price": 169.22,
         "baseline": 168.3,
-        "change_pct": 0.06,
+        "change_pct": 0.55,
         "live": true,
         "history": [
-          {
-            "date": "2026-06-01",
-            "close": 171.52,
-            "volume": 8235000
-          },
-          {
-            "date": "2026-06-02",
-            "close": 173.3,
-            "volume": 8663800
-          },
           {
             "date": "2026-06-03",
             "close": 173.16,
@@ -3300,30 +3290,30 @@
             "date": "2026-10-07",
             "close": 167.84,
             "volume": 8172800
+          },
+          {
+            "date": "2026-10-08",
+            "close": 168.4,
+            "volume": 9140100
+          },
+          {
+            "date": "2026-10-09",
+            "close": 169.22,
+            "volume": 2444137
           }
         ],
-        "week_change": -0.14,
-        "month_change": -3.19
+        "week_change": -0.52,
+        "month_change": -0.51
       },
       "xlb": {
         "symbol": "XLB",
         "name": "Materials",
         "industries": "Chemicals, Metals, Mining",
-        "price": 49.27,
+        "price": 49.51,
         "baseline": 82.4,
-        "change_pct": -40.21,
+        "change_pct": -39.92,
         "live": true,
         "history": [
-          {
-            "date": "2026-06-01",
-            "close": 50.5,
-            "volume": 24538000
-          },
-          {
-            "date": "2026-06-02",
-            "close": 51.09,
-            "volume": 19926800
-          },
           {
             "date": "2026-06-03",
             "close": 51.2,
@@ -3763,30 +3753,30 @@
             "date": "2026-10-07",
             "close": 48.98,
             "volume": 9797200
+          },
+          {
+            "date": "2026-10-08",
+            "close": 49.27,
+            "volume": 13687600
+          },
+          {
+            "date": "2026-10-09",
+            "close": 49.51,
+            "volume": 4320869
           }
         ],
-        "week_change": 1.5,
-        "month_change": -4.7
+        "week_change": 0.01,
+        "month_change": -2.03
       },
       "xlu": {
         "symbol": "XLU",
         "name": "Utilities",
         "industries": "Electric, Gas, Water",
-        "price": 41.07,
+        "price": 41.37,
         "baseline": 68.9,
-        "change_pct": -40.39,
+        "change_pct": -39.96,
         "live": true,
         "history": [
-          {
-            "date": "2026-06-01",
-            "close": 42.51,
-            "volume": 31206300
-          },
-          {
-            "date": "2026-06-02",
-            "close": 43.3,
-            "volume": 27366300
-          },
           {
             "date": "2026-06-03",
             "close": 43.12,
@@ -4226,30 +4216,30 @@
             "date": "2026-10-07",
             "close": 41.15,
             "volume": 45079400
+          },
+          {
+            "date": "2026-10-08",
+            "close": 41.07,
+            "volume": 28764000
+          },
+          {
+            "date": "2026-10-09",
+            "close": 41.37,
+            "volume": 11201714
           }
         ],
-        "week_change": 3.5,
-        "month_change": -4.78
+        "week_change": 3.49,
+        "month_change": -2.0
       },
       "xlre": {
         "symbol": "XLRE",
         "name": "Real Estate",
         "industries": "REITs, Property Management",
-        "price": 40.85,
+        "price": 41.53,
         "baseline": 42.1,
-        "change_pct": -2.97,
+        "change_pct": -1.35,
         "live": true,
         "history": [
-          {
-            "date": "2026-06-01",
-            "close": 42.54,
-            "volume": 6478200
-          },
-          {
-            "date": "2026-06-02",
-            "close": 42.75,
-            "volume": 6160600
-          },
           {
             "date": "2026-06-03",
             "close": 42.77,
@@ -4689,30 +4679,30 @@
             "date": "2026-10-07",
             "close": 40.57,
             "volume": 9206700
+          },
+          {
+            "date": "2026-10-08",
+            "close": 40.85,
+            "volume": 7898600
+          },
+          {
+            "date": "2026-10-09",
+            "close": 41.53,
+            "volume": 4488849
           }
         ],
-        "week_change": 0.42,
-        "month_change": -6.16
+        "week_change": 2.11,
+        "month_change": -2.72
       },
       "xlc": {
         "symbol": "XLC",
         "name": "Communication Services",
         "industries": "Media, Telecom, Entertainment",
-        "price": 112.07,
+        "price": 110.47,
         "baseline": 82.7,
-        "change_pct": 35.51,
+        "change_pct": 33.59,
         "live": true,
         "history": [
-          {
-            "date": "2026-06-01",
-            "close": 114.93,
-            "volume": 5270300
-          },
-          {
-            "date": "2026-06-02",
-            "close": 112.9,
-            "volume": 6493900
-          },
           {
             "date": "2026-06-03",
             "close": 111.42,
@@ -5152,10 +5142,20 @@
             "date": "2026-10-07",
             "close": 111.26,
             "volume": 4260200
+          },
+          {
+            "date": "2026-10-08",
+            "close": 112.07,
+            "volume": 6003400
+          },
+          {
+            "date": "2026-10-09",
+            "close": 110.47,
+            "volume": 3162220
           }
         ],
-        "week_change": 1.94,
-        "month_change": 0.83
+        "week_change": -1.02,
+        "month_change": -0.59
       }
     },
     "supply_chain_live": {
@@ -5163,9 +5163,9 @@
         "symbol": "ALI=F",
         "name": "Aluminum",
         "category": "metals",
-        "price": 3156.5,
+        "price": 3185.0,
         "baseline": 2450.0,
-        "change_pct": 28.84,
+        "change_pct": 30.0,
         "status": "stressed",
         "unit": "$/ton",
         "live": true
@@ -5174,9 +5174,9 @@
         "symbol": "^SPGSIN",
         "name": "Nickel",
         "category": "metals",
-        "price": 600.52,
+        "price": 607.6,
         "baseline": 16500.0,
-        "change_pct": -96.36,
+        "change_pct": -96.32,
         "status": "easing",
         "unit": "$/ton",
         "live": true
@@ -5185,9 +5185,9 @@
         "symbol": "URA",
         "name": "Uranium (ETF)",
         "category": "energy",
-        "price": 38.56,
+        "price": 38.88,
         "baseline": 28.5,
-        "change_pct": 35.3,
+        "change_pct": 36.4,
         "status": "elevated",
         "unit": "$",
         "live": true
@@ -5196,9 +5196,9 @@
         "symbol": "LIT",
         "name": "Lithium (ETF)",
         "category": "battery",
-        "price": 69.02,
+        "price": 69.78,
         "baseline": 42.0,
-        "change_pct": 64.33,
+        "change_pct": 66.14,
         "status": "elevated",
         "unit": "$",
         "live": true
@@ -5207,9 +5207,9 @@
         "symbol": "BDRY",
         "name": "Dry Bulk Shipping",
         "category": "shipping",
-        "price": 14.48,
+        "price": 13.96,
         "baseline": 8.5,
-        "change_pct": 70.35,
+        "change_pct": 64.2,
         "status": "elevated",
         "unit": "$",
         "live": true
@@ -5218,9 +5218,9 @@
         "symbol": "MOS",
         "name": "Fertilizers (Mosaic)",
         "category": "agriculture",
-        "price": 19.73,
+        "price": 18.77,
         "baseline": 48.0,
-        "change_pct": -58.9,
+        "change_pct": -60.9,
         "status": "easing",
         "unit": "$",
         "live": true
@@ -5229,9 +5229,9 @@
         "symbol": "REMX",
         "name": "Rare Earth Metals",
         "category": "metals",
-        "price": 60.58,
+        "price": 60.98,
         "baseline": 68.0,
-        "change_pct": -10.91,
+        "change_pct": -10.32,
         "status": "stable",
         "unit": "$",
         "live": true
@@ -5240,9 +5240,9 @@
         "symbol": "SLX",
         "name": "Steel",
         "category": "metals",
-        "price": 101.96,
+        "price": 103.56,
         "baseline": 78.0,
-        "change_pct": 30.72,
+        "change_pct": 32.77,
         "status": "stressed",
         "unit": "$",
         "live": true
@@ -5253,7 +5253,7 @@
         "category": "agriculture",
         "price": 28.34,
         "baseline": 22.5,
-        "change_pct": 25.96,
+        "change_pct": 25.98,
         "status": "stressed",
         "unit": "$",
         "live": true
@@ -5262,8 +5262,8 @@
         "symbol": "SOYB",
         "name": "Soybeans (ETF)",
         "category": "agriculture",
-        "price": 27.39,
-        "baseline": 27.39,
+        "price": 27.55,
+        "baseline": 27.549999237060547,
         "change_pct": 0.0,
         "status": "stable",
         "unit": "$",
@@ -5273,8 +5273,8 @@
         "symbol": "CORN",
         "name": "Corn (ETF)",
         "category": "agriculture",
-        "price": 18.96,
-        "baseline": 18.96,
+        "price": 18.46,
+        "baseline": 18.459999084472656,
         "change_pct": 0.0,
         "status": "stable",
         "unit": "$",
@@ -5284,8 +5284,8 @@
         "symbol": "PALL",
         "name": "Palladium",
         "category": "metals",
-        "price": 20.49,
-        "baseline": 20.49,
+        "price": 20.8,
+        "baseline": 20.798999786376953,
         "change_pct": 0.0,
         "status": "stable",
         "unit": "$",
@@ -5295,8 +5295,8 @@
         "symbol": "PPLT",
         "name": "Platinum",
         "category": "metals",
-        "price": 14.82,
-        "baseline": 14.82,
+        "price": 15.27,
+        "baseline": 15.265000343322754,
         "change_pct": 0.0,
         "status": "stable",
         "unit": "$",
@@ -6190,534 +6190,11 @@
             "cadence": "Mon/Thu \u2014 HBM qualification & market refresh runs 09:00 UTC on those days. The bitDemand sub-table refreshes MONTHLY (1st, 10:00 UTC) \u2014 derived shipment-mix \u00d7 per-SKU HBM content, published as ranges.",
             "next_refresh": "2026-10-12T09:00:00.000Z",
             "delta_check": "https://siliconanalysts.com/api/v1/changes?window=7d \u2014 the cheap way to stay current. An empty movements list means nothing moved past its significance threshold: that is signal, not staleness."
-          }
+          },
+          "hint": "Anonymous quota nearly used (0 of 20 left this window). A free API key raises limits and identifies your agent: https://siliconanalysts.com/developers"
         }
       },
-      "live": false,
-      "wafer_pricing": {
-        "success": true,
-        "data": [
-          {
-            "node": "tsmc-n3",
-            "label": "TSMC 3nm (N3)",
-            "waferCost": {
-              "avg": 20000,
-              "min": 18000,
-              "max": 27000,
-              "unit": "USD/wafer"
-            },
-            "defectDensity": {
-              "mature": 0.09,
-              "early": 0.14,
-              "unit": "defects/cm\u00b2"
-            },
-            "nreCost": {
-              "maskSetCost": 15000000,
-              "totalNRE": 22000000,
-              "unit": "USD"
-            },
-            "maturity": {
-              "status": "Early",
-              "yieldRisk": "Medium"
-            },
-            "source": "3 public sources",
-            "citation": "Point $20,000 (multi-source consensus, 2026-08-03 refresh); band restored 2026-08-23 per owner ruling \u2014 public N3 prints span Tom's Hardware ~$18,000 (2024, analyst-sourced) to TrendForce $25,000-27,000 (Oct 2025)",
-            "provenance": {
-              "last_updated": "2026-08-24T00:32:40.169+00:00",
-              "source_type": "research",
-              "confidence_tier": "high",
-              "dataset_version": "foundryData-v1.0",
-              "data_as_of": "2026-08-23T00:00:00.000Z"
-            }
-          },
-          {
-            "node": "tsmc-n5",
-            "label": "TSMC 5nm (N5/N4)",
-            "waferCost": {
-              "avg": 20000,
-              "min": 16000,
-              "max": 21300,
-              "unit": "USD/wafer"
-            },
-            "defectDensity": {
-              "mature": 0.10250000000000001,
-              "early": null,
-              "unit": "defects/cm\u00b2"
-            },
-            "nreCost": {
-              "maskSetCost": 6500000,
-              "totalNRE": 10000000,
-              "unit": "USD"
-            },
-            "maturity": {
-              "status": "Mature",
-              "yieldRisk": "Low"
-            },
-            "source": "3 public sources",
-            "citation": "Synthesized from 3 public sources: Reddit, EE Times, Design Reuse",
-            "provenance": {
-              "last_updated": "2026-10-05T11:31:15.618+00:00",
-              "source_type": "research",
-              "confidence_tier": "high",
-              "dataset_version": "foundryData-v1.0",
-              "data_as_of": "2026-09-28T00:00:00.000Z"
-            }
-          },
-          {
-            "node": "samsung-3nm",
-            "label": "Samsung 3nm (SF3)",
-            "waferCost": {
-              "avg": 15000,
-              "min": 13000,
-              "max": 17000,
-              "unit": "USD/wafer"
-            },
-            "defectDensity": {
-              "mature": 0.18,
-              "early": 0.22,
-              "unit": "defects/cm\u00b2"
-            },
-            "nreCost": {
-              "maskSetCost": 12000000,
-              "totalNRE": 18000000,
-              "unit": "USD"
-            },
-            "maturity": {
-              "status": "Ramping",
-              "yieldRisk": "High"
-            },
-            "source": "Industry Expert Consensus (Est. Discount)",
-            "citation": "Industry consensus (public briefings), 2024",
-            "provenance": {
-              "last_updated": "2026-06-20T22:38:52.879+00:00",
-              "source_type": "estimated",
-              "confidence_tier": "medium",
-              "dataset_version": "foundryData-v1.0",
-              "data_as_of": "2026-04-07T00:00:00.000Z"
-            }
-          },
-          {
-            "node": "samsung-5nm",
-            "label": "Samsung 5nm (SF5)",
-            "waferCost": {
-              "avg": 13000,
-              "min": 11000,
-              "max": 15000,
-              "unit": "USD/wafer"
-            },
-            "defectDensity": {
-              "mature": 0.13,
-              "early": null,
-              "unit": "defects/cm\u00b2"
-            },
-            "nreCost": {
-              "maskSetCost": 5000000,
-              "totalNRE": 8000000,
-              "unit": "USD"
-            },
-            "maturity": {
-              "status": "Early",
-              "yieldRisk": "Medium"
-            },
-            "source": "Industry Expert Consensus (Est. Discount)",
-            "citation": "Industry consensus (public briefings), 2024",
-            "provenance": {
-              "last_updated": "2026-06-20T22:38:52.879+00:00",
-              "source_type": "estimated",
-              "confidence_tier": "medium",
-              "dataset_version": "foundryData-v1.0",
-              "data_as_of": "2026-04-07T00:00:00.000Z"
-            }
-          },
-          {
-            "node": "tsmc-n7",
-            "label": "TSMC 7nm (N7)",
-            "waferCost": {
-              "avg": 9500,
-              "min": 8100,
-              "max": 10900,
-              "unit": "USD/wafer"
-            },
-            "defectDensity": {
-              "mature": 0.095,
-              "early": null,
-              "unit": "defects/cm\u00b2"
-            },
-            "nreCost": {
-              "maskSetCost": 3500000,
-              "totalNRE": 5500000,
-              "unit": "USD"
-            },
-            "maturity": {
-              "status": "Mature",
-              "yieldRisk": "Low"
-            },
-            "source": "CSET, Semiwiki",
-            "citation": "SemiWiki / CSET node pricing note, 2024",
-            "provenance": {
-              "last_updated": "2026-06-20T22:38:52.879+00:00",
-              "source_type": "research",
-              "confidence_tier": "medium",
-              "dataset_version": "foundryData-v1.0",
-              "data_as_of": "2026-04-07T00:00:00.000Z"
-            }
-          },
-          {
-            "node": "samsung-7nm",
-            "label": "Samsung 7/8nm (SF7)",
-            "waferCost": {
-              "avg": 8000,
-              "min": 7000,
-              "max": 9000,
-              "unit": "USD/wafer"
-            },
-            "defectDensity": {
-              "mature": 0.09,
-              "early": null,
-              "unit": "defects/cm\u00b2"
-            },
-            "nreCost": {
-              "maskSetCost": 3000000,
-              "totalNRE": 4800000,
-              "unit": "USD"
-            },
-            "maturity": {
-              "status": "Mature",
-              "yieldRisk": "Low"
-            },
-            "source": "TSMC N7 comp less ~20% Samsung discount (public briefings)",
-            "citation": "TSMC N7 comp less ~20% Samsung discount (public briefings), 2026. Samsung Foundry reports quarterly operating losses; breakeven targeted Late 2027.",
-            "provenance": {
-              "last_updated": "2026-08-05T02:36:12.315+00:00",
-              "source_type": "derived",
-              "confidence_tier": "medium",
-              "dataset_version": "foundryData-v1.0",
-              "data_as_of": "2026-08-05T00:00:00.000Z"
-            }
-          },
-          {
-            "node": "intel-7",
-            "label": "Intel 7",
-            "waferCost": {
-              "avg": 6500,
-              "min": 5000,
-              "max": 8000,
-              "unit": "USD/wafer"
-            },
-            "defectDensity": {
-              "mature": 0.11,
-              "early": null,
-              "unit": "defects/cm\u00b2"
-            },
-            "nreCost": {
-              "maskSetCost": 2500000,
-              "totalNRE": 4200000,
-              "unit": "USD"
-            },
-            "maturity": {
-              "status": "Mature",
-              "yieldRisk": "Medium"
-            },
-            "source": "Public analyst comps (Intel 7 \u2248 10nm-class)",
-            "citation": "Public analyst comps, Intel 7 \u2248 10nm-class, 2026. Intel Foundry reports a FY2025 segment operating loss \u2014 treat as a positioning price rather than a cost-recovering one.",
-            "provenance": {
-              "last_updated": "2026-08-05T02:36:12.315+00:00",
-              "source_type": "estimated",
-              "confidence_tier": "medium",
-              "dataset_version": "foundryData-v1.0",
-              "data_as_of": "2026-08-05T00:00:00.000Z"
-            }
-          },
-          {
-            "node": "tsmc-n16",
-            "label": "TSMC 16nm (N16/N12)",
-            "waferCost": {
-              "avg": 5500,
-              "min": 5000,
-              "max": 6000,
-              "unit": "USD/wafer"
-            },
-            "defectDensity": {
-              "mature": 0.08,
-              "early": null,
-              "unit": "defects/cm\u00b2"
-            },
-            "nreCost": {
-              "maskSetCost": 1800000,
-              "totalNRE": 3200000,
-              "unit": "USD"
-            },
-            "maturity": {
-              "status": "Mature",
-              "yieldRisk": "Low"
-            },
-            "source": "Analyst estimates (IBS, Morgan Stanley, DigiTimes, TrendForce)",
-            "citation": "TSMC_NODE_PRICING N16 \u2014 IBS / Morgan Stanley / DigiTimes / TrendForce analyst estimates, 2025.",
-            "provenance": {
-              "last_updated": "2026-08-05T02:36:12.315+00:00",
-              "source_type": "research",
-              "confidence_tier": "medium",
-              "dataset_version": "foundryData-v1.0",
-              "data_as_of": "2026-08-05T00:00:00.000Z"
-            }
-          },
-          {
-            "node": "intel-16",
-            "label": "Intel 16nm",
-            "waferCost": {
-              "avg": 4500,
-              "min": 3800,
-              "max": 5200,
-              "unit": "USD/wafer"
-            },
-            "defectDensity": {
-              "mature": 0.1,
-              "early": null,
-              "unit": "defects/cm\u00b2"
-            },
-            "nreCost": {
-              "maskSetCost": 1500000,
-              "totalNRE": 2800000,
-              "unit": "USD"
-            },
-            "maturity": {
-              "status": "Mature",
-              "yieldRisk": "Low"
-            },
-            "source": "Silicon Analysts estimate \u2014 Intel Foundry competitive positioning (not IR-derived)",
-            "citation": "Public foundry pricing comps, 2024. Intel Foundry reports a FY2025 segment operating loss ($10.3B on $17.8B revenue, of which $307M / 1.7% external) \u2014 treat as a positioning price rather than a cost-recovering one.",
-            "provenance": {
-              "last_updated": "2026-08-05T02:36:12.315+00:00",
-              "source_type": "estimated",
-              "confidence_tier": "medium",
-              "dataset_version": "foundryData-v1.0",
-              "data_as_of": "2026-04-07T00:00:00.000Z"
-            }
-          },
-          {
-            "node": "samsung-14nm",
-            "label": "Samsung 14nm (14LPP)",
-            "waferCost": {
-              "avg": 4400,
-              "min": 4000,
-              "max": 4800,
-              "unit": "USD/wafer"
-            },
-            "defectDensity": {
-              "mature": 0.11,
-              "early": null,
-              "unit": "defects/cm\u00b2"
-            },
-            "nreCost": {
-              "maskSetCost": 1500000,
-              "totalNRE": 2700000,
-              "unit": "USD"
-            },
-            "maturity": {
-              "status": "Mature",
-              "yieldRisk": "Low"
-            },
-            "source": "Silicon Analysts estimate \u2014 TSMC N16 comp less 20% Samsung mature-node discount",
-            "citation": "Derived from TSMC N16 (2025 analyst estimates) \u00d7 0.80; discount per SAMSUNG_FOUNDRY range [20\u201333%]. Samsung Foundry reports quarterly operating losses; breakeven targeted Late 2027.",
-            "provenance": {
-              "last_updated": "2026-08-05T02:36:12.315+00:00",
-              "source_type": "derived",
-              "confidence_tier": "medium",
-              "dataset_version": "foundryData-v1.0",
-              "data_as_of": "2026-08-05T00:00:00.000Z"
-            }
-          },
-          {
-            "node": "gf-12lp",
-            "label": "GlobalFoundries 12nm (12LP/12LP+)",
-            "waferCost": {
-              "avg": 4200,
-              "min": 3500,
-              "max": 4900,
-              "unit": "USD/wafer"
-            },
-            "defectDensity": {
-              "mature": 0.1,
-              "early": null,
-              "unit": "defects/cm\u00b2"
-            },
-            "nreCost": {
-              "maskSetCost": 1400000,
-              "totalNRE": 2500000,
-              "unit": "USD"
-            },
-            "maturity": {
-              "status": "Mature",
-              "yieldRisk": "Low"
-            },
-            "source": "Public 12/14nm FinFET pricing comps",
-            "citation": "Public pricing roundups, 2026.",
-            "provenance": {
-              "last_updated": "2026-08-05T02:36:12.315+00:00",
-              "source_type": "estimated",
-              "confidence_tier": "medium",
-              "dataset_version": "foundryData-v1.0",
-              "data_as_of": "2026-08-05T00:00:00.000Z"
-            }
-          },
-          {
-            "node": "gf-fdx",
-            "label": "GlobalFoundries FDX (22FDX/12FDX)",
-            "waferCost": {
-              "avg": 3200,
-              "min": 2500,
-              "max": 3900,
-              "unit": "USD/wafer"
-            },
-            "defectDensity": null,
-            "nreCost": null,
-            "maturity": {
-              "status": "Mature",
-              "yieldRisk": "Low"
-            },
-            "source": "FD-SOI specialty pricing comps",
-            "citation": "Public pricing roundups, 2026.",
-            "provenance": {
-              "last_updated": "2026-08-05T02:36:12.315+00:00",
-              "source_type": "estimated",
-              "confidence_tier": "medium",
-              "dataset_version": "foundryData-v1.0",
-              "data_as_of": "2026-08-05T00:00:00.000Z"
-            }
-          },
-          {
-            "node": "tsmc-28",
-            "label": "TSMC 28nm",
-            "waferCost": {
-              "avg": 3000,
-              "min": 2550,
-              "max": 3450,
-              "unit": "USD/wafer"
-            },
-            "defectDensity": {
-              "mature": 0.12,
-              "early": null,
-              "unit": "defects/cm\u00b2"
-            },
-            "nreCost": {
-              "maskSetCost": 1000000,
-              "totalNRE": 1800000,
-              "unit": "USD"
-            },
-            "maturity": {
-              "status": "Mature",
-              "yieldRisk": "Low"
-            },
-            "source": "Industry Reports (e.g., EEWORLD)",
-            "citation": "EEWORLD / industry pricing roundup, 2024",
-            "provenance": {
-              "last_updated": "2026-06-20T22:38:52.879+00:00",
-              "source_type": "research",
-              "confidence_tier": "medium",
-              "dataset_version": "foundryData-v1.0",
-              "data_as_of": "2026-04-07T00:00:00.000Z"
-            }
-          },
-          {
-            "node": "umc-22-28",
-            "label": "UMC 22/28nm",
-            "waferCost": {
-              "avg": 2800,
-              "min": 2200,
-              "max": 3400,
-              "unit": "USD/wafer"
-            },
-            "defectDensity": null,
-            "nreCost": null,
-            "maturity": {
-              "status": "Mature",
-              "yieldRisk": "Low"
-            },
-            "source": "TSMC 28nm comp less specialty-foundry discount (public roundups)",
-            "citation": "Public pricing roundups, 2026.",
-            "provenance": {
-              "last_updated": "2026-08-05T02:36:12.315+00:00",
-              "source_type": "derived",
-              "confidence_tier": "medium",
-              "dataset_version": "foundryData-v1.0",
-              "data_as_of": "2026-08-05T00:00:00.000Z"
-            }
-          },
-          {
-            "node": "smic-28",
-            "label": "SMIC 22/28nm",
-            "waferCost": {
-              "avg": 2000,
-              "min": 1500,
-              "max": 2500,
-              "unit": "USD/wafer"
-            },
-            "defectDensity": null,
-            "nreCost": null,
-            "maturity": {
-              "status": "Mature",
-              "yieldRisk": "Low"
-            },
-            "source": "Public pricing roundups (price-cut range)",
-            "citation": "Public pricing roundups + workspace wafer-pricing.csv ($1,500 post-cut / $2,500 pre-cut), 2025. Export-controlled supplier; availability is jurisdiction-dependent.",
-            "provenance": {
-              "last_updated": "2026-08-05T02:36:12.315+00:00",
-              "source_type": "estimated",
-              "confidence_tier": "medium",
-              "dataset_version": "foundryData-v1.0",
-              "data_as_of": "2026-08-05T00:00:00.000Z"
-            }
-          },
-          {
-            "node": "umc-40",
-            "label": "UMC 40/45nm",
-            "waferCost": {
-              "avg": 2000,
-              "min": 1500,
-              "max": 2500,
-              "unit": "USD/wafer"
-            },
-            "defectDensity": null,
-            "nreCost": null,
-            "maturity": {
-              "status": "Mature",
-              "yieldRisk": "Low"
-            },
-            "source": "40/45nm public pricing comps",
-            "citation": "Public pricing roundups, 2026.",
-            "provenance": {
-              "last_updated": "2026-08-05T02:36:12.315+00:00",
-              "source_type": "estimated",
-              "confidence_tier": "medium",
-              "dataset_version": "foundryData-v1.0",
-              "data_as_of": "2026-08-05T00:00:00.000Z"
-            }
-          }
-        ],
-        "meta": {
-          "source": "Silicon Analysts",
-          "count": 16,
-          "updated": "2026-10-05",
-          "data_as_of": "2026-09-28",
-          "data_freshness": {
-            "validated_through": "2026-10-05",
-            "age_days": 3,
-            "expected_cadence_days": 7,
-            "stale": false,
-            "note": "Confirmed 2026-10-05 (3d ago); within the ~7d refresh cadence."
-          },
-          "dataSources": "TrendForce, Morgan Stanley, CSET, TechInsights, IEDM, public filings",
-          "apiVersion": "1",
-          "endpoint": "/api/v1/foundry/wafer-pricing",
-          "docs": "https://siliconanalysts.com/developers",
-          "feedback": "Shape the paid tier \u2014 what would make this worth paying for? https://siliconanalysts.com/roadmap",
-          "freshness": {
-            "cadence": "Weekly \u2014 wafer pricing refresh runs Mondays 11:30 UTC (multi-source corroborated, $250-grained).",
-            "next_refresh": "2026-10-12T11:30:00.000Z",
-            "delta_check": "https://siliconanalysts.com/api/v1/changes?window=7d \u2014 the cheap way to stay current. An empty movements list means nothing moved past its significance threshold: that is signal, not staleness."
-          }
-        }
-      }
+      "live": false
     },
     "fuel": {
       "value": 4.0,
