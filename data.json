@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-16T20:47:57.767871",
+  "last_updated": "2026-10-16T23:23:00.292933",
   "baseline_date": "2026-02-27",
   "metrics": {
     "sp500": {
@@ -16,20 +16,20 @@
       "live": true
     },
     "brent": {
-      "value": 109.71,
-      "change_pct": 61.65,
+      "value": 109.69,
+      "change_pct": 61.62,
       "source": "Yahoo Finance",
       "live": true
     },
     "wti": {
-      "value": 98.94,
-      "change_pct": 47.67,
+      "value": 99.04,
+      "change_pct": 47.82,
       "source": "Yahoo Finance",
       "live": true
     },
     "henryhub": {
-      "value": 3.13,
-      "change_pct": -0.73,
+      "value": 3.12,
+      "change_pct": -1.05,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -46,14 +46,14 @@
       "live": true
     },
     "gold": {
-      "value": 4188.0,
-      "change_pct": 46.95,
+      "value": 4186.7,
+      "change_pct": 46.9,
       "source": "Yahoo Finance",
       "live": true
     },
     "copper": {
-      "value": 6.57,
-      "change_pct": 54.47,
+      "value": 6.56,
+      "change_pct": 54.4,
       "source": "Yahoo Finance",
       "live": true
     },
@@ -521,7 +521,7 @@
           {
             "date": "2026-10-16",
             "close": 183.47,
-            "volume": 15197435
+            "volume": 15292136
           }
         ],
         "week_change": -6.56,
@@ -984,7 +984,7 @@
           {
             "date": "2026-10-16",
             "close": 68.24,
-            "volume": 37242303
+            "volume": 37262356
           }
         ],
         "week_change": 3.38,
@@ -1447,7 +1447,7 @@
           {
             "date": "2026-10-16",
             "close": 55.52,
-            "volume": 42289153
+            "volume": 42796633
           }
         ],
         "week_change": 0.85,
@@ -1910,7 +1910,7 @@
           {
             "date": "2026-10-16",
             "close": 176.71,
-            "volume": 8537313
+            "volume": 8539321
           }
         ],
         "week_change": 2.74,
@@ -2373,7 +2373,7 @@
           {
             "date": "2026-10-16",
             "close": 112.46,
-            "volume": 16156921
+            "volume": 16161003
           }
         ],
         "week_change": 0.17,
@@ -2836,7 +2836,7 @@
           {
             "date": "2026-10-16",
             "close": 87.62,
-            "volume": 23317376
+            "volume": 23354590
           }
         ],
         "week_change": 3.8,
@@ -3299,7 +3299,7 @@
           {
             "date": "2026-10-16",
             "close": 167.76,
-            "volume": 9292338
+            "volume": 9310865
           }
         ],
         "week_change": -0.82,
@@ -3762,7 +3762,7 @@
           {
             "date": "2026-10-16",
             "close": 50.92,
-            "volume": 12534483
+            "volume": 12544951
           }
         ],
         "week_change": 2.99,
@@ -4225,7 +4225,7 @@
           {
             "date": "2026-10-16",
             "close": 42.21,
-            "volume": 31821560
+            "volume": 31891512
           }
         ],
         "week_change": 1.39,
@@ -4688,7 +4688,7 @@
           {
             "date": "2026-10-16",
             "close": 42.16,
-            "volume": 8047051
+            "volume": 8047532
           }
         ],
         "week_change": 0.57,
@@ -5151,7 +5151,7 @@
           {
             "date": "2026-10-16",
             "close": 110.32,
-            "volume": 6674335
+            "volume": 6677012
           }
         ],
         "week_change": -1.01,
@@ -5163,9 +5163,9 @@
         "symbol": "ALI=F",
         "name": "Aluminum",
         "category": "metals",
-        "price": 3109.0,
+        "price": 3092.25,
         "baseline": 2450.0,
-        "change_pct": 26.9,
+        "change_pct": 26.21,
         "status": "stressed",
         "unit": "$/ton",
         "live": true
@@ -6262,7 +6262,8 @@
             "cadence": "Mixed \u2014 qualificationFeed is re-checked Mon/Thu 09:00 UTC; bitDemand refreshes MONTHLY (1st, 10:00 UTC \u2014 derived shipment-mix \u00d7 per-SKU HBM content, published as ranges); accelerators, specs and validationChecks are hand-curated and the editorial tables are revised by hand, so neither moves on a schedule; spotPrices is retired. meta.table_freshness dates each sub-table.",
             "next_refresh": "2026-10-19T09:00:00.000Z",
             "delta_check": "https://siliconanalysts.com/api/v1/changes?window=7d \u2014 the cheap way to stay current. An empty movements list means nothing moved past its significance threshold: that is signal, not staleness."
-          }
+          },
+          "hint": "Anonymous quota nearly used (5 of 20 left this window). A free API key raises limits and identifies your agent: https://siliconanalysts.com/developers"
         }
       },
       "live": false,
@@ -6787,7 +6788,8 @@
             "cadence": "Weekly \u2014 wafer pricing refresh runs Mondays 11:30 UTC (multi-source corroborated, $250-grained).",
             "next_refresh": "2026-10-19T11:30:00.000Z",
             "delta_check": "https://siliconanalysts.com/api/v1/changes?window=7d \u2014 the cheap way to stay current. An empty movements list means nothing moved past its significance threshold: that is signal, not staleness."
-          }
+          },
+          "hint": "Anonymous quota nearly used (4 of 20 left this window). A free API key raises limits and identifies your agent: https://siliconanalysts.com/developers"
         }
       }
     },
